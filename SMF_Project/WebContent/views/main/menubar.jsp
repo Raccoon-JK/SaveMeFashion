@@ -48,10 +48,6 @@
                         <li><a href=""><img id="notice" src="${pageContext.request.contextPath}/resources/main/bell_icon.png"></a></li>
                     </ul>
                 </div>
-                <a class="nav-link nav-icons" href="javascript:void(0);" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-fw fa-bell"></i><input type="hidden" value="${loginUser.memId }" id="memIdSpan">
-                    <span class="indicator" id="alarmIcon" style="display:none;"></span>
-                </a>
             </div>
             <div class="header_main">
                 <div class="main_inner">
@@ -62,7 +58,7 @@
                         <ul class="gnb_list">
                             <li><a href="">DRESS ROOM</a></li>
                             <li><a href="">MY</a></li>
-                            <li><button class="btnFind" type="submit" name="btnFind"><img id="search" src="${pageContext.request.contextPath}/resources/main/search_icon.png"></button></li>
+                            <li><button class="btnFind" type="button" name="modal_open_btn"><img id="search" src="${pageContext.request.contextPath}/resources/main/search_icon.png"></button></li>
                         </ul>
                     </nav>
                 </div>
