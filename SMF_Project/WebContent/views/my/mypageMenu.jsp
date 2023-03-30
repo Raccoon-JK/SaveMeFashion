@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	String contextPath = request.getContextPath();
+%>
+<div id="mypage_menu">
+    <span>마이 페이지</span>
+    <ul>
+        <span>내 정보</span>
+        <li><a>프로필 정보</a></li>
+        <li><a href="<%=contextPath%>/address.me">주소록</a></li>
+        <li><a>스타일</a></li>
+        <li><a>포인트</a></li>
+        <li><a>계좌 및 카드 관리</a></li>
+        <li><a>신고 내역</a></li>
+    </ul>
+    <ul>
+        <span>쇼핑정보</span>
+        <li><a>구매 내역</a></li>
+        <li><a>판매 내역</a></li>
+        <li><a>관심 목록 / 장바구니</a></li>
+    </ul>
+</div>
