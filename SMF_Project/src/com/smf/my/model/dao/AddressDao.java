@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
@@ -28,6 +30,76 @@ public class AddressDao {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public Address addressDefault(Connection conn) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		Address addr = new Address();
+		
+		String sql = prop.getProperty("addressDefult");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, "hshwan0406@smf.com");
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				addr.setUserId(rset.getString("USER_ID"));
+				addr.setReceiver(rset.getString("RECEIVER"));
+				addr.setPhone(rset.getString("PHONE"));
+				addr.setPostcode(rset.getInt("POSTCODE"));
+				addr.setAddress(rset.getString("ADDRESS"));
+				addr.setDefaultAddress(rset.getInt("DEFAULT_ADDRESS"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return addr;
+	}
+	
+	public ArrayList<Address> addressList(Connection conn){
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String sql = prop.getProperty("addressList");
+		
+		ArrayList<Address> addrList = new ArrayList();
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, "hshwan0406@smf.com");
+			
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()) {
+				Address addr = new Address();
+											addr.setUserId(rset.getString("USER_ID"));
+											addr.setReceiver(rset.getString("RECEIVER"));
+											addr.setPhone(rset.getString("PHONE"));
+											addr.setPostcode(rset.getInt("POSTCODE"));
+											addr.setAddress(rset.getString("ADDRESS"));
+											addr.setDefaultAddress(rset.getInt("DEFAULT_ADDRESS"));
+											
+				addrList.add(addr);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return addrList;
 	}
 	
 	public int insertAddress(Connection conn, Address addr) {

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,22 +60,19 @@
             </div>
             <div id="mypage_content">
             	<div id="address_wrapper">
-	                <div class="address_area">
-	                    <p class="addrName">황수환</p>
-	                    <p>010-2231-7437</p>
-	                    <p>(우편번호)강서구 18마길 15</p>
+	                <div class="address_area" id="default_address">
+	                    <p class="addrName">${addrDefault.receiver}</p>
+	                    <p>${addrDefault.phone}</p>
+	                    <p>(${addrDefault.postcode}) ${addrDefault.address}</p>
 	                </div>
 	                <div id="addressLine"></div>
-   	                <div class="address_area">
-	                    <p class="addrName">황수환</p>
-	                    <p>010-2231-7437</p>
-	                    <p>(우편번호)강서구 18마길 15</p>
-	                </div>
-  	                <div class="address_area">
-	                    <p class="addrName">황수환</p>
-	                    <p>010-2231-7437</p>
-	                    <p>(우편번호)강서구 18마길 15</p>
-	                </div>
+             		<c:forEach var="list" items="${addrList}">
+	  	                <div class="address_area">
+		                    <p class="addrName">${list.receiver}</p>
+		                    <p>${list.phone}</p>
+		                    <p>(${list.postcode}) ${list.address}</p>
+		                </div>
+               		</c:forEach>
                 </div>
             </div>
         </div>

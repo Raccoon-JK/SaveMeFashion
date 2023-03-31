@@ -7,13 +7,13 @@ public class Address {
 	private String phone;			//  phone;
 	private int postcode;			//	POSTCODE
 	private String address;			//	ADDRESS
-	private String defaultAddress;	//	DEFAULT_ADDRESS
+	private int defaultAddress;	//	DEFAULT_ADDRESS
 	
 	public Address() {
 		super();
 	}
 	public Address(int addressNo, String userId, String receiver, String phone, int postcode, String address,
-			String defaultAddress) {
+			int defaultAddress) {
 		super();
 		this.addressNo = addressNo;
 		this.userId = userId;
@@ -67,10 +67,10 @@ public class Address {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getDefaultAddress() {
+	public int getDefaultAddress() {
 		return defaultAddress;
 	}
-	public void setDefaultAddress(String defaultAddress) {
+	public void setDefaultAddress(int defaultAddress) {
 		this.defaultAddress = defaultAddress;
 	}
 	
