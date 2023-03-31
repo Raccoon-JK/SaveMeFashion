@@ -15,3 +15,18 @@ modal.addEventListener("click", e => {
         modal.style.display = "none"
     }
 });
+
+modal.addEventListener("click", e => {
+    const evTarget = e.target
+    if(evTarget.classList.contains("btn-close-popup")) {
+        modal.style.display = "none"
+    }
+});
+
+function enterkey() {
+        if (window.event.keyCode == 13) {
+ 
+             // 엔터키가 눌렸을 때 실행할 내용
+             login();
+        }
+}

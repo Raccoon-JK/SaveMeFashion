@@ -41,47 +41,64 @@
 <body>
 	<div class="modal">
       	<div class="modal_body">
+      		<button class="btn-close-popup"" type="button">X</button>
 			<div>
 				<form method="" action="">
-					<input class="searchBar" type="text" name="name"><input class="searchBtn" type="submit" value="검색">
+					<input class="searchBar" onkeyup="enterkey();" type="search" name="name" placeholder="브랜드명, 모델명 등">
 				</form>
 			</div>
-			<div class="recommand">
-				<div class="recTitle">추천 검색어</div>
+			<div class="recSearch">
+				<div class="serTitle"><b>추천 검색어</b></div>
 				<ul>
-					<li><span>구찌</span></li>
-					<li><span>에르메스</span></li>
-					<li><span>샤넬</span></li>
-					<li><span>아디다스</span></li>
-					<li><span>나이키</span></li>
+					<li><a><span>구찌</span></a></li>
+					<li><a><span>에르메스</span></a></li>
+					<li><a><span>구찌</span></a></li>
+					<li><a><span>에르메스</span></a></li>
+					<li><a><span>구찌</span></a></li>
+					<li><a><span>에르메스</span></a></li>
 				</ul>
 			</div>
-			<div class="best">
-				<div class="bestTitle">인기 검색어</div>
+			<div class="bestSearch">
+				<div class="serTitle"><b>인기 검색어</b></div>
+				<div class="serList">
+					<ul>
+						<li><a><span>1</span><span>구찌</span></a></li>
+						<li><a><span>2</span><span>구찌</span></a></li>
+						<li><a><span>3</span><span>구찌</span></a></li>
+						<li><a><span>4</span><span>구찌</span></a></li>
+						<li><a><span>5</span><span>구찌</span></a></li>
+						<li><a><span>6</span><span>구찌</span></a></li>
+						<li><a><span>7</span><span>구찌</span></a></li>
+						<li><a><span>8</span><span>구찌</span></a></li>
+						<li><a><span>9</span><span>구찌</span></a></li>
+						<li><a><span>10</span><span>구찌</span></a></li>
+					</ul>
+				</div>
+				<div class="serList">
+					<ul>
+						<li><a><span>11</span><span>구찌</span></a></li>
+						<li><a><span>12</span><span>구찌</span></a></li>
+						<li><a><span>13</span><span>구찌</span></a></li>
+						<li><a><span>14</span><span>구찌</span></a></li>
+						<li><a><span>15</span><span>구찌</span></a></li>
+						<li><a><span>16</span><span>구찌</span></a></li>
+						<li><a><span>17</span><span>구찌</span></a></li>
+						<li><a><span>18</span><span>구찌</span></a></li>
+						<li><a><span>19</span><span>구찌</span></a></li>
+						<li><a><span>20</span><span>구찌</span></a></li>
+					</ul>
+				</div>
+				
+			</div>
+			<div class="recBrand">
+				<div class="serTitle"><b>추천 브랜드</b></div>
 				<ul>
-					<li><span>1</span><span>구찌</span></li>
-					<li><span>2</span><span>구찌</span></li>
-					<li><span>3</span><span>구찌</span></li>
-					<li><span>4</span><span>구찌</span></li>
-					<li><span>5</span><span>구찌</span></li>
-					<li><span>6</span><span>구찌</span></li>
-					<li><span>7</span><span>구찌</span></li>
-					<li><span>8</span><span>구찌</span></li>
-					<li><span>9</span><span>구찌</span></li>
-					<li><span>10</span><span>구찌</span></li>
-					<li><span>11</span><span>구찌</span></li>
-					<li><span>12</span><span>구찌</span></li>
-					<li><span>13</span><span>구찌</span></li>
-					<li><span>14</span><span>구찌</span></li>
-					<li><span>15</span><span>구찌</span></li>
-					<li><span>16</span><span>구찌</span></li>
-					<li><span>17</span><span>구찌</span></li>
-					<li><span>18</span><span>구찌</span></li>
-					<li><span>19</span><span>구찌</span></li>
-					<li><span>20</span><span>구찌</span></li>
+					<li><a><div><img src="https://via.placeholder.com/100"><p>구찌</p></div></a></li>
+					<li><a><div><img src="https://via.placeholder.com/100"><p>구찌</p></div></a></li>
+					<li><a><div><img src="https://via.placeholder.com/100"><p>구찌</p></div></a></li>
+					<li><a><div><img src="https://via.placeholder.com/100"><p>구찌</p></div></a></li>
 				</ul>
 			</div>
-			<div></div>
 		</div>
     </div>
     <div class="header">
@@ -105,7 +122,7 @@
                         <ul class="gnb_list">
                             <li><a href="">DRESS ROOM</a></li>
                             <li><a href="">MY</a></li>
-                            <li><button class="btn-open-popup"" type="button"><img id="search" src="${pageContext.request.contextPath}/resources/main/search_icon.png"></button></li>
+                            <li><button class="btn-open-popup" type="button"><img id="search" src="${pageContext.request.contextPath}/resources/main/search_icon.png"></button></li>
                         </ul>
                     </nav>
                 </div>

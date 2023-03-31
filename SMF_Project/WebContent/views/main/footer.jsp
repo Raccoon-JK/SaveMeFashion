@@ -20,16 +20,16 @@
     }
 
     .footer_box{
-        height: 580px;
+        height: 400px;
         max-width: 1280px;
-        padding: 50px 40px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 30px auto 60px;
+        border-bottom: solid 1px rgb(231, 231, 231);
+        padding: 0 40px;
     }
 
     .service_area{
         display: flex;
-        padding-bottom: 30px;
+        padding-bottom: 60px;
     }
 
     .customer_service{
@@ -37,7 +37,7 @@
     }
 
     .corporation_area{
-        padding-top: 30px;
+        margine: 30px 0px;
     }
 
     .notice_area{
@@ -47,19 +47,30 @@
 
     .menu_box{
         width: 155px;
-        height: 160px;
+        height: auto;
         margin-right: 40px;
     }
  
-
-    #menu_li{
-        padding-left: 0px;
+ 	#menu_li{
+ 		padding-left: 0px;
         list-style: none;
+ 	}
+
+    #menu_li>li{
+        margin-right: 10px;
     }
 
     .terms li{
         float: left;
         padding-right: 20px;
+    }
+    
+    .ask{
+    	margin-top: 10px;
+    	border-radius: 10px;
+    	background-color: white;
+    	border: solid 1px rgb(231, 231, 231);
+    	padding: 1px 6px;
     }
 
 
@@ -70,7 +81,6 @@
 <body>
     <div class="footer">
        <div class="footer_box">
-			<hr>
             <div class="service_area">
                 <div class="menu_box">
                     <strong>이용안내</strong>
@@ -96,7 +106,7 @@
                         <li>1:1 문의하기는 PC버전에서만 가능합니다.</li>
                     </ul>
                     <div class="question_box">
-                    	<button>자주 묻는 질문</button>
+                    	<button class="ask">자주 묻는 질문</button>
                     </div>
                 </div>
             </div>
@@ -114,10 +124,10 @@
                 <br><br>
                 <div class="info">
                     <ul id="menu_li">
-                        <li>크림 주식회사 · 대표 김창욱</li>
-                        <li>사업자등록번호 : 570-88-01618</li>
-                        <li>사업자정보확인통신판매업 : 제 2021-성남분당C-0093호</li>
-                        <li>사업장소재지 : 경기도 성남시 분당구 분당내곡로 131 판교테크원 타워1, 8층</li>
+                        <li>크림 주식회사 · 대표 김창욱 /</li>
+                        <li>사업자등록번호 : 570-88-01618 /</li>
+                        <li>사업자정보확인통신판매업 : 제 2021-성남분당C-0093호 /</li>
+                        <li>사업장소재지 : 경기도 성남시 분당구 분당내곡로 131 판교테크원 타워1, 8층 /</li>
                         <li>호스팅 서비스 : 네이버 클라우드 ㈜</li>
                     </ul>
                 </div>

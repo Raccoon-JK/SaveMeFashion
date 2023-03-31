@@ -22,7 +22,7 @@
   top: 50%;
   left: 50%;
 
-  width: 60%;
+  width: 600px;
   height: 80%;
 
   padding: 40px;
@@ -36,58 +36,91 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
+.btn-close-popup{
+	float: right;
+	border-style: none;
+    background-color: rgba( 255, 255, 255, 0 );
+}
+
 .searchBar{
-	width: 80%;
+	width: 100%;
+	height: 10%;
 	border: none;
+	border-bottom: 2px solid black;
+	padding: 20px;
 }
 
 input:focus {
 	outline: none;
 }
 
-.recommand{
-	width: 100%;
-	height: 10%;
-	border-top: 2px solid black;
+.serTitle{
 	margin-top: 10px;
+	text-align: left;
 }
 
-.recommand>ul>li{
-	margin: 10px 20px;
+.recSearch{
+	width: 100%;
+	height: 13%;
+	border-bottom: 2px solid black;
+	margin-top: 20px;
+	padding: 10px 0px;
 }
 
-.recommand>ul>li>span{
+.recSearch ul>li{
+	margin: 10px 10px;
+}
+
+.recSearch>ul>li>a>span{
 	background-color: lightgray;
-	border-radius: 10px;
-	height: 30px;
+	border-radius: 20px;
+	padding: 3px 5px;
+	
 }
 
-.recTitle{
-	margin-top: 10px;
-	text-align: left;
-}
-
-.best{
+.bestSearch{
 	width: 100%;
-	height: 40%;
-	border-top: 2px solid black;
-	margin-top: 10px;
+	height: 50%;
+	border-bottom: 2px solid black;
+	margin-top: 20px;
+	padding-bottom: 20px;
 }
 
-.bestTitle{
+.bestSearch>div>ul{
+	padding-left:0; 
+	margin-left:0;	
+}
+
+.bestSearch>div>ul>li{
+	width: 40%;
 	text-align: left;
+	margin: 8px 0px;
+	clear: left;
 }
 
-.best>ul{
-	padding-left:0; margin-left:0;	
-}
-
-.best>ul>li{
-	width: 50%;
-	text-align: left;
-	margin: 10px 0px;
-}
-
-.best>ul>li>span{
+.bestSearch>div>ul>li>a>span{
 	margin-right: 10px;
+}
+
+.serList{
+	float: left;
+	width: 50%;
+}
+
+.recBrand{
+	width: 100%;
+	height: 35%;
+	padding: 10px 0px;
+}
+
+.recBrand>ul>li{
+	margin: 20px;
+}
+
+.recBrand>ul>li>a>div>img{
+	border-radius: 10px;
+}
+
+.recBrand>ul>li>a>div>p{
+	margin-top: 5px;
 }

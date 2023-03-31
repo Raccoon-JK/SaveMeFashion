@@ -89,7 +89,11 @@
         margin-bottom: 5px;
     }
     
-    button{
+    .btn-open-popup{
     	border-style: none;
     	background-color: rgba( 255, 255, 255, 0 );
+    }
+    
+    .swiper-slide>a>img{
+    	height: 100%;
     }
