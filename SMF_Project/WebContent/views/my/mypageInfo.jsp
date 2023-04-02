@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../../resources/my/css/mypageInfo.css">
+<link rel="stylesheet" href="/SMF_Project/resources/my/css/mypageInfo.css">
 <jsp:include page="mypageHead.jsp"></jsp:include>
 <title>Insert title here</title>
 </head>
@@ -17,7 +17,7 @@
             </div>
 			<div id="mypage_content">
 				<div id="mypageInfo_img">
-					<img alt="" src="../../resources/my/img/하기싫어.jpg">
+					<img alt="" src="/SMF_Project/resources/my/img/하기싫어.jpg">
 					<a class="mypageBtn">변경</a>
 				</div>
 				<div id="mypageInfo_content">
@@ -38,12 +38,6 @@
 							<input class="inputBox" type="text">
 							<button type="button">변경</button>
 						</div>
-						<div class="Personal_info mypageInfo_class">
-							<p>이메일</p>
-							<input class="inputBox" type="text">
-							<button type="button">변경</button>
-						</div>
-						
 					</div>
 					<div id="mypageInfo_content_right">
 						<div id="mypageInfo_loginInfo">
@@ -74,5 +68,25 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		let info = document.getElementById("mypageInfo_content");
+		let inputText = info.querySelectorAll('input[type=text]');
+		let inputPwd = info.querySelector('input[type=password]');
+		let inputRadio = info.querySelectorAll('input[type=radio]')
+
+		inputText[0].value = '와우완';
+		inputText[1].value = '2111년14월99일';
+		inputText[2].value = '010-2111-0000';
+		inputText[3].value = 'hohwnd21@smf.com';
+		inputPwd.value = 'asldfjalskdf';
+
+		console.log(inputRadio)
+		if( 'N' == 'Y'){
+			inputRadio[0].checked = true;
+		} else{
+			inputRadio[1].checked = true;
+		}
+
+	</script>
 </body>
 </html>

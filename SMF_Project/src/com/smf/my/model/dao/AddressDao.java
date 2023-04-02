@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import static com.smf.common.JDBCTemplate.*;
 import com.smf.my.model.vo.Address;
+import com.smf.my.model.vo.ReplacePhoneNumber;
 
 public class AddressDao {
 
@@ -36,7 +37,7 @@ public class AddressDao {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		Address addr = new Address();
+		Address addr = null;
 		
 		String sql = prop.getProperty("addressDefult");
 		
@@ -48,12 +49,13 @@ public class AddressDao {
 			rset = pstmt.executeQuery();
 			
 			if(rset.next()) {
-				addr.setUserId(rset.getString("USER_ID"));
-				addr.setReceiver(rset.getString("RECEIVER"));
-				addr.setPhone(rset.getString("PHONE"));
-				addr.setPostcode(rset.getInt("POSTCODE"));
-				addr.setAddress(rset.getString("ADDRESS"));
-				addr.setDefaultAddress(rset.getInt("DEFAULT_ADDRESS"));
+				addr = new Address( rset.getInt("ADDRESS_NO"), 
+								    rset.getString("USER_ID"), 
+								    rset.getString("RECEIVER"), 
+								    ReplacePhoneNumber.repacePhoneNo(rset.getString("PHONE")), 
+								    rset.getInt("POSTCODE"), 
+								    rset.getString("ADDRESS")
+								   );
 			}
 			
 		} catch (SQLException e) {
@@ -82,14 +84,13 @@ public class AddressDao {
 			rset = pstmt.executeQuery();
 			
 			while(rset.next()) {
-				Address addr = new Address();
-											addr.setUserId(rset.getString("USER_ID"));
-											addr.setReceiver(rset.getString("RECEIVER"));
-											addr.setPhone(rset.getString("PHONE"));
-											addr.setPostcode(rset.getInt("POSTCODE"));
-											addr.setAddress(rset.getString("ADDRESS"));
-											addr.setDefaultAddress(rset.getInt("DEFAULT_ADDRESS"));
-											
+				Address addr = new Address( rset.getInt("ADDRESS_NO"), 
+										    rset.getString("USER_ID"), 
+										    rset.getString("RECEIVER"), 
+										    ReplacePhoneNumber.repacePhoneNo(rset.getString("PHONE")), 
+										    rset.getInt("POSTCODE"), 
+										    rset.getString("ADDRESS")
+										   );
 				addrList.add(addr);
 			}
 		} catch (SQLException e) {
@@ -117,6 +118,105 @@ public class AddressDao {
 			pstmt.setString(3, addr.getPhone());
 			pstmt.setInt(4, addr.getPostcode());
 			pstmt.setString(5, addr.getAddress());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public int addressDefaultUpdateY(Connection conn, int addrNo, String userId) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("addressDefaultUpdateY");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, addrNo);
+			pstmt.setString(2, "hshwan0406@smf.com"); //userId
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public int addressDefaultUpdateN(Connection conn, String userId) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("addressDefaultUpdateN");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, "hshwan0406@smf.com"); //userId
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public int addressUpdate(Connection conn, Address addr) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("addressUpdate");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, addr.getReceiver());
+			pstmt.setInt(2, Integer.parseInt(addr.getPhone()));
+			pstmt.setInt(3, addr.getPostcode());
+			pstmt.setString(4, addr.getAddress());
+			pstmt.setInt(5, addr.getAddressNo());
+			pstmt.setString(6, addr.getUserId());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public int addressDelete(Connection conn, int addrNo, String userId) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("addressDelete");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, addrNo);
+			pstmt.setString(2, "hshwan0406@smf.com"); //userId
 			
 			result = pstmt.executeUpdate();
 			

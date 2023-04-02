@@ -11,4 +11,20 @@
 		INSERT INTO ADDRESS(ADDRESS_NO, USER_ID, RECEIVER, PHONE, POSTCODE, ADDRESS)
     		VALUES(seq_address_no.nextval, ?, ?, ?, ?, ?)
 	</entry>
+	<entry key="addressDefaultUpdateN">
+		UPDATE ADDRESS SET default_address = 'N' WHERE default_address = 'Y' AND user_id = ?
+	</entry>
+	<entry key="addressDefaultUpdateY">
+		UPDATE ADDRESS SET default_address = 'Y' WHERE ADDRESS_NO = ? AND user_id = ?
+	</entry>
+	<entry key="addressDelete">
+		DELETE FROM ADDRESS WHERE ADDRESS_NO = ? AND USER_ID = ?
+	</entry>
+	<entry key="addressUpdate">
+		UPDATE ADDRESS SET RECEIVER = ?,
+                   		   PHONE = ?,
+                   		   POSTCODE = ?,
+                   		   ADDRESS = ?
+       		   		   WHERE ADDRESS_NO = ? AND USER_ID = ?
+	</entry>
 </properties>

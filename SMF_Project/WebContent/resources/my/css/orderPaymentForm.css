@@ -1,0 +1,120 @@
+/* input type="number" 위아래 화살표 없애기 */
+input::-webkit-inner-spin-button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+/* input placeholder 글자 사이즈 조절 */
+input::placeholder{
+    font-size: 10px;
+}
+
+#orderPayment_wrapper{
+    background-color: #fafafa;
+}
+#orderPayment_contentArea{
+    margin: 0 auto;
+    padding: 20px 40px 160px;
+    max-width: 780px;
+}
+.orderPayment_div{
+    background-color: #fff;
+    padding: 32px;
+}
+
+/* 주문 상품 */
+#proudctInfo_flex{
+    display: flex;
+}
+#productInfo_img>img{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+}
+#productInfo_text{
+    padding-left: 16px;
+}
+.product_brand{
+    line-height: 17px;
+    font-size: 14px;
+}
+.product_en{
+    line-height: 17px;
+    font-size: 14px;
+}
+.product_ko{
+    line-height: 16px;
+    font-size: 13px;
+}
+.product_size{
+    line-height: 17px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 7px;
+}
+
+/* 배송주소 */
+#orderAdress_title{
+    display: flex;
+    justify-content: space-between;
+}
+.orderAddress_title{
+    float: left;
+    display: block;
+    min-width: 80px;
+    font-size: 13px;
+    letter-spacing: -.07px;
+    color: rgba(34,34,34,.5);
+}
+.orderAddress_desc{
+    font-size: 14px;
+    letter-spacing: -.21px;
+}
+
+/* 포인트 */
+#orderPoint_title{
+    display: flex;
+    justify-content: flex-start;
+}
+#orderPoint_title>h5{
+    margin-right: 10px;
+}
+#pointInputBox{
+    font-size: 13px;
+    line-height: 100%;
+    padding: 17px 12px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    margin-right: 56px;
+    width: calc(100% - 76px);
+}
+#pointInputBox:focus-visible{
+    outline: none;
+    resize: none;
+}
+
+/* 결제 방법 */
+#enrollment_orderPayment{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 11px 8px 13px 9px;
+}
+#paymentInputBox{
+    font-size: 13px;
+    line-height: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    width: 107px;
+}
+#paymentInputBox:focus-visible{
+    outline: none;
+    resize: none;
+}
+#enrollment_cardNum{
+    font-size: 14px;
+}
+#enrollment_cardDate{
+    font-size: 13px;
+}

@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smf.my.model.service.AddressService;
+
 /**
  * Servlet implementation class MyAddressDefaultUpdateController
  */
@@ -27,8 +29,16 @@ public class MyAddressDefaultUpdateController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int result = new Address().AddressService();
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		int addrNo = Integer.parseInt(request.getParameter("addrno"));
+		String userId = request.getParameter("loginUser");
+		
+		int result = new AddressService().addressDefaultUpdate(addrNo, userId);
+		
+		if( result>0 ) {
+			response.sendRedirect(request.getContextPath()+"/address.me");
+		}else {
+			//오류
+		}
 	}
 
 	/**

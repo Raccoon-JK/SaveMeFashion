@@ -1,8 +1,6 @@
 package com.smf.my.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,19 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.smf.my.model.service.AddressService;
 import com.smf.my.model.vo.Address;
-import com.smf.my.model.vo.ReplacePhoneNumber;
 
 /**
- * Servlet implementation class MyAddressListController
+ * Servlet implementation class MyAddressUpdateController
  */
-@WebServlet("/address.me")
-public class MyAddressListController extends HttpServlet {
+@WebServlet("/addrupdate.me")
+public class MyAddressUpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MyAddressListController() {
+    public MyAddressUpdateController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,14 +29,8 @@ public class MyAddressListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
-		Address addrDefault = new AddressService().addressDefault();
-		ArrayList<Address> addrList = new AddressService().addressList();
-		
-		request.setAttribute("addrDefault", addrDefault);
-		request.setAttribute("addrList", addrList);
-		
-		request.getRequestDispatcher("/views/my/mypageAddress.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -47,7 +38,24 @@ public class MyAddressListController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doGet(request, response);
+//		request.setCharacterEncoding("UTF-8");
+		
+		int addrNo = Integer.parseInt(request.getParameter("addrNo"));
+		String userId = "hshwan0406@smf.com";
+		String receiver = request.getParameter("name");
+		String phone = request.getParameter("phone");
+		int postcode = Integer.parseInt(request.getParameter("postcode"));
+		String address = request.getParameter("address") +" "+request.getParameter("detailedAddress");
+		
+		Address addr = new Address(addrNo, userId, receiver, phone, postcode, address);
+		
+		int result = new AddressService().addressUpdate(addr);
+		
+		if( result>0 ) {
+			response.sendRedirect(request.getContextPath()+"/address.me");
+		}else {
+			
+		}
 	}
 
 }

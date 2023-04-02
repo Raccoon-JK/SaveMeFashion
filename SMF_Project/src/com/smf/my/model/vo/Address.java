@@ -7,13 +7,13 @@ public class Address {
 	private String phone;			//  phone;
 	private int postcode;			//	POSTCODE
 	private String address;			//	ADDRESS
-	private int defaultAddress;	//	DEFAULT_ADDRESS
+	private String defaultAddress;	//	DEFAULT_ADDRESS
 	
 	public Address() {
 		super();
 	}
 	public Address(int addressNo, String userId, String receiver, String phone, int postcode, String address,
-			int defaultAddress) {
+			String defaultAddress) {
 		super();
 		this.addressNo = addressNo;
 		this.userId = userId;
@@ -22,6 +22,14 @@ public class Address {
 		this.postcode = postcode;
 		this.address = address;
 		this.defaultAddress = defaultAddress;
+	}
+	public Address(int addressNo, String userId, String receiver, String phone, int postcode, String address) {
+		this.addressNo = addressNo;
+		this.userId = userId;
+		this.receiver = receiver;
+		this.phone = phone;
+		this.postcode = postcode;
+		this.address = address;
 	}
 	public Address(String userId, String receiver, String phone, int postcode, String address) {
 		this.userId = userId;
@@ -67,10 +75,10 @@ public class Address {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getDefaultAddress() {
+	public String getDefaultAddress() {
 		return defaultAddress;
 	}
-	public void setDefaultAddress(int defaultAddress) {
+	public void setDefaultAddress(String defaultAddress) {
 		this.defaultAddress = defaultAddress;
 	}
 	

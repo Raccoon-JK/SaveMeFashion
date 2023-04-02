@@ -49,4 +49,55 @@ public class AddressService {
 		return result;
 		
 	}
+	
+	public int addressDefaultUpdate(int addrNo, String userId) {
+		
+		 Connection conn = getConnection();
+		 
+		 int result1 = new AddressDao().addressDefaultUpdateN(conn, userId);
+		 int result2 = new AddressDao().addressDefaultUpdateY(conn, addrNo, userId);
+		 
+		 if( result1>0 && result2>0 ) {
+			 commit(conn);
+		 }else {
+			 rollback(conn);
+		 }
+		 
+		 close(conn);
+		 
+		 return result1 * result2;
+	}
+	
+	public int addressUpdate(Address addr) {
+		
+		Connection conn = getConnection();
+		
+		int result = new AddressDao().addressUpdate(conn, addr);
+		
+		if( result>0 ) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
+	
+	public int addressDelete(int addrNo, String userId) {
+		Connection conn = getConnection();
+		
+		int result = new AddressDao().addressDelete(conn, addrNo, userId);
+		
+		if( result>0 ) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
 }
