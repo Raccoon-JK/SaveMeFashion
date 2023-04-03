@@ -1,6 +1,7 @@
 package com.smf.my.controller;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -38,6 +39,20 @@ public class MyAddressListController extends HttpServlet {
 		
 		request.setAttribute("addrDefault", addrDefault);
 		request.setAttribute("addrList", addrList);
+		
+		
+		String yy = "2000";
+		String mm = "04";
+		String dd = "06";
+		Date birth = Date.valueOf(yy+"-"+mm+"-"+dd);
+		
+//		Date d = Date.valueOf(birth); 
+		
+		System.out.println(birth);
+		
+		
+		
+		
 		
 		request.getRequestDispatcher("/views/my/mypageAddress.jsp").forward(request, response);
 	}
