@@ -24,6 +24,9 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/views/main/css/modal.css"
 	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/views/main/css/rain.css"
+	type="text/css">
 
 <style>
 .header {
@@ -197,6 +200,8 @@
 
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/views/main/js/modal.js"></script>
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/views/main/js/rain.js"></script>
 
 </body>
 </html>

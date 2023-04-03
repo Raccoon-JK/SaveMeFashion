@@ -10,21 +10,16 @@ i {
 	z-index: 1001;
 }
 
-@
-keyframes raining { 0% {
+@keyframes raining { 
+	0% 
+{
 	transform: translateY(-130px);
 }
-
-100
-%
+	100%
 {
-transform
-:
-translateY(
--30px
-);
+	transform: translateY(-30px);}
 }
-}
+
 .header {
 	position: fixed;
 	top: 0;
