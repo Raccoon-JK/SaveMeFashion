@@ -2,31 +2,34 @@
  * 모달창 스크립트
  */
 
-const modal = document.querySelector('.modal');
-      const btnOpenPopup = document.querySelector('.btn-open-popup');
+var modals = document.getElementsByClassName("modal");
+var btns = document.getElementsByClassName("view_more");
+var spanes = document.getElementsByClassName("close");
+var funcs = [];
 
-      btnOpenPopup.addEventListener('click', () => {
-        modal.style.display = 'block';
-      });
+function Modal(num) {
+	return function() {
+		btns[num].onclick = function() {
+			modals[num].style.display = "block";
+			console.log(num);
+		};
 
-modal.addEventListener("click", e => {
-    const evTarget = e.target
-    if(evTarget.classList.contains("modal")) {
-        modal.style.display = "none"
-    }
-});
-
-modal.addEventListener("click", e => {
-    const evTarget = e.target
-    if(evTarget.classList.contains("btn-close-popup")) {
-        modal.style.display = "none"
-    }
-});
-
-function enterkey() {
-        if (window.event.keyCode == 13) {
- 
-             // 엔터키가 눌렸을 때 실행할 내용
-             login();
-        }
+		spanes[num].onclick = function() {
+			modals[num].style.display = "none";
+		};
+	};
 }
+
+for (var i = 0; i < btns.length; i++) {
+	funcs[i] = Modal(i);
+}
+
+for (var j = 0; j < btns.length; j++) {
+	funcs[j]();
+}
+
+window.onclick = function(event) {
+	if (event.target.className == "modal") {
+		event.target.style.display = "none";
+	}
+};
