@@ -105,7 +105,7 @@
                         <input type="checkbox" name="" id="tradeAgree" onclick="checkbox_checked();">
                     </div>
                     <div id="paymentsBtn_div">
-                        <a href="#" id="paymentsBtn">결제하기</a>
+                        <a id="paymentsBtn">결제하기</a>
                     </div>
                 </div>
             </div>
@@ -122,9 +122,11 @@
         	let paymentBtn = document.getElementById("paymentsBtn");
         	
             if(tradeAgree.checked == true){
+				paymentBtn.style.cursor = 'pointer';  	
             	paymentBtn.setAttribute('onclick', 'paymentsBtn_click()');
             	paymentBtn.style.backgroundColor = 'rgb(46, 204, 113)';
             } else{
+            	paymentBtn.style.cursor = 'none';  
             	paymentBtn.removeAttribute('onclick');
             	paymentBtn.style.backgroundColor = '#ebebeb';
             }

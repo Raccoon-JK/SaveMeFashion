@@ -1,0 +1,27 @@
+#wishList_shoppingCart_menuTab{
+    display: flex;
+    justify-content: center;
+    margin: 55px 25px 20px 25px;
+}
+.wish_cart_menuTab{
+    font-size: 18px;
+    width: 30%;
+    height: 45px;
+    text-align: center;
+}
+#shoppingCart_menuTab{
+    border-bottom: 3px solid black;
+    font-weight: 700;
+    margin-left: 30px;
+}
+#shoppingCart_menuTab>a{
+    color: #222;
+}
+#wishList_menuTab{
+    border-bottom: 2px solid #ebebeb;
+    margin-right: 30px;
+    font-weight: 500;
+}
+#wishList_menuTab>a{
+    color: rgba(34,34,34,.5);
+}

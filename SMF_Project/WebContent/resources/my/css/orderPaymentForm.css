@@ -1,10 +1,10 @@
-/* input type="number" �쐞�븘�옒 �솕�궡�몴 �뾾�븷湲� */
+/* input type="number" 증감소 화살표 삭제 */
 input::-webkit-inner-spin-button {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
 }
-/* input placeholder 湲��옄 �궗�씠利� 議곗젅 */
+/* input placeholder 설정 */
 input::placeholder{
     font-size: 10px;
 }
@@ -20,9 +20,10 @@ input::placeholder{
 .orderPayment_div{
     background-color: #fff;
     padding: 32px;
+    margin-top: 15px
 }
 
-/* 二쇰Ц �긽�뭹 */
+/* 상품 정보 */
 #proudctInfo_flex{
     display: flex;
 }
@@ -54,7 +55,7 @@ input::placeholder{
     margin-top: 7px;
 }
 
-/* 諛곗넚二쇱냼 */
+/* 배송 주소 */
 #orderAdress_title{
     display: flex;
     justify-content: space-between;
@@ -72,7 +73,7 @@ input::placeholder{
     letter-spacing: -.21px;
 }
 
-/* �룷�씤�듃 */
+/* 포인트 */
 #orderPoint_title{
     display: flex;
     justify-content: flex-start;
@@ -94,7 +95,7 @@ input::placeholder{
     resize: none;
 }
 
-/* 寃곗젣 諛⑸쾿 */
+/* 결제 방법 */
 #enrollment_orderPayment{
     border: 1px solid black;
     border-radius: 10px;

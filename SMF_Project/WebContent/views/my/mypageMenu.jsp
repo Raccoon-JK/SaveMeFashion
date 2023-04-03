@@ -18,6 +18,6 @@
         <span>쇼핑정보</span>
         <li><a>구매 내역</a></li>
         <li><a>판매 내역</a></li>
-        <li><a>관심 목록 / 장바구니</a></li>
+        <li><a href="<%=contextPath%>/mypagewishlist.me">관심 상품 / 장바구니</a></li>
     </ul>
 </div>
