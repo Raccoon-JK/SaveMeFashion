@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../../resources/my/css/mypageAccountsCard.css">
+<link rel="stylesheet" href="/SMF_Project/resources/my/css/mypageAccountsCard.css">
 <jsp:include page="mypageHead.jsp"></jsp:include>
 <title>Insert title here</title>
 </head>

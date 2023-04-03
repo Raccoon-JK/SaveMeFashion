@@ -21,8 +21,8 @@
             				<img alt="" src="../../resources/my/img/하기싫어.jpg">
             			</div>
             			<div id="myname">
-            				<p id="my_name">황수환</p>
-            				<p id="my_id">hshwan46@naver.com</p>
+            				<p id="my_name">와우완</p>
+            				<p id="my_id">hohwnamd@daum.net</p>
             			</div>
             		</div>
             		<div id="myprofile_right">

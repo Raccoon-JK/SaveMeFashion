@@ -48,6 +48,7 @@ public class MyAddressInsertController extends HttpServlet {
 //				System.out.println("name=" + name + ",value=" + value);
 //			}
 //		}
+		//로그인된 회원으로 변경해야함
 		String userId = "hshwan0406@smf.com";
 		String receiver = request.getParameter("name");
 		String phone = request.getParameter("phone");
@@ -59,7 +60,6 @@ public class MyAddressInsertController extends HttpServlet {
 		int result = new AddressService().insertAddress(addr);
 		
 		if( result>0 ) {
-			
 			response.sendRedirect(request.getContextPath()+"/address.me");
 		}
 

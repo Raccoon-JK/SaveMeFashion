@@ -2,8 +2,13 @@
     border: 1px solid black;
     border-radius: 20px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
+.address_area_right{
+    align-self: flex-end;
+}
 .address_area>p{
     margin-left: 10px;
 }
