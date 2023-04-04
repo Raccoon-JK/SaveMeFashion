@@ -31,12 +31,13 @@
                                 <input type="checkbox" name="" id="">
                             </div>
                             <div class="shoppingCart_productInfo_img">
-                                <img src="" alt="">
+                                <img src="/SMF_Project/resources/my/img/Adidas Gazelle Dark Green Cream White_1.png" alt="" width="80" height="80">
                             </div>
                             <div class="shoppingCart_productInfo_text">
-                                <p></p>
-                                <p></p>
-                                <p></p>
+                                <p class="shoppingCart_productInfo_brand">Adias</p>
+                                <p class="shoppingCart_productInfo_name">Adidas x Kith Samba OG Classics Program</p>
+                                <!-- <p>1</p> -->
+                                <p class="shoppingCart_productInfo_size">275</p>
                             </div>
                         </div>
                         <div class="shoppingCart_productInfo_flexRight">
@@ -44,7 +45,59 @@
                                 <span>가격: </span>
                                 <span>1,000원</span>
                             </div>
-                            <a href="">삭제</a>
+                            <div class="shoppingCart_productInfo_delete_div">
+                                <a href="">삭제</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shoppingCart_productInfo">
+                        <div class="shoppingCart_productInfo_flexLeft">
+                            <div class="shoppingCart_productInfo_checkbox">
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <div class="shoppingCart_productInfo_img">
+                                <img src="/SMF_Project/resources/my/img/Adidas Gazelle Dark Green Cream White_1.png" alt="" width="80" height="80">
+                            </div>
+                            <div class="shoppingCart_productInfo_text">
+                                <p class="shoppingCart_productInfo_brand">Adias</p>
+                                <p class="shoppingCart_productInfo_name">Adidas x Kith Samba OG Classics Program</p>
+                                <!-- <p>1</p> -->
+                                <p class="shoppingCart_productInfo_size">275</p>
+                            </div>
+                        </div>
+                        <div class="shoppingCart_productInfo_flexRight">
+                            <div class="shoppingCart_productInfo_price">
+                                <span>가격: </span>
+                                <span>1,000원</span>
+                            </div>
+                            <div class="shoppingCart_productInfo_delete_div">
+                                <a href="">삭제</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shoppingCart_productInfo">
+                        <div class="shoppingCart_productInfo_flexLeft">
+                            <div class="shoppingCart_productInfo_checkbox">
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <div class="shoppingCart_productInfo_img">
+                                <img src="/SMF_Project/resources/my/img/Adidas Gazelle Dark Green Cream White_1.png" alt="" width="80" height="80">
+                            </div>
+                            <div class="shoppingCart_productInfo_text">
+                                <p class="shoppingCart_productInfo_brand">Adias</p>
+                                <p class="shoppingCart_productInfo_name">Adidas x Kith Samba OG Classics Program</p>
+                                <!-- <p>1</p> -->
+                                <p class="shoppingCart_productInfo_size">275</p>
+                            </div>
+                        </div>
+                        <div class="shoppingCart_productInfo_flexRight">
+                            <div class="shoppingCart_productInfo_price">
+                                <span>가격: </span>
+                                <span>1,000원</span>
+                            </div>
+                            <div class="shoppingCart_productInfo_delete_div">
+                                <a href="">삭제</a>
+                            </div>
                         </div>
                     </div>
                 </div>

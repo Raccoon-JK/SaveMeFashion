@@ -25,3 +25,62 @@
 #wishList_menuTab>a{
     color: rgba(34,34,34,.5);
 }
+
+/* 장바구니 리스트 */
+#shoppingCartList_wrapper{
+    background-color: #fafafa;
+}
+.shoppingCart_productInfo{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 0px 5px;
+}
+.shoppingCart_productInfo_flexLeft{
+    display: flex;
+}
+.shoppingCart_productInfo_checkbox{
+    align-self: self-start;
+    margin-right: 10px;
+}
+.shoppingCart_productInfo_checkbox>input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+}
+.shoppingCart_productInfo_text{
+    margin-left: 10px;
+}
+.shoppingCart_productInfo_brand{
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+}
+.shoppingCart_productInfo_name{
+    margin-top: 2px;
+    font-size: 13px;
+    letter-spacing: -.03px;
+}
+.shoppingCart_productInfo_size{
+    margin-top: 23px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+}
+.shoppingCart_productInfo_price>span{
+    font-weight: 700;
+    font-size: 16px
+}
+.shoppingCart_productInfo_delete_div{
+    text-align: right;
+}
+.shoppingCart_productInfo_delete_div>a{
+    font-size: 12px;
+    color: rgba(34,34,34,.8);
+    text-decoration: underline;
+    letter-spacing: -.06px;
+    position: absolute;
+    right: 11px;
+    bottom: 9px;
+}

@@ -40,20 +40,6 @@ public class MyAddressListController extends HttpServlet {
 		request.setAttribute("addrDefault", addrDefault);
 		request.setAttribute("addrList", addrList);
 		
-		
-		String yy = "2000";
-		String mm = "04";
-		String dd = "06";
-		Date birth = Date.valueOf(yy+"-"+mm+"-"+dd);
-		
-//		Date d = Date.valueOf(birth); 
-		
-		System.out.println(birth);
-		
-		
-		
-		
-		
 		request.getRequestDispatcher("/views/my/mypageAddress.jsp").forward(request, response);
 	}
 

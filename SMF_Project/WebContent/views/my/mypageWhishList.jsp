@@ -51,9 +51,9 @@
                                 <img src="/SMF_Project/resources/my/img/_W_ Nike Dunk Low Black_1.png" alt="" width="80px" height="80px">
                             </div>
                             <div class="wishList_productInfo_text">
-                                <p class="wishList_producInfo_brand">Jordan</p>
-                                <p class="wishList_producInfo_name">Jordan 4 x Nike SB Retro Pine Green</p>
-                                <p class="wishList_producInfo_size">255</p>
+                                <p class="wishList_productInfo_brand">Jordan</p>
+                                <p class="wishList_productInfo_name">Jordan 4 x Nike SB Retro Pine Green</p>
+                                <p class="wishList_productInfo_size">255</p>
                             </div>
                         </div>
                         <div class="wishList_productInfo_right">
@@ -71,9 +71,9 @@
                                 <img src="/SMF_Project/resources/my/img/_W_ Nike Dunk Low Black_1.png" alt="" width="80px" height="80px">
                             </div>
                             <div class="wishList_productInfo_text">
-                                <p class="wishList_producInfo_brand">Jordan</p>
-                                <p class="wishList_producInfo_name">Jordan 4 x Nike SB Retro Pine Green</p>
-                                <p class="wishList_producInfo_size">255</p>
+                                <p class="wishList_productInfo_brand">Jordan</p>
+                                <p class="wishList_productInfo_name">Jordan 4 x Nike SB Retro Pine Green</p>
+                                <p class="wishList_productInfo_size">255</p>
                             </div>
                         </div>
                         <div class="wishList_productInfo_right">
@@ -85,6 +85,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
