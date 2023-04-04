@@ -27,8 +27,10 @@ var swiper = new Swiper(".first", {
 
 var swiper = new Swiper(".second", {
 	slidesPerView: 6,
+	slidesPerGroup: 1,
 	spaceBetween: 10,
 	loop: true,
+	loopedSlides: 1,
 	navigation: {
 		nextEl: ".swiper-button-next",
 		prevEl: ".swiper-button-prev",

@@ -43,7 +43,7 @@
 </style>
 <body>
 
-	<jsp:include page="/views/main/menubar.jsp" />
+	<jsp:include page="/views/main/menubar_sun.jsp" />
 
 	<!-- Swiper -->
 	<div class="swiper first">
@@ -289,6 +289,7 @@
 				</div>
 				<div class="swiper-button-next style"></div>
 				<div class="swiper-button-prev style"></div>
+				<div class="swiper-pagination"></div>
 			</div>
 		</div>
 	</div>

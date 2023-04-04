@@ -33,3 +33,9 @@ window.onclick = function(event) {
 		event.target.style.display = "none";
 	}
 };
+
+function press(f){
+    if(f.keyCode == 13){ 
+        search.submit();
+    }
+}

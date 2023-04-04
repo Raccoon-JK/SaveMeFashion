@@ -24,9 +24,6 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/views/main/css/modal.css"
 	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/views/main/css/rain.css"
-	type="text/css">
 
 <style>
 .header {
@@ -54,7 +51,7 @@
 			<div class="modal-alarm">
 				<span class="close">&times;</span>
 				<div>
-					<table>
+					<table class="table-alarm">
 						<tr>
 							<td>새로운 알림이 왔습니다.</td>
 						</tr>
@@ -78,81 +75,83 @@
 		</div>
 	</div>
 
-	<div class="modal background">
-		<div class="frame">
-			<div class="modal-search">
-				<span class="close">&times;</span>
-				<div>
-					<form method="" action="">
-						<input class="searchBar" onkeyup="enterkey();" type="search"
-							name="name" placeholder="브랜드명, 모델명 등">
-					</form>
-				</div>
-				<div class="recSearch">
-					<div class="serTitle">
-						<b>추천 검색어</b>
+	<div class="modal">
+		<div class="background">
+			<div class="frame">
+				<div class="modal-search">
+					<span class="close">&times;</span>
+					<div>
+						<form method="" action="">
+							<input class="searchBar" onkeyup="enterkey();" type="search"
+								name="name" placeholder="브랜드명, 모델명 등">
+						</form>
 					</div>
-					<ul>
-						<li><a><span>구찌</span></a></li>
-						<li><a><span>에르메스</span></a></li>
-						<li><a><span>구찌</span></a></li>
-						<li><a><span>에르메스</span></a></li>
-						<li><a><span>구찌</span></a></li>
-						<li><a><span>에르메스</span></a></li>
-					</ul>
-				</div>
-				<div class="bestSearch">
-					<div class="serTitle">
-						<b>인기 검색어</b>
-					</div>
-					<div class="serList">
+					<div class="recSearch">
+						<div class="serTitle">
+							<b>추천 검색어</b>
+						</div>
 						<ul>
-							<li><a><span>1</span><span>구찌</span></a></li>
-							<li><a><span>2</span><span>구찌</span></a></li>
-							<li><a><span>3</span><span>구찌</span></a></li>
-							<li><a><span>4</span><span>구찌</span></a></li>
-							<li><a><span>5</span><span>구찌</span></a></li>
-							<li><a><span>6</span><span>구찌</span></a></li>
-							<li><a><span>7</span><span>구찌</span></a></li>
-							<li><a><span>8</span><span>구찌</span></a></li>
-							<li><a><span>9</span><span>구찌</span></a></li>
-							<li><a><span>10</span><span>구찌</span></a></li>
+							<li><a><span>구찌</span></a></li>
+							<li><a><span>에르메스</span></a></li>
+							<li><a><span>구찌</span></a></li>
+							<li><a><span>에르메스</span></a></li>
+							<li><a><span>구찌</span></a></li>
+							<li><a><span>에르메스</span></a></li>
 						</ul>
 					</div>
-					<div class="serList">
-						<ul>
-							<li><a><span>11</span><span>구찌</span></a></li>
-							<li><a><span>12</span><span>구찌</span></a></li>
-							<li><a><span>13</span><span>구찌</span></a></li>
-							<li><a><span>14</span><span>구찌</span></a></li>
-							<li><a><span>15</span><span>구찌</span></a></li>
-							<li><a><span>16</span><span>구찌</span></a></li>
-							<li><a><span>17</span><span>구찌</span></a></li>
-							<li><a><span>18</span><span>구찌</span></a></li>
-							<li><a><span>19</span><span>구찌</span></a></li>
-							<li><a><span>20</span><span>구찌</span></a></li>
-						</ul>
-					</div>
+					<div class="bestSearch">
+						<div class="serTitle">
+							<b>인기 검색어</b>
+						</div>
+						<div class="serList">
+							<ul>
+								<li><a><span>1</span><span>구찌</span></a></li>
+								<li><a><span>2</span><span>구찌</span></a></li>
+								<li><a><span>3</span><span>구찌</span></a></li>
+								<li><a><span>4</span><span>구찌</span></a></li>
+								<li><a><span>5</span><span>구찌</span></a></li>
+								<li><a><span>6</span><span>구찌</span></a></li>
+								<li><a><span>7</span><span>구찌</span></a></li>
+								<li><a><span>8</span><span>구찌</span></a></li>
+								<li><a><span>9</span><span>구찌</span></a></li>
+								<li><a><span>10</span><span>구찌</span></a></li>
+							</ul>
+						</div>
+						<div class="serList">
+							<ul>
+								<li><a><span>11</span><span>구찌</span></a></li>
+								<li><a><span>12</span><span>구찌</span></a></li>
+								<li><a><span>13</span><span>구찌</span></a></li>
+								<li><a><span>14</span><span>구찌</span></a></li>
+								<li><a><span>15</span><span>구찌</span></a></li>
+								<li><a><span>16</span><span>구찌</span></a></li>
+								<li><a><span>17</span><span>구찌</span></a></li>
+								<li><a><span>18</span><span>구찌</span></a></li>
+								<li><a><span>19</span><span>구찌</span></a></li>
+								<li><a><span>20</span><span>구찌</span></a></li>
+							</ul>
+						</div>
 
-				</div>
-				<div class="recBrand">
-					<div class="serTitle">
-						<b>추천 브랜드</b>
 					</div>
-					<ul>
-						<li><a><div>
-									<img src="https://via.placeholder.com/100">
-									<p>구찌</p>
-								</div></a></li>
-						<li><a><div>
-									<img src="https://via.placeholder.com/100">
-									<p>구찌</p>
-								</div></a></li>
-						<li><a><div>
-									<img src="https://via.placeholder.com/100">
-									<p>구찌</p>
-								</div></a></li>
-					</ul>
+					<div class="recBrand">
+						<div class="serTitle">
+							<b>추천 브랜드</b>
+						</div>
+						<ul>
+							<li><a><div>
+										<img src="https://via.placeholder.com/100">
+										<p>구찌</p>
+									</div></a></li>
+							<li><a><div>
+										<img src="https://via.placeholder.com/100">
+										<p>구찌</p>
+									</div></a></li>
+							<li><a><div>
+										<img src="https://via.placeholder.com/100">
+										<p>구찌</p>
+									</div></a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
