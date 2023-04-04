@@ -24,24 +24,25 @@
                 <div class="login_area">
                     <h2 class="login_title">로고</h2>
                 
-                    <form action="<%=request.getContextPath()%>/login.me" method="post">
+                    <form action="<%=request.getContextPath()%>/login.me" method="post" id="login_form">
                             
                         <div class="has_button input_box" id="email_input_box">
                             <h3 class="input_title">이메일 주소</h3>
                             <div class="input_item">
-                                <input type="text" placeholder="예) kream@kream.co.kr" class="input_txt" id="email_input" name="email">
+                                <input type="text" placeholder="예) kream@kream.co.kr" class="input_txt" id="email_input" name="email" >
                             </div>
                             <p class="input_error" id="email_input_error"></p>
                         </div>
                         <div class="input_box has_button" id="password_input_box">
                             <h3 class="input_title">비밀번호</h3>
                             <div class="input_item">
-                                <input type="password" class="input_txt" id="password_input" name="userpw">
+                                <input type="password" class="input_txt" id="password_input" name="userpw" >
                             </div>
                             <p class="input_error" id="password_input_error">영어, 숫자, 특수문자를 조합해서 입력해주세요. (8-16자)  </p>
                         </div>
                         <div class="login_btn_box">
-                            <input type="submit"  class="btn full solid disabled" id="login_btn" value="로그인"> </input>
+                            <input type="button"  class="btn full solid disabled" id="login_btn" onclick="loginCheck();" value="로그인"></input>
+                            
                             
                         </div>
                     </form>
@@ -58,9 +59,30 @@
 <script>
  const msg = "<%= alertMsg %>";
  
- if(msg !="null"){
+<%--  if(msg !="null"){
 	 alert(msg);
 	 <% session.removeAttribute("alertMsg"); %>
+ } --%>
+ 
+ function loginCheck(){
+ 
+
+ if (email_input.value == "") {
+     alert("이메일을 입력하세요");
+     email_input.focus();
+     return false;
+ };
+
+ 
+ if(password_input.value== ""){
+	 alert("비밀번호를 입력하세요");
+     password_input.focus();
+     return false;
  }
+ var loginSubmit = document.getElementById("login_form")
+ loginSubmit.submit();
+}
+ 
+ 
 </script>
 </html>

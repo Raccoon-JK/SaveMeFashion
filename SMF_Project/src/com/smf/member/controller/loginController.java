@@ -44,8 +44,8 @@ public class loginController extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		String userId  = request.getParameter("userId");
-		String userPwd = request.getParameter("userPwd");
+		String userId  = request.getParameter("email");
+		String userPwd = request.getParameter("userpw");
 		
 		
 		Member loginUser = new MemberService().loginMember(userId, userPwd);
