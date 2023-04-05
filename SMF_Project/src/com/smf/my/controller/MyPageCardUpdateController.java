@@ -7,19 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smf.my.model.service.MyPageService;
-
 /**
- * Servlet implementation class MyAddressDefaultUpdateController
+ * Servlet implementation class MyPageCardUpdateController
  */
-@WebServlet("/defaultaddr.me")
-public class MyAddressDefaultUpdateController extends HttpServlet {
+@WebServlet("/cardupdate.me")
+public class MyPageCardUpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MyAddressDefaultUpdateController() {
+    public MyPageCardUpdateController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,17 +26,8 @@ public class MyAddressDefaultUpdateController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		int addrNo = Integer.parseInt(request.getParameter("addrno"));
-		String userId = request.getParameter("loginUser");
-		
-		int result = new MyPageService().addressDefaultUpdate(addrNo, userId);
-		
-		if( result>0 ) {
-			response.sendRedirect(request.getContextPath()+"/address.me");
-		}else {
-			//오류
-		}
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

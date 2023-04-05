@@ -1,7 +1,6 @@
 package com.smf.my.controller;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -10,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smf.my.model.service.AddressService;
+import com.smf.my.model.service.MyPageService;
 import com.smf.my.model.vo.Address;
-import com.smf.my.model.vo.ReplacePhoneNumber;
 
 /**
  * Servlet implementation class MyAddressListController
@@ -34,8 +32,8 @@ public class MyAddressListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				
-		Address addrDefault = new AddressService().addressDefault();
-		ArrayList<Address> addrList = new AddressService().addressList();
+		Address addrDefault = new MyPageService().addressDefault();
+		ArrayList<Address> addrList = new MyPageService().addressList();
 		
 		request.setAttribute("addrDefault", addrDefault);
 		request.setAttribute("addrList", addrList);

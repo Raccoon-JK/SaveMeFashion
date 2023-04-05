@@ -32,7 +32,7 @@
     background-color: #fafafa;
 }
 .shoppingCart_productInfo:nth-last-of-type(2){
-    border-bottom: none;
+    border-bottom: 3px solid #222;
 }
 .shoppingCart_productInfo{
     position: relative;
@@ -92,8 +92,7 @@
 
 /* 최종 금액 및 결제버튼 */
 #total_buy{
-    border-top: 3px solid #222;
-    padding: 20px 0px 20px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
 }

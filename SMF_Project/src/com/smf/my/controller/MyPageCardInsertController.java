@@ -1,6 +1,8 @@
 package com.smf.my.controller;
 
 import java.io.IOException;
+import java.sql.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,19 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smf.my.model.service.MyPageService;
-import com.smf.my.model.vo.Address;
+import com.smf.my.model.vo.Card;
 
 /**
- * Servlet implementation class MyAddressUpdateController
+ * Servlet implementation class MyPageCardInsertController
  */
-@WebServlet("/addrupdate.me")
-public class MyAddressUpdateController extends HttpServlet {
+@WebServlet("/cardinsert.me")
+public class MyPageCardInsertController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MyAddressUpdateController() {
+    public MyPageCardInsertController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,25 +39,27 @@ public class MyAddressUpdateController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		
-//		request.setCharacterEncoding("UTF-8");
+//		String userId = ((Member)request.getSession().getAttribute("loginUser")).getUserId;
+		String userId = "hshwan@smf.com";
+		int cardNo = Integer.parseInt(request.getParameter("cardNo"));
+		int cardPwd = Integer.parseInt(request.getParameter("cardPwd"));
+//		Date cardDate = Date.valueOf(request.getParameter("cardDate"));
+		String cardDate = request.getParameter("cardDate");
+		int cvcNo = Integer.parseInt(request.getParameter("cvcNo"));
 		
-		int addrNo = Integer.parseInt(request.getParameter("addrNo"));
-		String userId = "hshwan0406@smf.com";
-		String receiver = request.getParameter("name");
-		String phone = request.getParameter("phone");
-		int postcode = Integer.parseInt(request.getParameter("postcode"));
-		String address = request.getParameter("address") +" "+request.getParameter("detailedAddress");
+		System.out.println(cardDate);
 		
-		Address addr = new Address(addrNo, userId, receiver, phone, postcode, address);
+//		Card card = new Card(userId,cardNo,cardPwd,cardDate,cvcNo);
 		
-		int result = new MyPageService().addressUpdate(addr);
-		
-		if( result>0 ) {
-			response.sendRedirect(request.getContextPath()+"/address.me");
-		}else {
-			
-		}
+//		int result = new MyPageService().CardInsert(card);
+//		
+//		if( result>0 ) {
+//			response.sendRedirect(request.getContextPath()+"/mypageaccountscard.me");
+//		}else {
+//			
+//		}
 	}
 
 }

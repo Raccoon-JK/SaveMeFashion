@@ -28,7 +28,8 @@ public class MyPageInfoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		request.getSession().setAttribute("loginUser", "hshwan040");
+		
+		request.getSession().setAttribute("loginUser", "hshwan@smf.com");
 		
 		request.getRequestDispatcher("views/my/mypageInfo.jsp").forward(request, response);
 	}
