@@ -48,7 +48,7 @@
                     </form>
                     <ul class="look_box">
                         <li class="look_list"><a href="<%=request.getContextPath() %>/enroll.me" class="look_link"> 이메일 가입 </a></li>
-                        <li class="look_list"><a href="/login/find_email" class="look_link"> 이메일 찾기 </a></li>
+                        <li class="look_list"><a href="<%=request.getContextPath() %>/searchemail.page" class="look_link"> 이메일 찾기 </a></li>
                         <li class="look_list"><a href="/login/find_password" class="look_link"> 비밀번호 찾기 </a></li>
                     </ul>
                 </div>
@@ -59,10 +59,10 @@
 <script>
  const msg = "<%= alertMsg %>";
  
-<%--  if(msg !="null"){
+  if(msg !="null"){
 	 alert(msg);
 	 <% session.removeAttribute("alertMsg"); %>
- } --%>
+ } 
  
  function loginCheck(){
  

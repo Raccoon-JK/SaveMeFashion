@@ -45,6 +45,24 @@ public class MemberService {
 	}
 	
 	
-	
-	
+	//이메일을 조회 하는 메서드
+		public String searchEmail(String uphone) {
+			
+			String email = "";
+			Connection conn = JDBCTemplate.getConnection();
+			
+			//1. DB에서 uphone을 준비물로 email을 조회
+			email = new MemberDao().searchEmail(conn, uphone);
+			return email;
+		}
+		
+		
+		
+		
+		
+		
 }
+	
+	
+	
+

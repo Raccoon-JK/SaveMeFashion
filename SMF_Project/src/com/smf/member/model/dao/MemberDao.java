@@ -120,5 +120,34 @@ public class MemberDao {
 	
 	
 	
+		public String searchEmail(Connection conn, String uphone) {
+		
+		String email = "";
+		PreparedStatement pstmt = null;
+		String sql = prop.getProperty("selectEmail");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, uphone);
+			ResultSet result = pstmt.executeQuery();
+			
+			if(result.next()) {
+				email = result.getString("USER_ID");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCTemplate.close(pstmt);
+		}
+		
+		return email;
+	}
+	
+	
+	
 	
 }
+
+	
+	
