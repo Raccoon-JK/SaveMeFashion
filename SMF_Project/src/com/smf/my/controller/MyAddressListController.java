@@ -38,7 +38,7 @@ public class MyAddressListController extends HttpServlet {
 		ArrayList<Address> addrList = new AddressService().addressList();
 		
 		request.setAttribute("addrDefault", addrDefault);
-		request.setAttribute("addrList", addrList);dsfadf
+		request.setAttribute("addrList", addrList);
 		
 		request.getRequestDispatcher("/views/my/mypageAddress.jsp").forward(request, response);
 	}
