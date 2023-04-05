@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 
@@ -47,11 +48,31 @@ public class SearchEmailController extends HttpServlet {
    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  
 	  request.setCharacterEncoding("UTF-8");
-      System.out.println("TEST");
+	  
+   
       String uphone = request.getParameter("uphone");
-      System.out.println(uphone);
       String email = new MemberService().searchEmail(uphone);
-      System.out.println(email);
+     
+    
+      
+      if(email == null) {
+    	  
+    	  request.setAttribute("errorMSG", "가입 되어있지 않은 회원입니다");
+    	  
+      }else {
+    	  HttpSession session = request.getSession();
+    	  
+    	  System.out.println(email);
+    	  
+    	  session.setAttribute("email", email);
+    	  session.setAttribute("alert", "이메일 찾기 성공");
+    	
+    	  
+          response.sendRedirect(request.getContextPath()+"/views/member/searchemailresult.jsp");
+      }
+      
+
+      
       
       
    }

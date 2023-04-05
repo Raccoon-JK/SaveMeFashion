@@ -65,17 +65,17 @@
                             <select class="box" id="birth-mm" name="mm">
                                 <option value="">월 선택 </option>
                                 <option value="01">1</option>
-                                <option value="01">2</option>
-                                <option value="01">3</option>
-                                <option value="01">4</option>
-                                <option value="01">5</option>
-                                <option value="01">6</option>
-                                <option value="01">7</option>
-                                <option value="01">8</option>
-                                <option value="01">9</option>
-                                <option value="01">10</option>
-                                <option value="01">11</option>
-                                <option value="01">12</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
                             </select>
                              월
                         </label> 

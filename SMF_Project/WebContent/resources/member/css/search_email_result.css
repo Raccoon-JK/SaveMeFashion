@@ -1,11 +1,5 @@
 @charset "utf-8";
 
-    div{
-        box-sizing: border-box;
-        border: 1px solid red;
-
-    }
-
 
  body, button, input, select, table, textarea {
     font-family: 'Noto Sans KR', sans-serif;
@@ -32,7 +26,6 @@ input, textarea {
     border: 0;
     resize: none;
     border-radius: 0;
-    -webkit-appearance: none;
     background-color: rgba(0,0,0,0);
 }
 

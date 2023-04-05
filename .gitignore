@@ -1,5 +1,6 @@
-/SaveMeFashion/SMF_Project/.classpath
+/SMF_Project/.classpath
 .metadata/
 /SaveMeFashion/.settings/
 /Servers/
 .DS_Store
+SMF_Project/src/sql/driver/driver.properties

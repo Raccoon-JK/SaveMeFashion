@@ -124,7 +124,7 @@ public class MemberDao {
 		
 		String email = "";
 		PreparedStatement pstmt = null;
-		String sql = prop.getProperty("selectEmail");
+		String sql = prop.getProperty("searchEmail");
 		
 		try {
 			pstmt = conn.prepareStatement(sql);

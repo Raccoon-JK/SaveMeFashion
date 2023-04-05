@@ -53,6 +53,9 @@ public class MemberService {
 			
 			//1. DB에서 uphone을 준비물로 email을 조회
 			email = new MemberDao().searchEmail(conn, uphone);
+			
+			JDBCTemplate.close(conn);
+			
 			return email;
 		}
 		

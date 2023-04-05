@@ -52,7 +52,7 @@ public class MemberInsertController extends HttpServlet {
 		String agree = request.getParameter("agree");
 		String snsId = userId;
 		
-
+		
 		
 		Member m = new Member(userId, userName, userPwd, phone, birth, agree, snsId);
 		
