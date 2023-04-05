@@ -148,7 +148,7 @@
 	<div class="container">
 		<div class="content_label style_head">
 			<h5>
-				<b>오늘의 인기유저</b>
+				<b>Newest Style</b>
 			</h5>
 		</div>
 		<div class="content">
