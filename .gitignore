@@ -4,4 +4,4 @@
 /SaveMeFashion/.settings/
 /Servers/
 .DS_Store
-SMF_Project/src/sql/driver/driver.properties
+# SMF_Project/src/sql/driver/driver.properties
