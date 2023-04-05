@@ -5,8 +5,8 @@
 <head>
   <title>결제하기</title>
   <!-- 1. 스크립트 추가 -->
-  <script src="https://js.tosspayments.com/v1/payment"></script>
 </head>
+  <script src="https://js.tosspayments.com/v1/payment"></script>
 <script>
   var clientKey = 'test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq' // 테스트용 클라이언트 키
   // 2. 초기화
@@ -28,7 +28,6 @@
 	    // 유효하지 않은 카드 코드에 대한 에러 처리
 	  }
 	})
-
 </script>
 
 </html>
