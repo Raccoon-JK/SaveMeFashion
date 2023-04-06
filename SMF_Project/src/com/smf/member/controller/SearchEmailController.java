@@ -54,7 +54,7 @@ public class SearchEmailController extends HttpServlet {
       
       String email = new MemberService().searchEmail(uphone);
      
-    
+      
       
       if(email == null) {
     	  

@@ -124,7 +124,7 @@ public class MemberDao {
 		
 		String email = "";
 		PreparedStatement pstmt = null;
-		String sql = prop.getProperty("selectEmail");
+		String sql = prop.getProperty("searchEmail");
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -142,6 +142,33 @@ public class MemberDao {
 		}
 		
 		return email;
+	}
+		
+		public String searchPwd(Connection conn, String uphone, String userId) {
+		
+		String pwd = "";
+		PreparedStatement pstmt = null;
+		String sql = prop.getProperty("searchPwd");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, uphone);
+			pstmt.setString(2, userId);
+			
+			ResultSet result = pstmt.executeQuery();
+			
+			if(result.next()) {
+				pwd = result.getString("USER_PWD");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCTemplate.close(pstmt);
+		}
+		
+		return pwd;
+		
 	}
 	
 	
