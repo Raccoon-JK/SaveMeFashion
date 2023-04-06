@@ -1,8 +1,6 @@
 package com.smf.my.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,19 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smf.my.model.service.MyPageService;
-import com.smf.my.model.vo.Address;
 
 /**
- * Servlet implementation class MyAddressListController
+ * Servlet implementation class MyAddressDefaultUpdateController
  */
-@WebServlet("/address.me")
-public class MyAddressListController extends HttpServlet {
+@WebServlet("/defaultaddr.me")
+public class MyAddressDefaultUpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MyAddressListController() {
+    public MyAddressDefaultUpdateController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,21 +28,24 @@ public class MyAddressListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
-		Address addrDefault = new MyPageService().addressDefault();
-		ArrayList<Address> addrList = new MyPageService().addressList();
 		
-		request.setAttribute("addrDefault", addrDefault);
-		request.setAttribute("addrList", addrList);
+		int addrNo = Integer.parseInt(request.getParameter("addrno"));
+		String userId = request.getParameter("loginUser");
 		
-		request.getRequestDispatcher("/views/my/mypageAddress.jsp").forward(request, response);
+		int result = new MyPageService().addressDefaultUpdate(addrNo, userId);
+		
+		if( result>0 ) {
+			response.sendRedirect(request.getContextPath()+"/address.me");
+		}else {
+			//오류
+		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

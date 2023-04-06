@@ -9,7 +9,7 @@
     width: 170px;
     border-right: 1px solid black;
 }
-#mypage_menu>span{
+#mypage_mainBtn{
     font-size: 22px;
     font-weight: bold;
 }
@@ -30,6 +30,7 @@
 
 #mypage_content_wrapper{
     width: 100%;
+    margin-left: 20px;
 }
 
 #mypage_title{

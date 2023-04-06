@@ -23,6 +23,14 @@ public class Address {
 		this.address = address;
 		this.defaultAddress = defaultAddress;
 	}
+	public Address(int addressNo, String userId, String receiver, String phone, int postcode, String address) {
+		this.addressNo = addressNo;
+		this.userId = userId;
+		this.receiver = receiver;
+		this.phone = phone;
+		this.postcode = postcode;
+		this.address = address;
+	}
 	public Address(String userId, String receiver, String phone, int postcode, String address) {
 		this.userId = userId;
 		this.receiver = receiver;

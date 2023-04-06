@@ -20,4 +20,12 @@
     p{
         margin: 0px;
     }
+    a{
+    	text-decoration: none;
+    	color: black;
+    }
+    a:hover{
+    	text-decoration: none;
+    	color: black;
+    }
 </style>
