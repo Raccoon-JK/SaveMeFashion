@@ -5,11 +5,13 @@
 	String contextPath = request.getContextPath();
 %>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>구해줘 패션</title>
-<link rel="stylesheet" href="resources/style/스타일 메인.css" />
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>유저 피드페이지</title>
+    <link rel="stylesheet" href="resources/style/해쉬태그 피드.css" />
   </head>
   <body>
     <header>
@@ -28,117 +30,19 @@
           </ul>
         </div>
         <div class="headermain">
-          <div class="hm-logo"></div>
+          <div class="hm-logo">
+            <a href="<%= contextPath %>"><h2>구해줘 패션</h2></a>
+          </div>
           <div class="hm-menu"></div>
         </div>
         <div class="headerbottom">
-          <a href="<%= contextPath %>/follow.me"><span>팔로잉</span></a>
-          <a href="<%= contextPath %>"><span>발견</span></a>
-          <a href="<%= contextPath %>/snekers.do"><span>스니커즈</span></a>
-          <a href="<%= contextPath %>/luxury.do"><span>럭셔리</span></a>
-          <a href="<%= contextPath %>/clothes.do"><span>의류</span></a>
-          <a href="<%= contextPath %>/bag.do"><span>가방</span></a>
-          <a href="<%= contextPath %>/accessory.do"><span>악세서리</span></a>
+            <h2 style="text-align: center;">#오늘 뭐입지</h2>
         </div>
       </div>
     </header>
 
     <content>
       <div class="contentwrap">
-        <div class="ct-tagcontainer">
-          <a
-            href="<%= contextPath %>/hashtag.do"
-          >
-            <div class="tagshort">
-              <div class="round">
-                <img
-                  src="resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg"
-                  height="100"
-                />
-                <p class="tagtitle">#오늘뭐입지</p>
-              </div>
-            </div>
-          </a>
-          <a
-            href="https://kream.co.kr/social/tags/%EC%98%A4%EB%8A%98%EB%AD%90%EC%9E%85%EC%A7%80"
-          >
-            <div class="tagshort">
-              <div class="round">
-                <img
-                  src="resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp"
-                  height="100"
-                />
-                <p class="tagtitle">#내일뭐입지</p>
-              </div>
-            </div>
-          </a>
-          <a
-            href="https://kream.co.kr/social/tags/%EC%98%A4%EB%8A%98%EB%AD%90%EC%9E%85%EC%A7%80"
-          >
-            <div class="tagshort">
-              <div class="round">
-                <img
-                  src="resources/style/a_89c114d3a071422e9966dca98fa051f8.webp"
-                  height="100"
-                />
-                <p class="tagtitle">#집에가고싶다</p>
-              </div>
-            </div>
-          </a>
-          <a
-            href="https://kream.co.kr/social/tags/%EC%98%A4%EB%8A%98%EB%AD%90%EC%9E%85%EC%A7%80"
-          >
-            <div class="tagshort">
-              <div class="round">
-                <img
-                  src="resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp"
-                  height="100"
-                />
-                <p class="tagtitle">#졸리다으아</p>
-              </div>
-            </div>
-          </a>
-          <a
-            href="https://kream.co.kr/social/tags/%EC%98%A4%EB%8A%98%EB%AD%90%EC%9E%85%EC%A7%80"
-          >
-            <div class="tagshort">
-              <div class="round">
-                <img
-                  src="resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg"
-                  height="100"
-                />
-                <p class="tagtitle">#크림</p>
-              </div>
-            </div>
-          </a>
-          <a
-            href="https://kream.co.kr/social/tags/%EC%98%A4%EB%8A%98%EB%AD%90%EC%9E%85%EC%A7%80"
-          >
-            <div class="tagshort">
-              <div class="round">
-                <img
-                  src="resources/style/a_17002637a4e44a5c958830c00ab3059a.webp"
-                  height="100"
-                />
-                <p class="tagtitle">#지겨워</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="ct-sort">
-          <a href="<%= contextPath %>/styleInsert.me" class="style-insert">#스타일 등록</a>
-          <ul>
-            <li>
-              <a href="" style="font-weight: bold;">날짜별</a>
-            </li>
-            <li>
-              <a href="">인기순</a>
-            </li>
-            <li>
-              <a href="">최신순</a>
-            </li>
-          </ul>
-        </div>
         <div class="ct-feedcontainer">
           <div class="feedwrap">
             <div class="feedimg1">
@@ -207,7 +111,37 @@
         </div>
       </div>
 
+    </div>
+
+      <div class="modal-wrapper" style="display: none">
+        <div class="modal">
+          <div class="modal-title">
+            <ul class="action-list">
+              <li class="action-item">프로필 차단</li>
+              <li class="action-item">프로필 신고</li>
+              <li id="close">취소</li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+
       
+      
+      <script>
+        const open = document.getElementById("open");
+        const close = document.getElementById("close");
+  
+        const modal = document.querySelector(".modal-wrapper");
+  
+        open.onclick = () => {
+          modal.style.display = "flex";
+        };
+  
+        close.onclick = () => {
+          modal.style.display = "none";
+        };
+      </script>
     </content>
 
     <foorter>
@@ -229,5 +163,4 @@
       
     </foorter>
   </body>
-
 </html>
