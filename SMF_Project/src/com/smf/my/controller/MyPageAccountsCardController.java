@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smf.member.model.vo.Member;
 import com.smf.my.model.service.MyPageService;
 import com.smf.my.model.vo.Account;
 import com.smf.my.model.vo.Card;
@@ -31,11 +32,9 @@ public class MyPageAccountsCardController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-//		Member m = request.getSession().getAttribute("loginUser");
-		String userId = "hshwan@smf.com";
-		
-		Account account = new MyPageService().accountSelect(userId);
-		Card card = new MyPageService().cardSelect(userId);
+		Member m = (Member)request.getSession().getAttribute("loginUser");
+		Account account = new MyPageService().accountSelect(m);
+		Card card = new MyPageService().cardSelect(m);
 		
 		request.setAttribute("account", account);
 		request.setAttribute("card", card);
