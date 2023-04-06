@@ -18,7 +18,7 @@
             	<div id="myprofile">
             		<div id="myprofile_left">
             			<div id="profile_img">
-            				<img alt="" src="../../resources/my/img/하기싫어.jpg">
+            				<img alt="" src="/SMF_Project/resources/my/img/하기싫어.jpg">
             			</div>
             			<div id="myname">
             				<p id="my_name">와우완</p>
@@ -51,7 +51,7 @@
             			<div class="delivery_tracking_summary">
             				<p>2023.03.17 (금) 도착 예정</p>
             				<div class="delivery_product">
-	            				<img alt="" src="../../resources/my/img/Adidas Gazelle Dark Green Cream White_1.png">
+	            				<img alt="" src="/SMF_Project/resources/my/img/Adidas Gazelle Dark Green Cream White_1.png">
 	            				<div class="delivery_product_content">
 		            				<p>Adidas x Kith Samba OG Classics Progra</p>
 		            				<p class="others">외 1개</p>
@@ -61,7 +61,7 @@
             			<div class="delivery_tracking_summary">
             				<p>2023.03.17 (금) 도착 예정</p>
             				<div class="delivery_product">
-	            				<img alt="" src="../../resources/my/img/Adidas Gazelle Dark Green Cream White_1.png">
+	            				<img alt="" src="/SMF_Project/resources/my/img/Adidas Gazelle Dark Green Cream White_1.png">
 	            				<div class="delivery_product_content">
 		            				<p>Adidas x Kith Samba OG Classics Progra</p>
 		            				<p class="others">외 1개</p>
@@ -84,7 +84,7 @@
             			<div class="interest_product_wrapper">
             				<div class="interest_products">
           						<div class="interest_img">
-            						<img alt="" src="../../resources/my/img/_W_ Adidas Gazelle Bold Core Black Cloud White_1.png">
+            						<img alt="" src="/SMF_Project/resources/my/img/_W_ Adidas Gazelle Bold Core Black Cloud White_1.png">
             					</div>
             					<p>Adidas</p>
             					<p>Adidas Gazelle Bold Core Black Cloud White</p>
@@ -92,7 +92,7 @@
             				</div>
            					<div class="interest_products">
           						<div class="interest_img">
-            						<img alt="" src="../../resources/my/img/_W_ Adidas Gazelle Bold Core Black Cloud White_1.png">
+            						<img alt="" src="/SMF_Project/resources/my/img/_W_ Adidas Gazelle Bold Core Black Cloud White_1.png">
             					</div>
             					<p>Adidas</p>
             					<p>Adidas Gazelle Bold Core Black Cloud White</p>
@@ -100,7 +100,7 @@
             				</div>
             				<div class="interest_products">
           						<div class="interest_img">
-            						<img alt="" src="../../resources/my/img/_W_ Adidas Gazelle Bold Core Black Cloud White_1.png">
+            						<img alt="" src="/SMF_Project/resources/my/img/_W_ Adidas Gazelle Bold Core Black Cloud White_1.png">
             					</div>
             					<p>Adidas</p>
             					<p>Adidas Gazelle Bold Core Black Cloud White</p>
@@ -108,7 +108,7 @@
             				</div>
           					<div class="interest_products">
           						<div class="interest_img">
-            						<img alt="" src="../../resources/my/img/_W_ Adidas Gazelle Bold Core Black Cloud White_1.png">
+            						<img alt="" src="/SMF_Project/resources/my/img/_W_ Adidas Gazelle Bold Core Black Cloud White_1.png">
             					</div>
             					<p>Adidas</p>
             					<p>Adidas Gazelle Bold Core Black Cloud White</p>

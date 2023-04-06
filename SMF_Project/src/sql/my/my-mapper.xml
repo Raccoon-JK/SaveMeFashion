@@ -27,4 +27,22 @@
                    		   ADDRESS = ?
        		   		   WHERE ADDRESS_NO = ? AND USER_ID = ?
 	</entry>
+	
+	<!-- 계좌 및 카드 관리 -->
+	<entry key="accountSelect">
+		SELECT * FROM account WHERE USER_ID = ?
+	</entry>
+	<entry key="cardSelect">
+		SELECT * FROM card WHERE USER_ID = ?
+	</entry>
+	<entry key="accountInsert">
+		INSERT INTO ACCOUNT VALUES(?,?,?,?)
+	</entry>
+	<entry key="accountUpdate">
+		UPDATE ACCOUNT SET BANK_NAME = ?,
+						   ACCOUNT_NO = ?,
+						   ACCOUNT_HOLDER = ?
+			   WHERE USER_ID = ?
+	</entry>
+	
 </properties>

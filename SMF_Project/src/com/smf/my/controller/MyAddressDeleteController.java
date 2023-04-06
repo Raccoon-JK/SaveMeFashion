@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smf.my.model.service.AddressService;
+import com.smf.my.model.service.MyPageService;
 
 /**
  * Servlet implementation class MyAddressDeleteController
@@ -33,7 +33,7 @@ public class MyAddressDeleteController extends HttpServlet {
 		
 		String userId = request.getParameter("userId");
 		
-		int result = new AddressService().addressDelete(addrNo, userId);
+		int result = new MyPageService().addressDelete(addrNo, userId);
 		
 		if( result>0 ) {
 			response.sendRedirect(request.getContextPath()+"/address.me");

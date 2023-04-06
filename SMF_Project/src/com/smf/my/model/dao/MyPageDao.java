@@ -12,15 +12,18 @@ import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
 import static com.smf.common.JDBCTemplate.*;
+
+import com.smf.my.model.vo.Account;
 import com.smf.my.model.vo.Address;
+import com.smf.my.model.vo.Card;
 import com.smf.my.model.vo.ReplacePhoneNumber;
 
-public class AddressDao {
+public class MyPageDao {
 
 	private Properties prop = new Properties();
 	
-	public AddressDao() {
-		String fileName = AddressDao.class.getResource("/sql/my/my-mapper.xml").getPath();
+	public MyPageDao() {
+		String fileName = MyPageDao.class.getResource("/sql/my/my-mapper.xml").getPath();
 		
 		try {
 			prop.loadFromXML(new FileInputStream(fileName));
@@ -217,6 +220,126 @@ public class AddressDao {
 			
 			pstmt.setInt(1, addrNo);
 			pstmt.setString(2, "hshwan0406@smf.com"); //userId
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	
+	// 계좌 및 카드 관리
+	public Account accountSelect(Connection conn, String userId){
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		Account account = null;
+		
+		String sql = prop.getProperty("accountSelect");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, userId);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				account = new Account(rset.getString("USER_ID"),
+									  rset.getString("BANK_NAME"),
+									  rset.getInt("ACCOUNT_NO"),
+									  rset.getString("ACCOUNT_HOLDER")
+									 ); 
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return account;
+	}
+	
+	public Card cardSelect(Connection conn, String userId) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		Card card = null;
+		
+		String sql = prop.getProperty("cardSelect");
+		
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, userId);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				card = new Card(rset.getString("USER_ID"),
+								rset.getInt("CARD_NO"),
+								rset.getInt("CARD_PWD"),
+								rset.getDate("CARD_Validity"),
+								rset.getInt("CVC")
+								);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return card;
+	}
+	
+	public int accountInsert(Connection conn, Account account) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("accountInsert");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, account.getUserId());
+			pstmt.setString(2, account.getBankName());
+			pstmt.setInt(3, account.getAccountNo());
+			pstmt.setString(4, account.getAccountHolder());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public int accountUpdate(Connection conn, Account account) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("accountUpdate");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, account.getBankName());
+			pstmt.setInt(2, account.getAccountNo());
+			pstmt.setString(3, account.getAccountHolder());
+			pstmt.setString(4, account.getUserId());
 			
 			result = pstmt.executeUpdate();
 			
