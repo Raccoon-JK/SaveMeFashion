@@ -62,7 +62,7 @@ public class SearchEmailController extends HttpServlet {
       }else {
     	  HttpSession session = request.getSession();
     	  
-    	  System.out.println(email);
+    	  System.out.println(email);						
     	  
     	  session.setAttribute("email", email);
     	  session.setAttribute("alert", "이메일 찾기 성공");
