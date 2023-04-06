@@ -27,12 +27,12 @@
                         </h2>
                         <div class="success_notice">
                             <dl>
-                             <dt class="notice_title">  입니다.</dt>
+                             <h2 class="notice_title">  입니다.</h2>
                              <dd class="notice_txt"> </dd>
                             </dl>
                         </div>
                         <div class="success_btn_box">
-                            <a href="/login" class="btn outline large" type="button">로그인</a>
+                            <a href="<%=request.getContextPath()%>/login.page"  class="btn outline large" type="button">로그인</a>
                         </div>
 
                         
@@ -55,7 +55,7 @@ const maskedStr = str.slice(0, -4) + str.slice(-4).replace(/./g, '*');
 console.log(maskedStr); // '1q2w3e****'
 
 var el = document.querySelector(".notice_title");
-el.innerText = maskedStr;
+el.innerText = maskedStr + "  입니다.";
 
 
 

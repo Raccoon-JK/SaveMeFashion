@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
@@ -120,9 +121,11 @@ public class MemberDao {
 	
 	
 	
-		public String searchEmail(Connection conn, String uphone) {
+		public ArrayList<String> searchEmail(Connection conn, String uphone) {
 		
 		String email = "";
+		ArrayList<String> list = new ArrayList();
+		
 		PreparedStatement pstmt = null;
 		String sql = prop.getProperty("searchEmail");
 		
@@ -131,8 +134,10 @@ public class MemberDao {
 			pstmt.setString(1, uphone);
 			ResultSet result = pstmt.executeQuery();
 			
-			if(result.next()) {
+			while(result.next()) {
 				email = result.getString("USER_ID");
+				
+				list.add(email);
 			}
 			
 		} catch (SQLException e) {
@@ -141,7 +146,7 @@ public class MemberDao {
 			JDBCTemplate.close(pstmt);
 		}
 		
-		return email;
+		return list;
 	}
 		
 		public String searchPwd(Connection conn, String uphone, String userId) {
