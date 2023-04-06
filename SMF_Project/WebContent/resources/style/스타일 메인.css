@@ -27,7 +27,7 @@ header {
 
 .headertop {
   margin-bottom: 10px;
-  height: 80px;
+  height: 20px;
   font-size: 12px;
 }
 
@@ -39,11 +39,14 @@ header {
   display: flex;
   float: right;
   list-style: none;
-  height: 100px;
+  height: 20px;
 }
+
+
 
 .headerbottom {
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .headerbottom span {

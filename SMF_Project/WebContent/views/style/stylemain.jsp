@@ -10,7 +10,18 @@
 <meta charset="UTF-8">
 <title>구해줘 패션</title>
 <link rel="stylesheet" href="resources/style/스타일 메인.css" />
-  </head>
+<style>
+	.hm-menu{
+        display: flex;
+        justify-content: flex-end;
+        width: 90%;
+      }
+
+      .hm-menu span{
+        margin-right: 10px;
+      }
+</style>
+</head>
   <body>
     <header>
       <div class="headerwrap">
@@ -28,8 +39,15 @@
           </ul>
         </div>
         <div class="headermain">
-          <div class="hm-logo"></div>
-          <div class="hm-menu"></div>
+          <div class="hm-logo">
+            <a href=""><h2>구해줘 패션</h2></a>
+          </div>
+          <div class="hm-menu">
+          	<a href=""><span>HOME</span></a>
+            <a href="<%= contextPath %>"><span>STYLE</span></a>
+            <a href=""><span>SHOP</span></a>
+            <a href="<%= contextPath %>/mypagemain.me"><span>MY</span></a>
+          </div>
         </div>
         <div class="headerbottom">
           <a href="<%= contextPath %>/follow.me"><span>팔로잉</span></a>
