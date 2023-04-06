@@ -28,11 +28,13 @@
           </ul>
         </div>
         <div class="headermain">
-          <div class="hm-logo"></div>
+          <div class="hm-logo">
+            <a href="<%= contextPath %>"><h2>구해줘 패션</h2></a>
+          </div>
           <div class="hm-menu"></div>
         </div>
         <div class="headerbottom">
-         
+          
         </div>
       </div>
     </header>
@@ -58,7 +60,7 @@
                   <button type="button"  class="follow-btn">팔로잉</button>
                   <span>
                     <button type="button" id="open">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
                         <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
                       </svg>
                     </button>
@@ -90,55 +92,69 @@
             </div>
         </div>
         
-        <div class="ct-feedcontainer">
+       <div class="ct-feedcontainer">
           <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
+            <div class="feedimg1">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
+              <img src="./resources/style/캡처55.PNG">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
             </div>
           </div>
           <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
+            <div class="feedimg2">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡처88.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
             </div>
           </div>
           <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
+            <div class="feedimg3">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
             </div>
           </div>
           <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
+            <div class="feedimg4">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
             </div>
           </div>
         </div>
@@ -193,5 +209,6 @@
       </script>
       
     </foorter>
+  </body>
   </body>
 </html>

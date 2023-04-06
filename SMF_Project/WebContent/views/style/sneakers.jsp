@@ -35,8 +35,8 @@
         <div class="headerbottom">
           <a href="<%= contextPath %>/follow.me"><span>팔로잉</span></a>
           <a href="<%= contextPath %>"><span>발견</span></a>
-          <a href=""><span>스니커즈</span></a>
-          <a href=""><span>럭셔리</span></a>
+          <a href="<%= contextPath %>/snekers.do"><span>스니커즈</span></a>
+          <a href="<%= contextPath %>/luxury.do"><span>럭셔리</span></a>
           <a href=""><span>의류</span></a>
           <a href=""><span>가방</span></a>
           <a href=""><span>악세서리</span></a>
@@ -77,53 +77,67 @@
         </div>
         <div class="ct-feedcontainer">
           <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
+            <div class="feedimg1">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
+              <img src="./resources/style/캡처55.PNG">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
             </div>
           </div>
           <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
+            <div class="feedimg2">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡처88.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
             </div>
           </div>
           <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
+            <div class="feedimg3">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
             </div>
           </div>
           <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg">
-              <img src="resources/style/캡처1.PNG" />
+            <div class="feedimg4">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
+              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
+              <img src="./resources/style/캡쳐66.PNG">
+              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
+              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
+              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
- body {
+  body {
     width: 100%;
   }
 
@@ -150,7 +150,7 @@
 
   }
 
-  .modal-wrapper, .modal-wrapper2 {
+  #modal-wrapper1, #modal-wrapper2 {
     position: fixed;
     top: 0;
     right: 0;
@@ -180,7 +180,7 @@
     font-size: 16px;
   }
   
-  .close-wrapper {
+  #close-wrapper1, #close-wrapper2 {
     float: right;
     
   }
@@ -188,3 +188,73 @@
   #open{
     cursor: pointer;
   }
+
+  #close, #close2, .insert-btn2{
+    border-radius: 5px;
+    background-color: white; 
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+  }
+
+  /* 파일업로드 버튼 디자인 */
+
+  .file-box{
+    margin-bottom: 10px;
+  }
+
+  .file-box label {
+    display: inline-block;
+    padding: .5em .75em;
+    color: #999;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #fdfdfd;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: .25em;
+    font-size: 16px;
+    font-weight: bold; 
+  }
+
+  .file-box input[type="file"] {  /* 파일 필드 숨기기 */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+  }
+
+  .list-btn{
+    display: inline-block;
+    padding: .5em .75em;
+    color: #999;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #fdfdfd;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: .25em;
+    font-size: 16px;
+    font-weight: bold; 
+  }
+
+  .img-area{
+    width: 250;
+    height: 170;
+    border: 1px solid red;
+  }
+
+ 
+
+
+ 
+  
+  

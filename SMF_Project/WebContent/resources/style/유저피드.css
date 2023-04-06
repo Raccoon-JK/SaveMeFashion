@@ -1,19 +1,4 @@
-.moveTopBtn {
-          position: fixed;
-          bottom: 1rem;
-          right: 1rem;
-          width: 50px;
-          height: 50px;
-          color: #fff;
-      }
-  
-      .moveTopBtn svg{
-          width: 100%;
-          height: 100%;
-          color: black;
-      }
-      
-      body {
+body {
     width: 100%;
   }
   
@@ -36,6 +21,7 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1;
   }
   .headerwrap {
     margin-left: auto;
@@ -58,6 +44,10 @@
     float: right;
     list-style: none;
     height: 100px;
+  }
+
+  .hm-logo{
+    margin-bottom: 50px;
   }
   
   .headerbottom {
@@ -89,6 +79,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    margin-top: 200px;
   }
 
   .social-area{
@@ -196,13 +187,41 @@
     flex-wrap: wrap;
   }
   
-  .feedwrap {
-    width: 25%;
+  @media(min-width: 640px){
+    .ct-feedcontainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 20px;
+      grid-auto-flow: row dense;
+    }
+  
+    .feedimg1 {
+      display: grid;
+      row-gap: 10px;
+    }
+    .feedimg2 {
+      display: grid;
+      row-gap: 20px;
+    }
+    .feedimg3 {
+      display: grid;
+      row-gap: 30px;
+    }
+  
+    .feedimg4 {
+      display: grid;
+      row-gap: 5px;
+    }
   }
   
-  .feedwrap img {
+  .ct-feedcontainer img{
+    border-radius: 10px;
     width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
+
+  
   
   footer {
     height: 10%;
@@ -258,3 +277,32 @@
   #open{
     cursor: pointer;
   }
+
+  .moveTopBtn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+}
+
+.moveTopBtn svg{
+    width: 80%;
+    height: 80%;
+    color: gray;
+}
+
+.user-btn button{
+  border-radius: 5px;
+  border: 1px solid gray;
+  background-color: white; 
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.follow-btn {
+  width: 100px;
+  height: 30px;
+}
+  
