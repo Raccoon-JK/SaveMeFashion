@@ -32,9 +32,9 @@ public class MyPageAccountsCardController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Member m = (Member)request.getSession().getAttribute("loginUser");
-		Account account = new MyPageService().accountSelect(m);
-		Card card = new MyPageService().cardSelect(m);
+		String userId = ((Member)request.getSession().getAttribute("loginUser")).getUserId();
+		Account account = new MyPageService().accountSelect(userId);
+		Card card = new MyPageService().cardSelect(userId);
 		
 		request.setAttribute("account", account);
 		request.setAttribute("card", card);

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smf.member.model.vo.Member;
 import com.smf.my.model.service.MyPageService;
 import com.smf.my.model.vo.Address;
 
@@ -31,9 +32,11 @@ public class MyAddressListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
-		Address addrDefault = new MyPageService().addressDefault();
-		ArrayList<Address> addrList = new MyPageService().addressList();
+		
+		String userId = ((Member)request.getSession().getAttribute("loginUser")).getUserId();
+		
+		Address addrDefault = new MyPageService().addressDefault(userId);
+		ArrayList<Address> addrList = new MyPageService().addressList(userId);
 		
 		request.setAttribute("addrDefault", addrDefault);
 		request.setAttribute("addrList", addrList);

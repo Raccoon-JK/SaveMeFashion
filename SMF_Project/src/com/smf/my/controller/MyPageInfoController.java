@@ -29,7 +29,7 @@ public class MyPageInfoController extends HttpServlet {
 		
 		
 		
-		request.getSession().setAttribute("loginUser", "hshwan@smf.com");
+		// request.getSession().setAttribute("loginUser", "hshwan@smf.com");
 		
 		request.getRequestDispatcher("views/my/mypageInfo.jsp").forward(request, response);
 	}

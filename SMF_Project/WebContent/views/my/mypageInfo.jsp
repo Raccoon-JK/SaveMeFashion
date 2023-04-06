@@ -68,25 +68,28 @@
 			</div>
 		</div>
 	</div>
+	<script src="/SMF_Project/resources/common/javascript/priceFormat.js"></script>
 	<script>
-// 		let info = document.getElementById("mypageInfo_content");
-// 		let inputText = info.querySelectorAll('input[type=text]');
-// 		let inputPwd = info.querySelector('input[type=password]');
-// 		let inputRadio = info.querySelectorAll('input[type=radio]')
+		let info = document.getElementById("mypageInfo_content");
+		let inputText = info.querySelectorAll('input[type=text]');
+		let inputPwd = info.querySelector('input[type=password]');
+		let inputRadio = info.querySelectorAll('input[type=radio]')
 
-// 		inputText[0].value = '${loginUser.userName}';
-// 		inputText[1].value = '${loginUser.birth}';
-// 		inputText[2].value = '${loginUser.phone}';
-// 		inputText[3].value = '${loginUser.userId}';
-// 		inputPwd.value = '${loginUser.userPWd}';
+		inputText[0].value = '${loginUser.userName}';
+		inputText[1].value = '${loginUser.birth}';
+		inputText[2].value = '${loginUser.phone}'; //MemberDao에서 핸드폰 형식수정
+		inputText[3].value = '${loginUser.userId}';
+		inputPwd.value = '${loginUser.userPwd}';
 
-// 		console.log(inputRadio)
-// 		if( '${agreeEmail}' == 'Y'){
-// 			inputRadio[0].checked = true;
-// 		} else{
-// 			inputRadio[1].checked = true;
-// 		}
+		console.log(inputRadio)
+		if( '${agreeEmail}' == 'Y'){
+			inputRadio[0].checked = true;
+		} else{
+			inputRadio[1].checked = true;
+		}
+		console.log(priceFormat(100000));
 
 	</script>
+	
 </body>
 </html>

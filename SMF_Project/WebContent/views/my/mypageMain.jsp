@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +22,8 @@
             				<img alt="" src="/SMF_Project/resources/my/img/하기싫어.jpg">
             			</div>
             			<div id="myname">
-            				<p id="my_name">와우완</p>
-            				<p id="my_id">hohwnamd@daum.net</p>
+            				<p id="my_name">${ loginUser.userName }</p>
+            				<p id="my_id">${ loginUser.userId }</p>
             			</div>
             		</div>
             		<div id="myprofile_right">

@@ -36,7 +36,8 @@ public class MyPageDao {
 		}
 	}
 	
-	public Address addressDefault(Connection conn) {
+	//주소록
+	public Address addressDefault(Connection conn, String userId) {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -47,7 +48,7 @@ public class MyPageDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, "hshwan0406@smf.com");
+			pstmt.setString(1, userId);
 			
 			rset = pstmt.executeQuery();
 			
@@ -71,7 +72,7 @@ public class MyPageDao {
 		return addr;
 	}
 	
-	public ArrayList<Address> addressList(Connection conn){
+	public ArrayList<Address> addressList(Connection conn, String userId){
 		
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -82,7 +83,7 @@ public class MyPageDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, "hshwan0406@smf.com");
+			pstmt.setString(1, userId);
 			
 			rset = pstmt.executeQuery();
 			
@@ -144,7 +145,7 @@ public class MyPageDao {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, addrNo);
-			pstmt.setString(2, "hshwan0406@smf.com"); //userId
+			pstmt.setString(2, userId); //userId
 			
 			result = pstmt.executeUpdate();
 			
@@ -167,7 +168,7 @@ public class MyPageDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, "hshwan0406@smf.com"); //userId
+			pstmt.setString(1, userId); //userId
 			
 			result = pstmt.executeUpdate();
 			
@@ -286,7 +287,7 @@ public class MyPageDao {
 				card = new Card(rset.getString("USER_ID"),
 								rset.getInt("CARD_NO"),
 								rset.getInt("CARD_PWD"),
-								rset.getDate("CARD_Validity"),
+								rset.getDate("CARD_VALIDIY"),
 								rset.getInt("CVC")
 								);
 			}
@@ -343,6 +344,57 @@ public class MyPageDao {
 			
 			result = pstmt.executeUpdate();
 			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public int cardInsert(Connection conn, Card card) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("cardInsert");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, card.getUserId());
+			pstmt.setInt(2, card.getCardNo());
+			pstmt.setInt(3, card.getCardPwd());
+			pstmt.setDate(4, card.getCardValidity());
+			pstmt.setInt(5, card.getCvc());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public int cardUpdate(Connection conn, Card card) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("cardUpdate");
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, card.getCardNo());
+			pstmt.setInt(2, card.getCardPwd());
+			pstmt.setDate(3, card.getCardValidity());
+			pstmt.setInt(4, card.getCvc());
+			pstmt.setString(5, card.getUserId());
+			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
