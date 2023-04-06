@@ -69,23 +69,23 @@
 		</div>
 	</div>
 	<script>
-		let info = document.getElementById("mypageInfo_content");
-		let inputText = info.querySelectorAll('input[type=text]');
-		let inputPwd = info.querySelector('input[type=password]');
-		let inputRadio = info.querySelectorAll('input[type=radio]')
+// 		let info = document.getElementById("mypageInfo_content");
+// 		let inputText = info.querySelectorAll('input[type=text]');
+// 		let inputPwd = info.querySelector('input[type=password]');
+// 		let inputRadio = info.querySelectorAll('input[type=radio]')
 
-		inputText[0].value = '와우완';
-		inputText[1].value = '2111년14월99일';
-		inputText[2].value = '010-2111-0000';
-		inputText[3].value = 'hohwnd21@smf.com';
-		inputPwd.value = 'asldfjalskdf';
+// 		inputText[0].value = '${loginUser.userName}';
+// 		inputText[1].value = '${loginUser.birth}';
+// 		inputText[2].value = '${loginUser.phone}';
+// 		inputText[3].value = '${loginUser.userId}';
+// 		inputPwd.value = '${loginUser.userPWd}';
 
-		console.log(inputRadio)
-		if( 'N' == 'Y'){
-			inputRadio[0].checked = true;
-		} else{
-			inputRadio[1].checked = true;
-		}
+// 		console.log(inputRadio)
+// 		if( '${agreeEmail}' == 'Y'){
+// 			inputRadio[0].checked = true;
+// 		} else{
+// 			inputRadio[1].checked = true;
+// 		}
 
 	</script>
 </body>

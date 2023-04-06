@@ -20,21 +20,21 @@
                     <div class="buysale_menuSelect buysale_menutab_common" id="buysale_all">
                         <a href="">전체</a>
                     </div>
-                    <div class="buysale_menuUnselect buysale_menutab_common" id="buysaleMenu_indelivery">
-                        <a href="">결제</a>
+                    <div class="buysale_menuUnselect buysale_menutab_common" id="buysaleMenu_waiting_for_sales">
+                        <a href="">판매 대기</a>
                     </div>
-                    <div class="buysale_menuUnselect buysale_menutab_common" id="buysaleMenu_payments">
-                        <a href="">배송 중</a>
+                    <div class="buysale_menuUnselect buysale_menutab_common" id="buysaleMenu_on_sale">
+                        <a href="">판매 중</a>
                     </div>
-                    <div class="buysale_menuUnselect buysale_menutab_common" id="buysaleMenu_delivered">
-                        <a href="">배송 완료</a>
+                    <div class="buysale_menuUnselect buysale_menutab_common" id="buysaleMenu_completed_sale">
+                        <a href="">판매 완료</a>
                     </div>
                 </div>
                 <div class="dateSelect_box">
                     <div class="decentBtn_box">
                         <button type="button" value="2">최근 2개월</button>
-                        <button type="button" value="2"> 4개월</button>
-                        <button type="button" value="2"> 6개월</button>
+                        <button type="button" value="4"> 4개월</button>
+                        <button type="button" value="6"> 6개월</button>
                     </div>
                     <div class="duration_box">
                         <input type="date" name="duration_start" id="">
@@ -53,7 +53,7 @@
                         <div class="salebuy_info_product_flex">
                             <div class="salebuy_info_product_left">
                                 <div class="salebuy_info_product_img">
-                                    <img src="SMF_Project/resources/my/img/_W_ Asics Gel_Kayano 14 White Midnight_1.png" alt="" width="80" height="80">
+                                    <img src="/SMF_Project/resources/my/img/_W_ Adidas Gazelle Bold Core Black Cloud White_1.png" alt="" width="80" height="80">
                                 </div>
                                 <div class="salebuy_info_product_text">
                                     <p>Adidas</p>
