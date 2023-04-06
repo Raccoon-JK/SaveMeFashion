@@ -36,10 +36,10 @@
           <a href="<%= contextPath %>/follow.me"><span>팔로잉</span></a>
           <a href="<%= contextPath %>"><span>발견</span></a>
           <a href="<%= contextPath %>/snekers.do"><span>스니커즈</span></a>
-          <a href="<%= contextPath %>/luxury.do""><span>럭셔리</span></a>
-          <a href=""><span>의류</span></a>
-          <a href=""><span>가방</span></a>
-          <a href=""><span>악세서리</span></a>
+          <a href="<%= contextPath %>/luxury.do"><span>럭셔리</span></a>
+          <a href="<%= contextPath %>/clothes.do"><span>의류</span></a>
+          <a href="<%= contextPath %>/bag.do"><span>가방</span></a>
+          <a href="<%= contextPath %>/accessory.do"><span>악세서리</span></a>
         </div>
       </div>
       
