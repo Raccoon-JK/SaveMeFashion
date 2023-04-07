@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../../resources/css/productDetail.css">
+<link rel="stylesheet" href="../../resources/shop/css/productDetail.css">
 <style>
     *{
         box-sizing: border-box;
@@ -44,13 +44,13 @@
                 <button class="prevArrow"></button>
                 <div class="mainImgList">
                     <div>
-                        <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" style="width: 560px;">
+                        <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" style="width: 560px;">
                     </div>                
                     <div>
-                        <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" style="width: 560px;">
+                        <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" style="width: 560px;">
                     </div>
                     <div>
-                        <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" style="width: 560px;">
+                        <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" style="width: 560px;">
                     </div>
                 </div>
                 <button class="nextArrow"></button>
@@ -62,118 +62,123 @@
                     <!-- <p>알렌느 카펜터 디테일 트윌 데님 바이커 자켓 인디안 핑크</p> -->
                 </div>
                 <div id="productInfo">
-                	<form action="">
-	                    <div class="categoryTitle productUnderline">
-	                        <div id="productInfoPrice">
-	                            <div class="titleProduct">가격</div><!-- 가격 << 포지션 따로 해서 뺄 예정 -->
-	                        </div>
-	                        <div class="productInfoHalf">
-	                            <div class="detailPriceInfo">
-	                                <div class="detailPrice">기업 가격</div>
-	                                <div class="detailFullPrice"><%= p.getCompanyPrice() %></div>                                 
-	                            </div>
-	                            <div class="detailPriceInfo">
-	                                <div class="detailPrice">리셀 가격</div>
-	                                <div class="detailFullPrice"><%= rs.getResellPrice() %></div>                                 
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div>
-	                        <div class="categoryTitle productUnderline"">
-	                            <div class="productInfoHalf">사이즈</div>
-	                            <div class="productInfoRight productInfoHalf">
-	                                <!-- 사이즈 Modal-->
-	                                <button id="testBtn" class="btn sizeOption">옵션</button>
-	                                <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	                                    <div class="modal-dialog" role="document">
-	                                        <div class="modal-content">
-	                                            <div class="modal-header">
-	                                                <h5 class="modal-title" id="exampleModalLabel">사이즈 선택</h5>
-	                                            </div>
-	                                            <div class="modal-body shoeSize">
-	                                                <input type="radio" id="215" name="size" value="215" class="modalSize"><label for="215">215</label></input>
-	                                                <input type="radio" id="220" name="size" value="220" class="modalSize"><label for="220">220</label></input>
-	                                                <input type="radio" id="225" name="size" value="225" class="modalSize"><label for="225">225</label></input>
-	                                                <input type="radio" id="230" name="size" value="230" class="modalSize"><label for="230">230</label></input>
-	                                                <input type="radio" id="235" name="size" value="235" class="modalSize"><label for="235">235</label></input>
-	                                                <input type="radio" id="240" name="size" value="240" class="modalSize"><label for="240">240</label></input>
-	                                                <input type="radio" id="245" name="size" value="245" class="modalSize"><label for="245">245</label></input>
-	                                                <input type="radio" id="250" name="size" value="250" class="modalSize"><label for="250">250</label></input>
-	                                                <input type="radio" id="255" name="size" value="255" class="modalSize"><label for="255">255</label></input>
-	                                                <input type="radio" id="260" name="size" value="260" class="modalSize"><label for="260">260</label></input>
-	                                                <input type="radio" id="265" name="size" value="265" class="modalSize"><label for="265">265</label></input>
-	                                                <input type="radio" id="270" name="size" value="270" class="modalSize"><label for="270">270</label></input>
-	                                                <input type="radio" id="275" name="size" value="275" class="modalSize"><label for="275">275</label></input>
-	                                                <input type="radio" id="280" name="size" value="280" class="modalSize"><label for="280">280</label></input>
-	                                                <input type="radio" id="285" name="size" value="285" class="modalSize"><label for="285">285</label></input>
-	                                                <input type="radio" id="290" name="size" value="290" class="modalSize"><label for="290">290</label></input>
-	                                                <input type="radio" id="295" name="size" value="295" class="modalSize"><label for="295">295</label></input>
-	                                                <input type="radio" id="300" name="size" value="300" class="modalSize"><label for="300">300</label></input>
-	                                                <input type="radio" id="305" name="size" value="305" class="modalSize"><label for="305">305</label></input>
-	                                                <input type="radio" id="310" name="size" value="310" class="modalSize"><label for="310">310</label></input>
-	                                                <input type="radio" id="315" name="size" value="315" class="modalSize"><label for="315">315</label></input>
-	                                                <input type="radio" id="320" name="size" value="320" class="modalSize"><label for="320">320</label></input>
-	                                                <input type="radio" id="325" name="size" value="325" class="modalSize"><label for="325">325</label></input>
-	                                                <input type="radio" id="330" name="size" value="330" class="modalSize"><label for="330">330</label></input>
-	                                            </div>
-	                                            <div class="modal-body commonSize">                                               
-	                                                <input type="radio" id="XXS" name="size" value="XXS" class="modalSize"><label for="XXS">XXS</label></input>
-	                                                <input type="radio" id="XS" name="size" value="XS" class="modalSize"><label for="XS">XS</label></input>
-	                                                <input type="radio" id="S" name="size" value="S" class="modalSize"><label for="S">S</label></input>
-	                                                <input type="radio" id="M" name="size" value="M" class="modalSize"><label for="M">M</label></input>
-	                                                <input type="radio" id="L" name="size" value="L" class="modalSize"><label for="L">L</label></input>
-	                                                <input type="radio" id="XL" name="size" value="XL" class="modalSize"><label for="XL">XL</label></input>
-	                                                <input type="radio" id="XXL" name="size" value="XXL" class="modalSize"><label for="XXL">XXL</label></input>
-	                                                <input type="radio" id="XXXL" name="size" value="XXXL" class="modalSize"><label for="XXXL">XXXL</label></input>
-	                                            </div>
-	                                            <div class="modal-body bottomSize">
-	                                                <input type="radio" id="28" name="size" value="28" class="modalSize"><label for="28">28</label></input>                                                
-	                                                <input type="radio" id="29" name="size" value="29" class="modalSize"><label for="29">29</label></input>
-	                                                <input type="radio" id="30" name="size" value="30" class="modalSize"><label for="30">30</label></input>
-	                                                <input type="radio" id="31" name="size" value="31" class="modalSize"><label for="31">31</label></input>
-	                                                <input type="radio" id="32" name="size" value="32" class="modalSize"><label for="32">32</label></input>
-	                                                <input type="radio" id="33" name="size" value="33" class="modalSize"><label for="33">33</label></input>
-	                                                <input type="radio" id="34" name="size" value="34" class="modalSize"><label for="34">34</label></input>
-	                                                <input type="radio" id="35" name="size" value="35" class="modalSize"><label for="35">35</label></input>
-	                                                <input type="radio" id="36" name="size" value="36" class="modalSize"><label for="36">36</label></input>
-	                                            </div>
-	                                            <div class="modal-body freeSize">
-	                                                <input type="radio" id="Free" name="size" value="Free" class="modalSize"><label for="Free">Free</label></input>                                                
-	                                            </div>
-	                                            <div class="modal-footer">
-	                                                <button type="button" id="sizeBtn" class="btn">선택</button>
-	                                                <button type="button" id="closeBtn" class="btn" data-dismiss="modal">취소</button>
-	                                            </div>
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="categoryTitle productUnderline"">
-	                            <div class="productInfoHalf">수량 : <input type="number" min="1" max="<% rs.getStock(); %>";></div>
-	                            <div class="productInfoHalf detailPriceInfo">
-	                                <div class="detailPrice">총 가격</div>
-	                                <div class="detailFullPrice"><% p.getCompanyPrice(); %>원</div>                                 
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div>
-	                        <button type="submit" class="buyButton" style="background-color: rgb(239, 98, 83);color: rgb(255, 255, 255);">구매하기</button>
-	                        <a href="" class="interestProduct">
-	                            <svg width="13" height="15">
-	                                <path d="M0,0 L13,0 L13,15 L6.5,9.5 L0,15 L0,10 Z" fill="none" stroke="#000000" stroke-width="1" />
-	                            </svg>
-	                            <span class="btnText">관심상품</span>
-	                            <span class="wishCount">320</span>
-	                        </a>
-	                    </div>
-	                    <div class="deliveryTitle1">
-                	</form>
+                    <form action="">
+                            <div class="categoryTitle productUnderline">
+                                <div id="productInfoPrice">
+                                    <div class="titleProduct">가격</div><!-- 가격 << 포지션 따로 해서 뺄 예정 -->
+                                </div>
+                                <div class="productInfoHalf">
+                                    <div class="detailPriceInfo">
+                                        <div class="detailPrice">기업 가격</div>
+                                        <div class="detailFullPrice"><%= p.getCompanyPrice() %></div>                                 
+                                    </div>
+                                    <div class="detailPriceInfo">
+                                        <div class="detailPrice">리셀 가격</div>
+                                        <div class="detailFullPrice"><%= rs.getResellPrice() %></div>                                 
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="categoryTitle productUnderline"">
+                                    <div class="productInfoHalf">사이즈</div>
+                                    <div class="productInfoRight productInfoHalf">
+                                        <!-- 사이즈 Modal-->
+                                        <button id="testBtn" class="btn sizeOption">옵션</button>
+                                        <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">사이즈 선택</h5>
+                                                    </div>
+                                                    <div class="modal-body shoeSize">
+                                                        <input type="radio" id="215" name="size" value="215" class="modalSize"><label for="215" class="btn">215</label></input>
+                                                        <input type="radio" id="220" name="size" value="220" class="modalSize"><label for="220">220</label></input>
+                                                        <input type="radio" id="225" name="size" value="225" class="modalSize"><label for="225">225</label></input>
+                                                        <input type="radio" id="230" name="size" value="230" class="modalSize"><label for="230">230</label></input>
+                                                        <input type="radio" id="235" name="size" value="235" class="modalSize"><label for="235">235</label></input>
+                                                        <input type="radio" id="240" name="size" value="240" class="modalSize"><label for="240">240</label></input>
+                                                        <input type="radio" id="245" name="size" value="245" class="modalSize"><label for="245">245</label></input>
+                                                        <input type="radio" id="250" name="size" value="250" class="modalSize"><label for="250">250</label></input>
+                                                        <input type="radio" id="255" name="size" value="255" class="modalSize"><label for="255">255</label></input>
+                                                        <input type="radio" id="260" name="size" value="260" class="modalSize"><label for="260">260</label></input>
+                                                        <input type="radio" id="265" name="size" value="265" class="modalSize"><label for="265">265</label></input>
+                                                        <input type="radio" id="270" name="size" value="270" class="modalSize"><label for="270">270</label></input>
+                                                        <input type="radio" id="275" name="size" value="275" class="modalSize"><label for="275">275</label></input>
+                                                        <input type="radio" id="280" name="size" value="280" class="modalSize"><label for="280">280</label></input>
+                                                        <input type="radio" id="285" name="size" value="285" class="modalSize"><label for="285">285</label></input>
+                                                        <input type="radio" id="290" name="size" value="290" class="modalSize"><label for="290">290</label></input>
+                                                        <input type="radio" id="295" name="size" value="295" class="modalSize"><label for="295">295</label></input>
+                                                        <input type="radio" id="300" name="size" value="300" class="modalSize"><label for="300">300</label></input>
+                                                        <input type="radio" id="305" name="size" value="305" class="modalSize"><label for="305">305</label></input>
+                                                        <input type="radio" id="310" name="size" value="310" class="modalSize"><label for="310">310</label></input>
+                                                        <input type="radio" id="315" name="size" value="315" class="modalSize"><label for="315">315</label></input>
+                                                        <input type="radio" id="320" name="size" value="320" class="modalSize"><label for="320">320</label></input>
+                                                        <input type="radio" id="325" name="size" value="325" class="modalSize"><label for="325">325</label></input>
+                                                        <input type="radio" id="330" name="size" value="330" class="modalSize"><label for="330">330</label></input>
+                                                    </div>
+                                                    <div class="modal-body commonSize">                                               
+                                                        <input type="radio" id="XXS" name="size" value="XXS" class="modalSize"><label for="XXS">XXS</label></input>
+                                                        <input type="radio" id="XS" name="size" value="XS" class="modalSize"><label for="XS">XS</label></input>
+                                                        <input type="radio" id="S" name="size" value="S" class="modalSize"><label for="S">S</label></input>
+                                                        <input type="radio" id="M" name="size" value="M" class="modalSize"><label for="M">M</label></input>
+                                                        <input type="radio" id="L" name="size" value="L" class="modalSize"><label for="L">L</label></input>
+                                                        <input type="radio" id="XL" name="size" value="XL" class="modalSize"><label for="XL">XL</label></input>
+                                                        <input type="radio" id="XXL" name="size" value="XXL" class="modalSize"><label for="XXL">XXL</label></input>
+                                                        <input type="radio" id="XXXL" name="size" value="XXXL" class="modalSize"><label for="XXXL">XXXL</label></input>
+                                                    </div>
+                                                    <div class="modal-body bottomSize">
+                                                        <input type="radio" id="28" name="size" value="28" class="modalSize"><label for="28">28</label></input>                                                
+                                                        <input type="radio" id="29" name="size" value="29" class="modalSize"><label for="29">29</label></input>
+                                                        <input type="radio" id="30" name="size" value="30" class="modalSize"><label for="30">30</label></input>
+                                                        <input type="radio" id="31" name="size" value="31" class="modalSize"><label for="31">31</label></input>
+                                                        <input type="radio" id="32" name="size" value="32" class="modalSize"><label for="32">32</label></input>
+                                                        <input type="radio" id="33" name="size" value="33" class="modalSize"><label for="33">33</label></input>
+                                                        <input type="radio" id="34" name="size" value="34" class="modalSize"><label for="34">34</label></input>
+                                                        <input type="radio" id="35" name="size" value="35" class="modalSize"><label for="35">35</label></input>
+                                                        <input type="radio" id="36" name="size" value="36" class="modalSize"><label for="36">36</label></input>
+                                                    </div>
+                                                    <div class="modal-body freeSize">
+                                                        <input type="radio" id="Free" name="size" value="Free" class="modalSize"><label for="Free">Free</label></input>                                                
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" id="sizeBtn" class="btn">선택</button>
+                                                        <button type="button" id="closeBtn" class="btn" data-dismiss="modal">취소</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="categoryTitle productUnderline"">
+                                    <div class="productInfoHalf">수량</div> <!-- 모달창으로. 누르면 해당 브랜드 재고, 리셀 재고 표시 -->
+                                    <div class="productInfoHalf detailPriceInfo">
+                                        <div class="detailPrice">총 가격</div>
+                                        <div class="detailFullPrice"><% p.getCompanyPrice(); %>원</div>                                 
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <c:if test="${  }"> <!-- 재고가 있을때 -->
+                                    <button type="submit" class="buyButton" style="background-color: rgb(239, 98, 83);color: rgb(255, 255, 255);">구매하기</button>
+                                </c:if>
+                                <c:if test="${  }"> <!-- 재고가 없을때 -->
+                                    <button type="submit" class="buyButton" style="background-color: rgb(211, 211, 211);color: rgb(255, 255, 255); cursor: not-allowed;">일시 품절</button>
+                                </c:if>
+                                <a href="" class="interestProduct">
+                                    <svg width="13" height="15">
+                                        <path d="M0,0 L13,0 L13,15 L6.5,9.5 L0,15 L0,10 Z" fill="none" stroke="#000000" stroke-width="1" />
+                                    </svg>
+                                    <span class="btnText">관심상품</span>
+                                    <span class="wishCount">320</span>
+                                </a>
+                            </div>
+                        <div class="deliveryTitle1">
+                    </form>
                         <p class="deliveryTitle1_1">배송 정보</p>
                         <div>
                             <div class="deliveryFlex"><!-- flex용 -->
                                 <div style="width: 40px; height: 40px; margin-right: 14px;">
-                                    <img src="../../resources/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" style="width: 40px; height: 40px;">
+                                    <img src="../../resources/shop/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" style="width: 40px; height: 40px;">
                                 </div>
                                 <div>
                                     <p class="deliveryText1">
@@ -329,11 +334,11 @@
                     <div class="feedContent1">
                         <a href="">
                             <div class="feedContent2">
-                                <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
+                                <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
                             </div>
                             <div class="feedContent3">
                                 <div class="feedContent3_1">
-                                    <img src="../../resources/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
+                                    <img src="../../resources/shop/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
                                     <p class="feedContent3_1_2">fashion69</p><!-- 스타일 아이디 -->
                                     <span class="feedContent3_1_3"><!-- 좋아요 -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -349,11 +354,11 @@
                     <div class="feedContent1" style="left: 307px;">
                         <a href="">
                             <div class="feedContent2">
-                                <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
+                                <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
                             </div>
                             <div class="feedContent3">
                                 <div class="feedContent3_1">
-                                    <img src="../../resources/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
+                                    <img src="../../resources/shop/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
                                     <p class="feedContent3_1_2">fashion69</p><!-- 스타일 아이디 -->
                                     <span class="feedContent3_1_3"><!-- 좋아요 -->
                                         svg
@@ -367,11 +372,11 @@
                     <div class="feedContent1">
                         <a href="">
                             <div class="feedContent2">
-                                <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
+                                <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
                             </div>
                             <div class="feedContent3">
                                 <div class="feedContent3_1">
-                                    <img src="../../resources/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
+                                    <img src="../../resources/shop/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
                                     <p class="feedContent3_1_2">fashion69</p><!-- 스타일 아이디 -->
                                     <span class="feedContent3_1_3"><!-- 좋아요 -->
                                         svg
@@ -385,11 +390,11 @@
                     <div class="feedContent1">
                         <a href="">
                             <div class="feedContent2">
-                                <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
+                                <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
                             </div>
                             <div class="feedContent3">
                                 <div class="feedContent3_1">
-                                    <img src="../../resources/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
+                                    <img src="../../resources/shop/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
                                     <p class="feedContent3_1_2">fashion69</p><!-- 스타일 아이디 -->
                                     <span class="feedContent3_1_3"><!-- 좋아요 -->
                                         svg
@@ -403,11 +408,11 @@
                     <div class="feedContent1">
                         <a href="">
                             <div class="feedContent2">
-                                <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
+                                <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
                             </div>
                             <div class="feedContent3">
                                 <div class="feedContent3_1">
-                                    <img src="../../resources/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
+                                    <img src="../../resources/shop/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
                                     <p class="feedContent3_1_2">fashion69</p><!-- 스타일 아이디 -->
                                     <span class="feedContent3_1_3"><!-- 좋아요 -->
                                         svg
@@ -421,11 +426,11 @@
                     <div class="feedContent1">
                         <a href="">
                             <div class="feedContent2">
-                                <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
+                                <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="productSocialImg">
                             </div>
                             <div class="feedContent3">
                                 <div class="feedContent3_1">
-                                    <img src="../../resources/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
+                                    <img src="../../resources/shop/symbols/a_debcc71138bf44cebfe3e83661b3f3cb.png" alt="" class="feedContent3_1_1"><!-- 프로필사진 -->
                                     <p class="feedContent3_1_2">fashion69</p><!-- 스타일 아이디 -->
                                     <span class="feedContent3_1_3"><!-- 좋아요 -->
                                         svg
@@ -449,7 +454,7 @@
                         <div class="moreContent1_1">
                             <a href="">
                                 <div class="moreContentImg">
-                                    <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
+                                    <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
                                 </div>
                                 <div class="moreContentInfo">
                                     <div class="moreContentInfo1">jordan</div>
@@ -461,7 +466,7 @@
                         <div class="moreContent1_1">
                             <a href="">
                                 <div class="moreContentImg">
-                                    <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
+                                    <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
                                 </div>
                                 <div class="moreContentInfo">
                                     <div class="moreContentInfo1">jordan</div>
@@ -473,7 +478,7 @@
                         <div class="moreContent1_1">
                             <a href="">
                                 <div class="moreContentImg">
-                                    <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
+                                    <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
                                 </div>
                                 <div class="moreContentInfo">
                                     <div class="moreContentInfo1">jordan</div>
@@ -485,7 +490,7 @@
                         <div class="moreContent1_1">
                             <a href="">
                                 <div class="moreContentImg">
-                                    <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
+                                    <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
                                 </div>
                                 <div class="moreContentInfo">
                                     <div class="moreContentInfo1">jordan</div>
@@ -497,7 +502,7 @@
                         <div class="moreContent1_1">
                             <a href="">
                                 <div class="moreContentImg">
-                                    <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
+                                    <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
                                 </div>
                                 <div class="moreContentInfo">
                                     <div class="moreContentInfo1">jordan</div>
@@ -509,7 +514,7 @@
                         <div class="moreContent1_1">
                             <a href="">
                                 <div class="moreContentImg">
-                                    <img src="../../resources/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
+                                    <img src="../../resources/shop/symbols/p_a5578cd8bd72480d83719612c9e74282.webp" alt="" class="moreContentImg1">
                                 </div>
                                 <div class="moreContentInfo">
                                     <div class="moreContentInfo1">jordan</div>
@@ -547,6 +552,17 @@
             $('#testModal').modal("hide");
         });
         
+        $('.modalSize').checked(function() {
+            $(this).children().addClass('btn-outline-primary');
+        });
+
+        $('input[type="checkbox"]').on('change', function() {
+            if ($(this).is(':checked')) {
+                $(this).find('input').addClass('btn-outline-primary');
+            } else {
+                $(this).find('input').removeClass('btn-outline-primary');
+            }
+        });
         </script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <title>Document</title>
     <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="../../resources/css/shop-styles.css" type="text/css">
+    <link rel="stylesheet" href="../../resources/shop/css/shop-styles.css" type="text/css">
 </head>
 <style>
     #navibar{
@@ -51,7 +51,7 @@
         <div id="searchbox">
             <div id="search">
                 <input id="searchMain" type="text" placeholder="브랜드, 모델명, 모델번호 등" onfocus="this.placeholder = ''" onblur="this.placeholder = '브랜드, 모델명, 모델번호 등'">
-                <img src="../../resources/symbols/x.png" id="deleteBtn">
+                <img src="../../resources/shop/symbols/x.png" id="deleteBtn">
             </div>
         </div>
         <div id="category">
@@ -70,19 +70,19 @@
             <div>
                 <ul id="weatherCategory">
                     <li>
-                        <img src="../../resources/symbols/맑음.png" alt="" class="weather">
+                        <img src="../../resources/shop/symbols/맑음.png" alt="" class="weather">
                     </li>
                     <li>
-                        <img src="../../resources/symbols/흐림.png" alt="" class="weather">
+                        <img src="../../resources/shop/symbols/흐림.png" alt="" class="weather">
                     </li>
                     <li>
-                        <img src="../../resources/symbols/비.png" alt="" class="weather">
+                        <img src="../../resources/shop/symbols/비.png" alt="" class="weather">
                     </li>
                     <li>
-                        <img src="../../resources/symbols/눈.png" alt="" class="weather">
+                        <img src="../../resources/shop/symbols/눈.png" alt="" class="weather">
                     </li>
                     <li class="temper">
-                        <img src="../../resources/symbols/기온.png" alt="" class="weather">
+                        <img src="../../resources/shop/symbols/기온.png" alt="" class="weather">
                         <div class="temperature">현재 기온</div>
                     </li>
                 </ul>
@@ -103,8 +103,8 @@
                                 <span class="subTitle" id="subTitle1">모든 카테고리</span>
                             </div>
                             <div class="titleBtn">
-                                <img src="../../resources/symbols/+.png" alt="" class="filterPM filterPlus">
-                                <img src="../../resources/symbols/-.png" alt="" class="filterPM filterMinus" style="display: none;">
+                                <img src="../../resources/shop/symbols/+.png" alt="" class="filterPM filterPlus">
+                                <img src="../../resources/shop/symbols/-.png" alt="" class="filterPM filterMinus" style="display: none;">
                             </div>
                         </div>
                         <div class="filterCheck" id="filterCheck1" style="display: none;">
@@ -250,8 +250,8 @@
                                 <span class="subTitle" id="subTitle2">모든 성별</span>
                             </div>
                             <div class="titleBtn">
-                                <img src="../../resources/symbols/+.png" alt="" class="filterPM filterPlus">
-                                <img src="../../resources/symbols/-.png" alt="" class="filterPM filterMinus" style="display: none;">
+                                <img src="../../resources/shop/symbols/+.png" alt="" class="filterPM filterPlus">
+                                <img src="../../resources/shop/symbols/-.png" alt="" class="filterPM filterMinus" style="display: none;">
                             </div>
                         </div>
                         <div class="filterCheck" id="filterCheck2" style="display: none;">
@@ -272,8 +272,8 @@
                                 <span class="subTitle" id="subTitle1">모든 브랜드</span>
                             </div>
                             <div class="titleBtn">
-                                <img src="../../resources/symbols/+.png" alt="" class="filterPM filterPlus">
-                                <img src="../../resources/symbols/-.png" alt="" class="filterPM filterMinus" style="display: none;">
+                                <img src="../../resources/shop/symbols/+.png" alt="" class="filterPM filterPlus">
+                                <img src="../../resources/shop/symbols/-.png" alt="" class="filterPM filterMinus" style="display: none;">
                             </div>
                         </div>
                         <div class="filterCheck" id="filterCheck1" style="display: none;">
@@ -291,8 +291,8 @@
                                 <span class="subTitle" id="subTitle1">모든 사이즈</span>
                             </div>
                             <div class="titleBtn">
-                                <img src="../../resources/symbols/+.png" alt="" class="filterPM filterPlus">
-                                <img src="../../resources/symbols/-.png" alt="" class="filterPM filterMinus" style="display: none;">
+                                <img src="../../resources/shop/symbols/+.png" alt="" class="filterPM filterPlus">
+                                <img src="../../resources/shop/symbols/-.png" alt="" class="filterPM filterMinus" style="display: none;">
                             </div>
                         </div>
                         <div class="filterCheck" id="filterCheck1" style="display: none;">
@@ -371,8 +371,8 @@
                                 <span class="subTitle" id="subTitle1">모든 혜택/가격</span>
                             </div>
                             <div class="titleBtn">
-                                <img src="../../resources/symbols/+.png" alt="" class="filterPM filterPlus">
-                                <img src="../../resources/symbols/-.png" alt="" class="filterPM filterMinus" style="display: none;">
+                                <img src="../../resources/shop/symbols/+.png" alt="" class="filterPM filterPlus">
+                                <img src="../../resources/shop/symbols/-.png" alt="" class="filterPM filterMinus" style="display: none;">
                             </div>
                         </div>
                         <div class="filterCheck" id="filterCheck1" style="display: none;">
@@ -422,7 +422,7 @@
                     <div class="postItem">
                         <a href="productDetailForm.jsp">
                             <div>
-                                <img src="../../resources/symbols/sample.jpg" alt="" class="productImg">
+                                <img src="../../resources/shop/symbols/sample.jpg" alt="" class="productImg">
                             </div>
                             <div class="productInner">
                                 <div class="productBrand">Hermes</div>
@@ -451,7 +451,7 @@
                     <div class="postItem">
                         <a href="">
                             <div>
-                                <img src="../../resources/symbols/sample.jpg" alt="" class="productImg">
+                                <img src="../../resources/shop/symbols/sample.jpg" alt="" class="productImg">
                             </div>
                             <div class="productInner">
                                 <div class="productBrand">Hermes</div>
@@ -480,7 +480,7 @@
                     <div class="postItem">
                         <a href="productDetailForm.jsp">
                             <div>
-                                <img src="../../resources/symbols/sample.jpg" alt="" class="productImg">
+                                <img src="../../resources/shop/symbols/sample.jpg" alt="" class="productImg">
                             </div>
                             <div class="productInner">
                                 <div class="productBrand">Hermes</div>
@@ -509,7 +509,7 @@
                     <div class="postItem">
                         <a href="">
                             <div>
-                                <img src="../../resources/symbols/sample.jpg" alt="" class="productImg">
+                                <img src="../../resources/shop/symbols/sample.jpg" alt="" class="productImg">
                             </div>
                             <div class="productInner">
                                 <div class="productBrand">Hermes</div>
@@ -538,7 +538,7 @@
                     <div class="postItem">
                         <a href="productDetailForm.jsp">
                             <div>
-                                <img src="../../resources/symbols/sample.jpg" alt="" class="productImg">
+                                <img src="../../resources/shop/symbols/sample.jpg" alt="" class="productImg">
                             </div>
                             <div class="productInner">
                                 <div class="productBrand">Hermes</div>
@@ -567,7 +567,7 @@
                     <div class="postItem">
                         <a href="">
                             <div>
-                                <img src="../../resources/symbols/sample.jpg" alt="" class="productImg">
+                                <img src="../../resources/shop/symbols/sample.jpg" alt="" class="productImg">
                             </div>
                             <div class="productInner">
                                 <div class="productBrand">Hermes</div>
@@ -596,7 +596,7 @@
                     <div class="postItem">
                         <a href="productDetailForm.jsp">
                             <div>
-                                <img src="../../resources/symbols/sample.jpg" alt="" class="productImg">
+                                <img src="../../resources/shop/symbols/sample.jpg" alt="" class="productImg">
                             </div>
                             <div class="productInner">
                                 <div class="productBrand">Hermes</div>
@@ -625,7 +625,7 @@
                     <div class="postItem">
                         <a href="">
                             <div>
-                                <img src="../../resources/symbols/sample.jpg" alt="" class="productImg">
+                                <img src="../../resources/shop/symbols/sample.jpg" alt="" class="productImg">
                             </div>
                             <div class="productInner">
                                 <div class="productBrand">Hermes</div>
