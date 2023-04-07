@@ -9,9 +9,9 @@ import com.smf.main.model.JDBCTemplate;
 
 public class ProductService {
 
-    public static List<Product> getProducts() {
+    public static List<Product> getProduct() {
         Connection conn = JDBCTemplate.getConnection();
-        List<Product> productList = new ProductDAO().getProducts();
+        List<Product> productList = new ProductDAO().getProduct();
         JDBCTemplate.close(conn);
         return productList;
     }

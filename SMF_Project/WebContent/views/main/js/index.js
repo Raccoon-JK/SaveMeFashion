@@ -40,7 +40,7 @@ var swiper = new Swiper(".second", {
 /**
  * 더보기 기능
  */
-
+/*
 $(function() {
 	$.get("/product.pr")
 		.done((data) => {
@@ -59,14 +59,14 @@ $(function() {
 			})
 		})
 });
+*/
 
 var count = 1;
 
 $('#more').click(function() {
-	$.get(" ")
-	
-	
+	$.get("/product.pr")
 		.done((data) => {
+			console.log(data)
 			data = JSON.parse(data);
 			data.forEach((a, i) => {
 				var template =

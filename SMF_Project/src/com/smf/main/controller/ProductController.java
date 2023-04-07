@@ -20,7 +20,7 @@ public class ProductController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // 데이터베이스에서 상품 정보를 조회하는 DAO 호출
-        List<Product> productList = ProductDAO.getProducts();
+        List<Product> productList = ProductDAO.getProduct();
 
         // 조회한 상품 정보를 JSON 형식으로 변환
         String json = "[";

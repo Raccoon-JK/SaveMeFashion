@@ -8,35 +8,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.smf.main.model.JDBCTemplate;
 import com.smf.main.model.vo.Product;
 
 public class ProductDAO {
-
-	public static Connection getConnection() throws SQLException {
-	    // JDBC 드라이버를 로드합니다.
-	    try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	    // 데이터베이스 연결 정보를 지정합니다.
-	    String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-	    String user = "PASSION";
-	    String password = "PASSION";
-	    // 데이터베이스에 연결하고 Connection 객체를 반환합니다.
-	    Connection conn = DriverManager.getConnection(url, user, password);
-	    return conn;
-	}
-
-
     // 모든 상품 정보를 가져오는 메소드
-    public static List<Product> getProducts() {
+    public static List<Product> getProduct() {
         List<Product> productList = new ArrayList<>();
-        try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM PRODUCT");
+        String sql = "SELECT * FROM PRODUCT";
+        try (Connection conn = JDBCTemplate.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
-        	while (rs.next()) {
+            while (rs.next()) {
                 Product product = new Product();
                 product.setProductName(rs.getString("PRODUCT_NAME"));
                 product.setCompanyPrice(rs.getInt("COMPANY_PRICE"));
@@ -51,7 +34,6 @@ public class ProductDAO {
         }
         return productList;
     }
-
 }
 
 

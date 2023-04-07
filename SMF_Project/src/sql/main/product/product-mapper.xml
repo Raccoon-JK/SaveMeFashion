@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <!-- 인기상품 mapper -->
 <properties>
-	<entry key="getProducts">
+	<entry key="getProduct">
 		SELECT
 		P.PRODUCT_NAME
 		, P.COMPANY_PRICE
@@ -27,7 +27,7 @@
 		AND STATUS = 'Y';
 	</entry>
 
-	<entry key="getMoreProducts">
+	<entry key="getMoreProduct">
 		SELECT
 		PRODUCT_NAME
 		, COMPANY_PRICE
