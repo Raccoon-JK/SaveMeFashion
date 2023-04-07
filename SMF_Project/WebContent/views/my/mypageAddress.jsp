@@ -159,10 +159,10 @@
                 </div>
             </div>
         </div>
-    </div>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="/SMF_Project/resources/my/javascript/daum_postcode.js"></script>
 	<script>
+		
 		var Num = 0;
     	function defaultAddrChange(addrNo) {
 			location.href = "<%= contextPath %>/defaultaddr.me?addrno="+addrNo;

@@ -30,10 +30,10 @@
 	
 	<!-- 계좌 및 카드 관리 -->
 	<entry key="accountSelect">
-		SELECT * FROM account WHERE USER_ID = ?
+		SELECT * FROM ACCOUNT WHERE USER_ID = ?
 	</entry>
 	<entry key="cardSelect">
-		SELECT * FROM card WHERE USER_ID = ?
+		SELECT * FROM CARD WHERE USER_ID = ?
 	</entry>
 	<entry key="accountInsert">
 		INSERT INTO ACCOUNT VALUES(?,?,?,?)

@@ -32,14 +32,20 @@ public class MyPageAccountsCardController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String userId = ((Member)request.getSession().getAttribute("loginUser")).getUserId();
-		Account account = new MyPageService().accountSelect(userId);
-		Card card = new MyPageService().cardSelect(userId);
-		
-		request.setAttribute("account", account);
-		request.setAttribute("card", card);
-		
-		request.getRequestDispatcher("views/my/mypageAccountsCard.jsp").forward(request, response);
+		if(request.getSession().getAttribute("loginUser") != null) {
+			String userId = ((Member)request.getSession().getAttribute("loginUser")).getUserId();
+			Account account = new MyPageService().accountSelect(userId);
+			Card card = new MyPageService().cardSelect(userId);
+			
+			request.setAttribute("account", account);
+			request.setAttribute("card", card);
+			
+			request.getRequestDispatcher("views/my/mypageAccountsCard.jsp").forward(request, response);
+		}else {
+			request.getSession().setAttribute("alertMsg","로그인이 필요합니다.");
+			
+			response.sendRedirect(request.getContextPath()+"/login.page");
+		}
 	}
 
 	/**

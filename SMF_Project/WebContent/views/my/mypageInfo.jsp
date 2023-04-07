@@ -65,6 +65,9 @@
 						</div>
 					</div>
 				</div>
+					<div>
+						<span><a>회원 탈퇴</a></span>
+					</div>
 			</div>
 		</div>
 	</div>
@@ -87,7 +90,7 @@
 		} else{
 			inputRadio[1].checked = true;
 		}
-		console.log(priceFormat(100000));
+		console.log(priceFormat(100000)); //priceForamt 테스트
 
 	</script>
 	
