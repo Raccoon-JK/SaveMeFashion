@@ -1,10 +1,10 @@
 package com.smf.main.model.vo;
 
 public class ProductRange {
-	private int startRange;
-	private int endRange;
-	private int currentRange;
-	private int productLimit;	
+	private int startRange; // 새롭게 추가될 행의 시작
+	private int endRange; // 새롭게 추가될 행의 끝
+	private int currentRange; // 현재 저장된 행
+	private int productLimit; // 보여줄 행 제한 (3행)	
 	
 	public ProductRange() {
 		super();

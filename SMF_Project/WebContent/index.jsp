@@ -1,3 +1,4 @@
+<%@ page import="com.smf.main.model.vo.Product, java.util.ArrayList, com.smf.main.model.vo.ProductRange" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -137,7 +138,9 @@
 			인기상품
 		</div>
 
-		<div class="row"></div>
+		<div class="row">
+			
+		</div>
 
 		<div class="button_box">
 			<button class="btn_more" id="more">더보기</button>

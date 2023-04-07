@@ -5,21 +5,8 @@ public class Product {
 	private int companyPrice;
 	private int tradeCount;
 	private String status;
-	private String imgPath;
-	
-	public Product() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Product(String productName, int companyPrice, int tradeCount, String status, String imgPath) {
-		super();
-		this.productName = productName;
-		this.companyPrice = companyPrice;
-		this.tradeCount = tradeCount;
-		this.status = status;
-		this.imgPath = imgPath;
-	}
+	private String imagePath;
+	private String brandName;
 
 	public String getProductName() {
 		return productName;
@@ -29,11 +16,11 @@ public class Product {
 		this.productName = productName;
 	}
 
-	public int getcompanyPrice() {
+	public int getCompanyPrice() {
 		return companyPrice;
 	}
 
-	public void setcompanyPrice(int companyPrice) {
+	public void setCompanyPrice(int companyPrice) {
 		this.companyPrice = companyPrice;
 	}
 
@@ -53,21 +40,19 @@ public class Product {
 		this.status = status;
 	}
 
-	public String getImgPath() {
-		return imgPath;
+	public String getImagePath() {
+		return imagePath;
 	}
 
-	public void setImgPath(String imgPath) {
-		this.imgPath = imgPath;
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
 
-	@Override
-	public String toString() {
-		return "Product [productName=" + productName + ", companyPrice=" + companyPrice + ", tradeCount=" + tradeCount
-				+ ", status=" + status + ", imgPath=" + imgPath + "]";
+	public String getBrandName() {
+		return brandName;
 	}
-	
-	
+
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
+	}
 }
-
-
