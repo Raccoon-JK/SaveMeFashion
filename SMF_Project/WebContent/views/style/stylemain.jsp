@@ -71,7 +71,6 @@
               <div class="round">
                 <img
                   src="resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg"
-                  height="100"
                 />
                 <p class="tagtitle">#오늘뭐입지</p>
               </div>
@@ -84,7 +83,6 @@
               <div class="round">
                 <img
                   src="resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp"
-                  height="100"
                 />
                 <p class="tagtitle">#내일뭐입지</p>
               </div>
@@ -97,7 +95,6 @@
               <div class="round">
                 <img
                   src="resources/style/a_89c114d3a071422e9966dca98fa051f8.webp"
-                  height="100"
                 />
                 <p class="tagtitle">#집에가고싶다</p>
               </div>
@@ -110,7 +107,6 @@
               <div class="round">
                 <img
                   src="resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp"
-                  height="100"
                 />
                 <p class="tagtitle">#졸리다으아</p>
               </div>
@@ -123,7 +119,6 @@
               <div class="round">
                 <img
                   src="resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg"
-                  height="100"
                 />
                 <p class="tagtitle">#크림</p>
               </div>
@@ -136,7 +131,6 @@
               <div class="round">
                 <img
                   src="resources/style/a_17002637a4e44a5c958830c00ab3059a.webp"
-                  height="100"
                 />
                 <p class="tagtitle">#지겨워</p>
               </div>
