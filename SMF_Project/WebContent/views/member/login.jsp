@@ -29,7 +29,7 @@
                         <div class="has_button input_box" id="email_input_box">
                             <h3 class="input_title">이메일 주소</h3>
                             <div class="input_item">
-                                <input type="text" placeholder="예) kream@kream.co.kr" class="input_txt" id="email_input" name="email" >
+                                <input type="text" placeholder="예) SaveMeFashion@SMF.co.kr" class="input_txt" id="email_input" name="email" >
                             </div>
                             <p class="input_error" id="email_input_error"></p>
                         </div>
