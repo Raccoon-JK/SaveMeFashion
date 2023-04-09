@@ -5,7 +5,6 @@ public class Product {
 	private String productName;
 	private int categoryNo;
 	private String brandName;
-	private int companyPrice;
 	private String productColor;
 	private String productGender;
 	private String productWeather;
@@ -17,13 +16,12 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(String productName, int categoryNo, String brandName, int companyPrice, String productColor,
+	public Product(String productName, int categoryNo, String brandName, String productColor,
 			String productGender, String productWeather, String status, int tradeCount) {
 		super();
 		this.productName = productName;
 		this.categoryNo = categoryNo;
 		this.brandName = brandName;
-		this.companyPrice = companyPrice;
 		this.productColor = productColor;
 		this.productGender = productGender;
 		this.productWeather = productWeather;
@@ -53,14 +51,6 @@ public class Product {
 
 	public void setBrandName(String brandName) {
 		this.brandName = brandName;
-	}
-
-	public int getCompanyPrice() {
-		return companyPrice;
-	}
-
-	public void setCompanyPrice(int companyPrice) {
-		this.companyPrice = companyPrice;
 	}
 
 	public String getProductColor() {
@@ -106,7 +96,7 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [productName=" + productName + ", categoryNo=" + categoryNo + ", brandName=" + brandName
-				+ ", companyPrice=" + companyPrice + ", productColor=" + productColor + ", productGender="
+				+ ", productColor=" + productColor + ", productGender="
 				+ productGender + ", productWeather=" + productWeather + ", status=" + status + ", tradeCount="
 				+ tradeCount + "]";
 	}

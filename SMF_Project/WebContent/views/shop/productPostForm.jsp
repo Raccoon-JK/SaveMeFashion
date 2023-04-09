@@ -37,11 +37,7 @@
                     </tr>
                     <tr>
                         <td>가격</td>
-                        <td><input type="text" placeholder="가격 입력" name="resellPrice"></td>
-                    </tr>
-                    <tr>
-                        <td>발매가격</td>
-                        <td><input type="text" placeholder="발매가격 입력" name="companyPrice"></td>
+                        <td><input type="text" placeholder="가격 입력" name="price"></td>
                     </tr>
                     <tr>
                         <td>분류</td>
@@ -147,7 +143,7 @@
 					</tr>
                 </table>
                 <div style="width: 100px; margin: auto;">
-                    <button type="submit" id="submit">확인</button>
+                    <button type="button" id="submit">확인</button>
                     <button type="reset">취소</button>
                 </div>
             </div>
@@ -326,6 +322,29 @@
 			})
         });
         
+        $('#submit').click(function(){
+    		let form = $("#productPostForm")[0];
+    		let formData = new FormData(form);
+    		
+    		$.each($("#upfile")[0].files, function(index, file){
+    			console.log(index, file);
+    			formData.append("upfile"+index, file);
+    		});
+    		formData.delete("upfile");
+
+    		
+    		$.ajax({
+    			cache: false,
+    			url: "<%=contextPath%>/insert.sh",
+                type : 'POST', 
+                data : formData,
+                processData: false,
+                contentType: false,
+                success: function(data){
+                	alert("성공");
+                }
+    		});
+    	});
     </script>
 
     </html>

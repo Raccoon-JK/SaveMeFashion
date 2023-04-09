@@ -7,7 +7,6 @@ import com.smf.shop.model.dao.ShopDao;
 import com.smf.shop.model.vo.Category_Sub;
 import com.smf.shop.model.vo.Product;
 import com.smf.shop.model.vo.Product_Detail;
-import com.smf.shop.model.vo.ResellStock;
 import com.smf.shop.model.vo.Stock;
 
 public class ShopService {
@@ -24,22 +23,21 @@ public class ShopService {
 		
 	}
 	
-	public int insertProduct(Product p, ResellStock rs, Stock s, Product_Detail pd) {
+	public int insertProduct(Product p, Stock s, Product_Detail pd) {
 		
 		Connection conn = getConnection();
 		
 		int result1 = new ShopDao().insertProduct(conn, p);
-		int result2 = new ShopDao().insertResellStock(conn, rs);
-//		int result3 = new ShopDao().insertStock(conn, s);
-		int result4 = new ShopDao().insertProduct_Detail(conn, pd);
+		int result2 = new ShopDao().insertStock(conn, s);
+		int result3 = new ShopDao().insertProduct_Detail(conn, pd);
 		
-		if (result1 > 0 && result2 > 0 /* && result3 > 0 */ && result4 > 0) {
+		if (result1 > 0 && result2 > 0 && result3 > 0) {
 			commit(conn);
 		}else {
 			rollback(conn);
 		}
 		close(conn);
-		return result1 * result2 * /* result3 **/ result4;
+		return result1 * result2 * result3;
 		
 	}
 	

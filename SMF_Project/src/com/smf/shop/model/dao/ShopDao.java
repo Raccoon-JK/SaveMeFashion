@@ -15,7 +15,7 @@ import static com.smf.common.JDBCTemplate.*;
 import com.smf.shop.model.vo.Category_Sub;
 import com.smf.shop.model.vo.Product;
 import com.smf.shop.model.vo.Product_Detail;
-import com.smf.shop.model.vo.ResellStock;
+import com.smf.shop.model.vo.Stock;
 
 public class ShopDao {
 	private Properties prop = new Properties();
@@ -35,7 +35,7 @@ public class ShopDao {
 		}
 	}
 
-	public ArrayList<Category_Sub> list(Connection conn, String abc) {
+	public ArrayList<Category_Sub> list(Connection conn, String cat) {
 
 		ArrayList<Category_Sub> list = new ArrayList();
 
@@ -48,7 +48,7 @@ public class ShopDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, abc);
+			pstmt.setString(1, cat);
 
 			rset = pstmt.executeQuery();
 
@@ -84,10 +84,9 @@ public class ShopDao {
 			
 			pstmt.setString(1, p.getBrandName());
 			pstmt.setString(2, p.getProductName());
-			pstmt.setInt(3, p.getCompanyPrice());
-			pstmt.setInt(4, p.getCategoryNo());
-			pstmt.setString(5, p.getProductGender());
-			pstmt.setString(6, p.getProductWeather());
+			pstmt.setInt(3, p.getCategoryNo());
+			pstmt.setString(4, p.getProductGender());
+			pstmt.setString(5, p.getProductWeather());
 			
 			result = pstmt.executeUpdate();
 			
@@ -99,7 +98,7 @@ public class ShopDao {
 		return result;
 	}
 	
-	public int insertResellStock(Connection conn, ResellStock rs) {
+	public int insertStock(Connection conn, Stock s) {
 		
 		int result = 0;
 		
@@ -111,11 +110,12 @@ public class ShopDao {
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, rs.getProductName());
-			pstmt.setString(2, rs.getUserId());
-			pstmt.setInt(3, rs.getResellPrice());
-			pstmt.setInt(4, rs.getStock());
-			pstmt.setString(5, rs.getSize());
+			pstmt.setString(1, s.getUserId());
+			pstmt.setString(2, s.getProductName());
+			pstmt.setInt(3, s.getPrice());
+			pstmt.setInt(4, s.getStock());
+			pstmt.setString(5, s.getSize());
+			pstmt.setString(6, s.getUserClass());
 			
 			result = pstmt.executeUpdate();
 			

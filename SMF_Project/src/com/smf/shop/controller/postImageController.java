@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 
 import com.google.gson.Gson;
 import com.oreilly.servlet.MultipartRequest;
+import com.smf.common.MyFileRenamePolicy;
 
 /**
  * Servlet implementation class postImageController
@@ -49,7 +50,7 @@ public class postImageController extends HttpServlet {
 			String savePath = request.getSession().getServletContext().getRealPath("/resources/upfiles_img/");
 			
 			//파일 저장
-			MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8");
+			MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8", new MyFileRenamePolicy());
 			
 			Enumeration e = multi.getParameterNames();
 			while (e.hasMoreElements()) {

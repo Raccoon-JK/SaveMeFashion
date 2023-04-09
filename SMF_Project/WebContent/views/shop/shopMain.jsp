@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String contextPath = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -111,7 +114,7 @@
                             <ul class="filterCheckUl">
                                 <li class="menu">
                               		<div class="filterCheckDiv">
-                              			<input type="checkbox" id="shoe" value="신발"><label for="shoe" class="filterText">신발</label><br>
+                              			<input type="checkbox" id="shoe" value="신발"><label for="shoe" class="filterText filterMain">신발</label><br>
                                		</div>
                                     <ul class="filterCheckUl filterDetail">
                                         <li class="menu menu2"><input type="checkbox" name="shoe" id="sneakers" value="스니커즈"><label for="sneakers" class="filterText">스니커즈</label><br></li>
@@ -126,7 +129,7 @@
                                 </li>
                                 <li class="menu">
                                 	<div class="filterCheckDiv">
-	                                    <input type="checkbox" id="outer" value="아우터"><label for="outer" class="filterText">아우터</label><br>
+	                                    <input type="checkbox" id="outer" value="아우터"><label for="outer" class="filterText filterMain">아우터</label><br>
                                 	</div>
                                     <ul class="filterCheckUl filterDetail">
                                         <li class="menu menu2"><input type="checkbox" name="outer" id="jacket" value="자켓"><label for="jacket" class="filterText">자켓</label></input></li>
@@ -138,7 +141,7 @@
                                 </li>
                                 <li class="menu">
                                 	<div class="filterCheckDiv">
-	                                    <input type="checkbox" id="top" value="상의"><label for="top" class="filterText">상의</label><br>
+	                                    <input type="checkbox" id="top" value="상의"><label for="top" class="filterText filterMain">상의</label><br>
                                 	</div>
                                     <ul class="filterCheckUl filterDetail">
                                         <li class="menu menu2"><input type="checkbox" name="top" id="cardigan" value="가디건"><label for="cardigan" class="filterText">가디건</label></input></li>
@@ -156,7 +159,7 @@
                                 </li>
                                 <li class="menu">
                                 	<div class="filterCheckDiv">
-                                    	<input type="checkbox" id="bottom" value="하의"><label for="bottom" class="filterText">하의</label><br>                                	
+                                    	<input type="checkbox" id="bottom" value="하의"><label for="bottom" class="filterText filterMain">하의</label><br>                                	
                                 	</div>
                                     <ul class="filterCheckUl filterDetail">
                                         <li class="menu menu2"><input type="checkbox" name="bottom" id="pants" value="바지"><label for="pants" class="filterText">바지</label></input></li>
@@ -168,7 +171,7 @@
                                 </li>
                                 <li class="menu">
                                 	<div class="filterCheckDiv">
-                                    	<input type="checkbox" id="bag" value="가방"><label for="bag" class="filterText">가방</label><br>                                	
+                                    	<input type="checkbox" id="bag" value="가방"><label for="bag" class="filterText filterMain">가방</label><br>                                	
                                 	</div>
                                     <ul class="filterCheckUl filterDetail">
                                         <li class="menu menu2"><input type="checkbox" name="bag" id="premiumBag" value="프리미엄가방"><label for="premiumBag" class="filterText">프리미엄가방</label></input></li>
@@ -186,7 +189,7 @@
                                 </li>
                                 <li class="menu">
                                 	<div class="filterCheckDiv">
-                                    	<input type="checkbox" id="wallet" value="지갑"><label for="wallet" class="filterText">지갑</label><br>                                	
+                                    	<input type="checkbox" id="wallet" value="지갑"><label for="wallet" class="filterText filterMain">지갑</label><br>                                	
                                 	</div>
                                     <ul class="filterCheckUl filterDetail">
                                         <li class="menu menu2"><input type="checkbox" name="wallet" id="halfWallet" value="반지갑"><label for="halfWallet" class="filterText">반지갑</label></input></li>
@@ -198,7 +201,7 @@
                                 </li>
                                 <li class="menu">
                                 	<div class="filterCheckDiv">
-	                                    <input type="checkbox" id="watch" value="시계"><label for="watch" class="filterText">시계</label><br>
+	                                    <input type="checkbox" id="watch" value="시계"><label for="watch" class="filterText filterMain">시계</label><br>
                                 	</div>
                                     <ul class="filterCheckUl filterDetail">
                                         <li class="menu menu2"><input type="checkbox" name="watch" id="premiumWatch" value="프리미엄시계"><label for="premiumWatch" class="filterText">프리미엄시계</label></input></li>
@@ -210,7 +213,7 @@
                                 </li>
                                 <li class="menu">
                                     <div class="filterCheckDiv">
-                                        <input type="checkbox" id="accessory" value="패션잡화"><label for="accessory" class="filterText">패션잡화</label>                                	
+                                        <input type="checkbox" id="accessory" value="패션잡화"><label for="accessory" class="filterText filterMain">패션잡화</label>                                	
                                     </div>
                                     <ul class="filterCheckUl filterDetail">
                                         <li class="menu menu2"><input type="checkbox" name="accessory" id="earring" value="귀걸이"><label for="earring" class="filterText">귀걸이</label></input></li>
@@ -696,6 +699,120 @@
                 }
             });            
         });
+
+        let filterData = {
+            sortBy: 'price',
+            order: 'asc'
+        };
+
+        $('input[type="checkbox"]').change(function() {
+        	console.log(this);
+            if ($(this).is(':checked')) {
+                $.ajax({
+                url: "<%=contextPath%>/pCatFilter.sh",
+                dataType: 'json',
+                data: { category },
+                success: function(data) {
+                    // <div class="postItem">
+                    //     <a href="productDetailForm.jsp">
+                    //         <div>
+                    //             <img src="../../resources/shop/symbols/sample.jpg" alt="" class="productImg">
+                    //         </div>
+                    //         <div class="productInner">
+                    //             <div class="productBrand">Hermes</div>
+                    //             <div class="productName">(W) Hermes Mini Pop H Pendant Rose Gold & Blanc</div>
+                    //             <div class="productPrice">850,000원</div>
+                    //         </div>
+                    //     </a>
+                    //     <div class="productWish">
+                    //         <div class="interestWish">
+                    //             <svg width="13" height="15">
+                    //                 <path d="M0,0 L13,0 L13,15 L6.5,9.5 L0,15 L0,10 Z" fill="none" stroke="#000000" stroke-width="1" />
+                    //             </svg>
+                    //             <div class="wishText">300</div>
+                    //         </div>
+                    //         <div class="interestWish">
+                    //             <svg width="15" height="15">
+                    //                 <rect x="0" y="0" width="15" height="15" fill="#fff" stroke="#000" stroke-width="1" />
+                    //                 <path d="M6.5 9.2c-1.88-1.85-3.67-3.44-3.67-4.84 0-1.28 1.04-1.76 1.79-1.76 0.44 0 1.39 0.17 1.92 1.5 0.53-1.32 1.49-1.48 1.92-1.48 0.85 0 1.76 0.54 1.76 1.72 0 1.69-2.13 3.59-4.5 6.01m1.92-8.63c-0.7 0-1.42 0.33-1.84 1.02-0.42-0.72-1.15-1.06-1.88-1.06-1.05 0-2.08 0.72-2.08 2.04 0 1.54 1.84 3.11 4 5.24 2.16-2.13 4-3.71 4-5.24 0-1.33-1.03-2.05-2.09-2.05" fill="#000" stroke="#000" stroke-width="0"/>
+                    //                 <line x1="2" y1="11" x2="13" y2="11" stroke="#000" stroke-width="1" />
+                    //                 <line x1="2" y1="13" x2="10.5" y2="13" stroke="#000" stroke-width="1" />
+                    //             </svg>
+                    //             <div class="wishText">300</div>
+                    //         </div>
+                    //     </div>
+                    // </div>
+                    for(let i = 0; i < data.length; i++) {
+						str += '<div class="postItem">'
+                            +   '<a href="">'
+                            +      '<div>'
+                            +           '<img src="' + product.filPath + '"alt ="" class ="productImg">'
+							+      '</div>'
+                            +       '<div class="productInner">'
+                            +           '<div class="productBrand">'+ product.brand +'</div>'
+                            +           '<div class="productName">'+ product.name +'</div>'
+                            +           '<div class="productPrice">'+ product.price +'</div>'
+                            +   '</a>'
+                            +   '<div class="productWish">'
+                            +       '<div class="interestWish">'
+                            +           '<svg width="13" height="15">'
+                            +               '<path d="M0,0 L13,0 L13,15 L6.5,9.5 L0,15 L0,10 Z" fill="none" stroke="#000000" stroke-width="1" />'
+                            +           '</svg>'
+                            +           '<div class="wishText">300</div>'
+                            +       '</div>'
+                            +       '<div class="interestWish">'
+                            +           '<svg width="15" height="15">'
+                            +               '<rect x="0" y="0" width="15" height="15" fill="#fff" stroke="#000" stroke-width="1" />'
+                            +               '<path d="M6.5 9.2c-1.88-1.85-3.67-3.44-3.67-4.84 0-1.28 1.04-1.76 1.79-1.76 0.44 0 1.39 0.17 1.92 1.5 0.53-1.32 1.49-1.48 1.92-1.48 0.85 0 1.76 0.54 1.76 1.72 0 1.69-2.13 3.59-4.5 6.01m1.92-8.63c-0.7 0-1.42 0.33-1.84 1.02-0.42-0.72-1.15-1.06-1.88-1.06-1.05 0-2.08 0.72-2.08 2.04 0 1.54 1.84 3.11 4 5.24 2.16-2.13 4-3.71 4-5.24 0-1.33-1.03-2.05-2.09-2.05" fill="#000" stroke="#000" stroke-width="0"/>'
+                            +               '<line x1="2" y1="11" x2="13" y2="11" stroke="#000" stroke-width="1" />'
+                            +               '<line x1="2" y1="13" x2="10.5" y2="13" stroke="#000" stroke-width="1" />'
+                            +           '</svg>'
+                            +           '<div class="wishText">300</div>'
+                            +       '</div>'
+                            +    '</div>'
+							+ '</div>'
+					}
+					$("#content").html(str);
+                },
+                error: function() {
+                    alert('상품 목록을 가져오는데 실패하였습니다.');
+                }
+                });
+            } else {
+                // 체크박스가 체크 해제될 때 필요한 처리
+            } 
+        });
+
+        $('.filterCheckUl').on('click', 'input[name="outer"]', function() {
+            var selectedFilters = [];
+            $('input[name="outer"]:checked').each(function() {
+                selectedFilters.push($(this).val());
+            });
+
+            $.ajax({
+                url: '/getProducts',
+                type: 'POST',
+                dataType: 'json',
+                data: { category: 'outer', filters: selectedFilters },
+                success: function(data) {
+                // 응답받은 데이터를 가지고 상품 목록 생성 및 렌더링
+                },
+                error: function() {
+                alert('상품 목록을 가져오는데 실패하였습니다.');
+                }
+            });
+        });
+        // $.ajax({
+        //     url: "<%=contextPath%>/pCatFilter.sh",
+        //     data: filterData,
+        //     success: function(data) {
+        //         // 반환된 JSON 데이터를 처리
+        //         // ...
+        // },
+        // error: function() {
+        //     console.error(error);
+        // }
+        // });
 
         // 무한스크롤
         // $('.contentContainer').infiniteScroll({

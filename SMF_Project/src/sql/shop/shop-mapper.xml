@@ -25,14 +25,15 @@
 			?
 		)
 	</entry>
-	<entry key="insertResellStock">
-		INSERT INTO RESELL_STOCK{
-			RESELL_NO,
-			PRODUCT_NAME,
+	<entry key="insertStock">
+		INSERT INTO STOCK{
+			STOCK_NO,
 			USER_ID,
-			RESELL_PRICE,
+			PRODUCT_NAME,
+			PRICE,
 			STOCK,
-			SIZE
+			SIZE,
+			USER_CLASS
 		)
 		VALUES(
 			SEQ_RNO.NEXTVAL,
@@ -40,14 +41,9 @@
 			?,
 			?,
 			?,
+			?,
 			?
 		)
-	</entry>
-	<entry key="insertStock">
-		INSERT INTO STOCK(
-			
-		)
-		
 	</entry>
 	<entry key="insertProduct_Detail">
 		INSERT INTO(

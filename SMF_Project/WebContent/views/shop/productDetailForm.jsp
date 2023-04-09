@@ -5,7 +5,6 @@
 <%
 	Product p = (Product) request.getAttribute("p");
 	Product_Detail pd = (Product_Detail) request.getAttribute("pd");
-	ResellStock rs = (ResellStock) request.getAttribute("rs");
 	Product_Img pi = (Product_Img) request.getAttribute("pi");
 %>
 <!DOCTYPE html>

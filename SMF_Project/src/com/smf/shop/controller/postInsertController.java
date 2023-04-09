@@ -14,12 +14,11 @@ import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.smf.common.MyFileRenamePolicy;
+import com.smf.member.model.vo.Member;
 import com.smf.shop.model.service.ShopService;
-import com.smf.shop.model.vo.Brand;
 import com.smf.shop.model.vo.Product;
 import com.smf.shop.model.vo.Product_Detail;
 import com.smf.shop.model.vo.Product_Img;
-import com.smf.shop.model.vo.ResellStock;
 import com.smf.shop.model.vo.Stock;
 
 /**
@@ -69,59 +68,40 @@ public class postInsertController extends HttpServlet {
 			MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8",
 					new MyFileRenamePolicy());
 			
-			Enumeration e = multi.getParameterNames();
-			while (e.hasMoreElements()) {
-				String name = (String) e.nextElement();
-				String[] values = multi.getParameterValues(name);
-				for (String value : values) {
-					System.out.println("name = " + name + ", value = " + value);
-				}
-			}
+			String pName = multi.getParameter("productName");
+			String userId = ((Member) request.getSession().getAttribute("loginUser")).getUserId() + ""; // 로그인 유저 아이디 정보
+			String userClass = ((Member) request.getSession().getAttribute("loginUser")).getUserType() + "";
 
-				String pName = multi.getParameter("productName");
-				// 3. DB에 저장
-				// Board에 들어갈 값들 뽑아오기 >> Product
-				Product p = new Product();
-				
-				p.setBrandName(multi.getParameter("brandName"));
-				p.setProductName(pName);
-				p.setCompanyPrice(Integer.parseInt(multi.getParameter("companyPrice")));
-				p.setCategoryNo(Integer.parseInt(multi.getParameter("subCategory")));
-				p.setProductGender(multi.getParameter("productGender"));
-				p.setProductWeather(multi.getParameter("productWeather"));
+			// 3. DB에 저장
+			// Product에 들어갈 값들 뽑아오기
+			Product p = new Product();
 
-				// 희망가격, 수량, 사이즈 >> 리셀재고
-//				String userId = ((Member)request.getSession().getAttribute("loginUser")).getUserNo()+""; // 로그인 유저 아이디 정보
-				
-				ResellStock rs = new ResellStock();
-				rs.setProductName(pName);
-				rs.setResellPrice(Integer.parseInt(multi.getParameter("resellPrice")));
-				rs.setStock(Integer.parseInt(multi.getParameter("stock")));
-				rs.setSize(multi.getParameter("size"));
-//				rs.setUserId(userId);
-//				int resultRS = new ShopService().insertResellStock(rs);
-				
-				// 사이즈, 수량 >> 재고
-				Stock s = new Stock();
-				s.setProductName(pName);
-				s.setStock(Integer.parseInt(multi.getParameter("stock")));
-				s.setSize(multi.getParameter("size"));
-				
-//				int resultS = new ShopService().insertStock(s);
-				
-				// 상세정보 >> 상품상세
-				Product_Detail pd = new Product_Detail();
-				pd.setProductName(pName);
-				pd.setProductContent(multi.getParameter("productContent"));
-				
-//				int resultPD = new ShopService().insertProductDetail(pd);
-				
-				// Attachment테이블에 여러번 insert할 데이터를 뽑기
-				// 단, 여러개의 첨부파일이 있을것이기 때문에 attachment들을 ArrayList에 담을 예정 => 반드시 1개 이상은 담김(대표이미지)
-				// >> Product_Img?
-				int resultP = new ShopService().insertProduct(p, rs, s, pd);
+			p.setBrandName(multi.getParameter("brandName"));
+			p.setProductName(pName);
+			p.setCategoryNo(Integer.parseInt(multi.getParameter("subCategory")));
+			p.setProductGender(multi.getParameter("productGender"));
+			p.setProductWeather(multi.getParameter("productWeather"));
 
-				ArrayList<Product_Img> list = new ArrayList();
+			// 희망가격, 수량, 사이즈, 수량 >> 재고
+			Stock s = new Stock();
+			s.setUserId(userId);
+			s.setProductName(pName);
+			s.setPrice(Integer.parseInt(multi.getParameter("price")));
+			s.setStock(Integer.parseInt(multi.getParameter("stock")));
+			s.setSize(multi.getParameter("size"));
+			s.setUserClass(userClass);
+
+			// 상세정보 >> 상품상세
+			Product_Detail pd = new Product_Detail();
+			pd.setProductName(pName);
+			pd.setProductContent(multi.getParameter("productContent"));
+
+			// Attachment테이블에 여러번 insert할 데이터를 뽑기
+			// 단, 여러개의 첨부파일이 있을것이기 때문에 attachment들을 ArrayList에 담을 예정 => 반드시 1개 이상은 담김(대표이미지)
+			// >> Product_Img?
+			int result = new ShopService().insertProduct(p, s, pd);
+
+			ArrayList<Product_Img> list = new ArrayList();
 
 //				for (int i = 1; i <= 4; i++) { // 파일개수는 최대 4개이기 때문에 4번 반복시킴
 //
@@ -145,12 +125,30 @@ public class postInsertController extends HttpServlet {
 //
 //				int result = new ShopService().insertThumbnailBoard(b, list);
 //
-				if (resultP > 0) { // 성공 -> list.th를 요청
+			if (result > 0) { // 성공 -> list.th를 요청
+				
+				// 상품 이미지
+				int imgresult = 0;
+				Enumeration f = multi.getFileNames();
+				while (f.hasMoreElements()) {
+					String fileName = (String) f.nextElement();
+					String imgName = multi.getFilesystemName(fileName);
+					Product_Img pi = new Product_Img();
+
+					pi.setProductName(pName);
+					pi.setImgName(imgName);
+					pi.setImgPath("/resources/thumb_upfiles/");
+
+					imgresult += new ShopService().insertProductImg(imgName);
+				}
+				if(imgresult > 0) {
 					response.sendRedirect(request.getContextPath());
-				} else {
 					
 				}
-			
+			} else {
+
+			}
+
 		}
 
 //		response.sendRedirect(request.getContextPath());
