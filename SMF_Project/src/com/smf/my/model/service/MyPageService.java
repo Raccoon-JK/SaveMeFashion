@@ -5,12 +5,50 @@ import java.util.ArrayList;
 
 import static com.smf.common.JDBCTemplate.*;
 
+import com.smf.member.model.vo.Member;
 import com.smf.my.model.dao.MyPageDao;
 import com.smf.my.model.vo.Account;
 import com.smf.my.model.vo.Address;
 import com.smf.my.model.vo.Card;
 
 public class MyPageService {
+	
+	// 내 프로필 정보
+	public Member myInfoUpdate(String column, String value, String userId) {
+		 
+		Connection conn = getConnection();
+		Member m = null;
+		
+		int result = new MyPageDao().myInfoUpdate(conn, column, value, userId);
+		
+		if(result>0) {
+			commit(conn);
+			m = new MyPageDao().myInfoUpdateLoginUser(conn,userId);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return m;
+	}
+	
+	public int myinfoDelete(String userId) {
+		
+		Connection conn = getConnection();
+		
+		int result = new MyPageDao().myinfoDelete(conn, userId);
+		
+		if(result>0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
 	
 	// 주소록
 	public Address addressDefault(String userId) {

@@ -127,38 +127,57 @@
             </div>
             <div id="mypage_content">
             	<div id="address_wrapper">
-					<!-- 기본 배송지 -->
-	                <div class="address_area" id="default_address">
-						<div class="address_area_left">
-							<p class="addrName" style="display: inline-block;">${addrDefault.receiver}</p>
-							<p style="display: inline-block;">기본 배송지</p>
-							<p>${addrDefault.phone}</p>
-							<p>(${addrDefault.postcode}) ${addrDefault.address}</p>
-						</div>
-						<div class="address_area_right">
-							<a href="" class="mypageBtn">수정</a>
-<!-- 							<a href="" class="mypageBtn">삭제</a> -->
-						</div>
-	                </div>
-	                <div id="addressLine"></div>
-	                <!-- 그 외 배송지 -->
-             		<c:forEach var="list" items="${addrList}">
-	  	                <div class="address_area">
-							<div class="address_area_left">
-								<p class="addrName">${list.receiver}</p>
-								<p>${list.phone}</p>
-								<p>(${list.postcode}) ${list.address}</p>
-							</div>
-							<div class="address_area_right">
-								<a href="#" class="mypageBtn" id="defaultAddr_Btn" onclick="defaultAddrChange(${list.addressNo});">기본 배송지</a>
-								<a href="#" class="mypageBtn" data-toggle="modal" data-target="#addressUpdate" onclick="addrUpdate(${list.addressNo});">수정</a>
-								<a href="#" class="mypageBtn" data-toggle="modal" data-target="#addressDel" onclick="addrDel(${list.addressNo});">삭제</a>
-							</div>
-		                </div>
-               		</c:forEach>
+					<c:choose>
+						<c:when test="${addrDefault eq null and addrList == '[]'}">
+							<!-- 기본 배송지 -->
+              				<div class="address_null">
+	               				<p>등록된 배송지가 없습니다...</p>
+	               			</div>
+	               		</c:when>
+	               		<c:otherwise>
+	               			<c:choose>
+								<c:when test="${addrDefault ne null}">
+					                <div class="address_area" id="default_address">
+										<div class="address_area_left">
+											<p class="addrName" style="display: inline-block;">${addrDefault.receiver}</p>
+											<p style="display: inline-block;">기본 배송지</p>
+											<p>${addrDefault.phone}</p>
+											<p>(${addrDefault.postcode}) ${addrDefault.address}</p>
+										</div>
+										<div class="address_area_right">
+											<a href="" class="mypageBtn">수정</a>
+				<!-- 							<a href="" class="mypageBtn">삭제</a> -->
+										</div>
+					                </div>
+				                </c:when>
+				                <c:otherwise>
+				                	<div class="address_null">
+				                		<p>등록된 기본 배송지가 없습니다.</p>
+				                	</div>
+				                </c:otherwise>
+			                </c:choose>
+			                <div id="addressLine"></div>
+			                <!-- 그 외 배송지 -->
+		             		<c:forEach var="list" items="${addrList}">
+			  	                <div class="address_area">
+									<div class="address_area_left">
+										<p class="addrName">${list.receiver}</p>
+										<p>${list.phone}</p>
+										<p>(${list.postcode}) ${list.address}</p>
+									</div>
+									<div class="address_area_right">
+										<a href="#" class="mypageBtn" id="defaultAddr_Btn" onclick="defaultAddrChange(${list.addressNo});">기본 배송지</a>
+										<a href="#" class="mypageBtn" data-toggle="modal" data-target="#addressUpdate" onclick="addrUpdate(${list.addressNo});">수정</a>
+										<a href="#" class="mypageBtn" data-toggle="modal" data-target="#addressDel" onclick="addrDel(${list.addressNo});">삭제</a>
+									</div>
+				                </div>
+		               		</c:forEach>
+	               		</c:otherwise>
+        			</c:choose>
                 </div>
             </div>
-        </div>
+    	</div>
+    </div>   
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="/SMF_Project/resources/my/javascript/daum_postcode.js"></script>
 	<script>

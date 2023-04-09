@@ -41,6 +41,7 @@ public class MyAddressListController extends HttpServlet {
 		request.setAttribute("addrDefault", addrDefault);
 		request.setAttribute("addrList", addrList);
 		
+		
 		request.getRequestDispatcher("/views/my/mypageAddress.jsp").forward(request, response);
 		}else {
 			request.getSession().setAttribute("alertMsg","로그인이 필요합니다.");

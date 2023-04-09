@@ -32,6 +32,11 @@
 .addrName{
 	font-weight: bold;
 }
+.address_null>p{
+    font-weight: 700;
+
+}
+
 
 /* 새 주소 추가 모달창 */
 .modal-body input{

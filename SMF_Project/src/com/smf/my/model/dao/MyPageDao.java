@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import static com.smf.common.JDBCTemplate.*;
 
+import com.smf.member.model.vo.Member;
 import com.smf.my.model.vo.Account;
 import com.smf.my.model.vo.Address;
 import com.smf.my.model.vo.Card;
@@ -34,6 +35,92 @@ public class MyPageDao {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	// 내 프로필 정보
+	public int myInfoUpdate(Connection conn, String column, String value, String userId) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+//		String sql = prop.getProperty("myInfoUpdate");
+		String sql = "UPDATE MEMBER SET "+column+" = ? WHERE USER_ID = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, value);
+			pstmt.setString(2, userId);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public Member myInfoUpdateLoginUser(Connection conn, String userId) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		Member m = null;
+		
+		String sql = prop.getProperty("myInfoUpdateLoginUser");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, userId);
+			
+			rset = pstmt.executeQuery();
+			if(rset.next()) {
+				m = new Member(rset.getString("USER_ID"),
+						   rset.getString("USER_NAME"),
+						   rset.getString("USER_PWD"),
+						   rset.getString("PHONE"),
+						   rset.getDate("BIRTH"),
+						   rset.getInt("USER_TYPE"),
+						   rset.getString("AGREE_EMAIL"),
+						   rset.getString("USER_IMAGE"),
+						   rset.getString("INTRODUCE"),
+						   rset.getString("SNS_ID"),
+						   rset.getInt("TOTAL_POINT")
+						   );
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return m;
+		
+	}
+	
+	public int myinfoDelete(Connection conn, String userId) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("myinfoDelete");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, userId);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 	
 	//주소록
@@ -220,7 +307,7 @@ public class MyPageDao {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, addrNo);
-			pstmt.setString(2, "hshwan0406@smf.com"); //userId
+			pstmt.setString(2, userId); //userId
 			
 			result = pstmt.executeUpdate();
 			

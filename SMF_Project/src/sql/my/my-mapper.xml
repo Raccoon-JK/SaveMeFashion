@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
+
+	<!-- 내 프로필 정보 -->
+	<entry key="myInfoUpdateLoginUser">
+		SELECT * FROM MEMBER WHERE USER_ID = ?
+	</entry>
+	<entry key="myinfoDelete">
+		UPDATE MEMBER SET STATUS = 'X' WHERE USER_ID= ?
+	</entry>
+	<!-- 주소록 -->
 	<entry key="addressDefult">
 		SELECT * FROM ADDRESS WHERE default_address = 'Y' AND USER_ID = ?
 	</entry>
