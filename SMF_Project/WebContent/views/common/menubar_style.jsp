@@ -19,7 +19,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/views/main/css/menu_style.css"
+	href="${pageContext.request.contextPath}/views/common/css/menu_style.css"
 	type="text/css">
 
 <style>
@@ -71,7 +71,7 @@
 							<li><a href="">MY</a></li>
 							<li><button class="btnFind" type="submit" name="btnFind">
 									<img id="search"
-										src="${pageContext.request.contextPath}/resources/main/search_icon.png">
+										src="${pageContext.request.contextPath}/resources/common/images/search_icon.png">
 								</button></li>
 						</ul>
 					</nav>

@@ -22,12 +22,12 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/views/main/css/index.css"
+	href="${pageContext.request.contextPath}/views/common/css/index.css"
 	type="text/css">
 </head>
 <style>
 .swiper-button-prev.style {
-	background-image: url("resources/main/prev_button.svg") !important;
+	background-image: url("resources/common/images/prev_button.svg") !important;
 	width: 80px;
 	height: 100px;
 	margin-left: -25px;
@@ -35,7 +35,7 @@
 }
 
 .swiper-button-next.style {
-	background-image: url("resources/main/next_button.svg") !important;
+	background-image: url("resources/common/images/next_button.svg") !important;
 	width: 80px;
 	height: 100px;
 	margin-right: -25px;
@@ -44,22 +44,22 @@
 </style>
 <body>
 
-	<jsp:include page="/views/main/menubar_sun.jsp" />
+	<jsp:include page="/views/common/menubar_shop.jsp" />
 
 	<!-- Swiper -->
 	<div class="swiper first">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide banner">
-				<a><img src="${pageContext.request.contextPath}/resources/main/banner1.webp"/></a>
+				<a><img src="${pageContext.request.contextPath}/resources/common/images/banner1.webp"/></a>
 			</div>
 			<div class="swiper-slide banner">
-				<a><img src="${pageContext.request.contextPath}/resources/main/banner2.webp"/></a>
+				<a><img src="${pageContext.request.contextPath}/resources/common/images/banner2.webp"/></a>
 			</div>
 			<div class="swiper-slide banner">
-				<a><img src="${pageContext.request.contextPath}/resources/main/banner3.webp"/></a>
+				<a><img src="${pageContext.request.contextPath}/resources/common/images/banner3.webp"/></a>
 			</div>
 			<div class="swiper-slide banner">
-				<a><img src="${pageContext.request.contextPath}/resources/main/banner4.webp"/></a>
+				<a><img src="${pageContext.request.contextPath}/resources/common/images/banner4.webp"/></a>
 			</div>
 		</div>
 		<div class="swiper-button-next"></div>
@@ -76,7 +76,7 @@
 			<div class="box_men">
 				<div>
 					<a href=""> <img
-						src="${pageContext.request.contextPath}/resources/main/남성추천.webp"
+						src="${pageContext.request.contextPath}/resources/common/images/남성추천.webp"
 						id="box1">
 						<p>남성 추천</p>
 					</a>
@@ -85,7 +85,7 @@
 			<div class="box_women">
 				<div>
 					<a href=""> <img
-						src="${pageContext.request.contextPath}/resources/main/여성추천.webp"
+						src="${pageContext.request.contextPath}/resources/common/images/여성추천.webp"
 						id="box1">
 						<p>여성 추천</p>
 					</a>
@@ -94,7 +94,7 @@
 			<div class="box_brand">
 				<div>
 					<a href=""> <img
-						src="${pageContext.request.contextPath}/resources/main/인기브랜드.webp"
+						src="${pageContext.request.contextPath}/resources/common/images/인기브랜드.webp"
 						id="box1">
 						<p>인기 브랜드</p>
 					</a>
@@ -103,7 +103,7 @@
 			<div class="box_men">
 				<div>
 					<a href=""> <img
-						src="${pageContext.request.contextPath}/resources/main/정가아래.webp"
+						src="${pageContext.request.contextPath}/resources/common/images/정가아래.webp"
 						id="box1">
 						<p>정가 아래</p>
 					</a>
@@ -112,7 +112,7 @@
 			<div class="box_women">
 				<div>
 					<a href=""> <img
-						src="${pageContext.request.contextPath}/resources/main/셀럽픽.webp"
+						src="${pageContext.request.contextPath}/resources/common/images/셀럽픽.webp"
 						id="box1">
 						<p>셀럽픽</p>
 					</a>
@@ -121,7 +121,7 @@
 			<div class="box_brand">
 				<div>
 					<a href=""> <img
-						src="${pageContext.request.contextPath}/resources/main/인기럭셔리.webp"
+						src="${pageContext.request.contextPath}/resources/common/images/인기럭셔리.webp"
 						id="box1">
 						<p>인기 럭셔리</p>
 					</a>
@@ -161,11 +161,11 @@
 						<div class="style-container">
 							<div class="style-pro">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test1.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test1.webp"></a>
 							</div>
 							<div class="style-main">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test1.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test1.webp"></a>
 							</div>
 							<p class="userId">@test1</p>
 						</div>
@@ -175,11 +175,11 @@
 						<div class="style-container">
 							<div class="style-pro">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test2.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test2.webp"></a>
 							</div>
 							<div class="style-main">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test2.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test2.webp"></a>
 							</div>
 							<p class="userId">@test1</p>
 						</div>
@@ -189,11 +189,11 @@
 						<div class="style-container">
 							<div class="style-pro">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test3.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test3.webp"></a>
 							</div>
 							<div class="style-main">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test3.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test3.webp"></a>
 							</div>
 							<p class="userId">@test1</p>
 						</div>
@@ -202,11 +202,11 @@
 						<div class="style-container">
 							<div class="style-pro">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test4.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test4.webp"></a>
 							</div>
 							<div class="style-main">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test4.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test4.webp"></a>
 							</div>
 							<p class="userId">@test1</p>
 						</div>
@@ -215,11 +215,11 @@
 						<div class="style-container">
 							<div class="style-pro">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test5.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test5.webp"></a>
 							</div>
 							<div class="style-main">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test5.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test5.webp"></a>
 							</div>
 							<p class="userId">@test1</p>
 						</div>
@@ -228,11 +228,11 @@
 						<div class="style-container">
 							<div class="style-pro">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test6.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test6.webp"></a>
 							</div>
 							<div class="style-main">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test6.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test6.webp"></a>
 							</div>
 							<p class="userId">@test1</p>
 						</div>
@@ -241,11 +241,11 @@
 						<div class="style-container">
 							<div class="style-pro">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test7.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test7.webp"></a>
 							</div>
 							<div class="style-main">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test7.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test7.webp"></a>
 							</div>
 							<p class="userId">@test1</p>
 						</div>
@@ -254,11 +254,11 @@
 						<div class="style-container">
 							<div class="style-pro">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test8.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test8.webp"></a>
 							</div>
 							<div class="style-main">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test8.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test8.webp"></a>
 							</div>
 							<p class="userId">@test1</p>
 						</div>
@@ -267,11 +267,11 @@
 						<div class="style-container">
 							<div class="style-pro">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test9.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test9.webp"></a>
 							</div>
 							<div class="style-main">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test9.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test9.webp"></a>
 							</div>
 							<p class="userId">@test1</p>
 						</div>
@@ -280,11 +280,11 @@
 						<div class="style-container">
 							<div class="style-pro">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test10.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test10.webp"></a>
 							</div>
 							<div class="style-main">
 								<a><img
-									src="${pageContext.request.contextPath}/resources/main/test10.webp"></a>
+									src="${pageContext.request.contextPath}/resources/common/images/test10.webp"></a>
 							</div>
 							<p class="userId">@test1</p>
 						</div>
@@ -298,9 +298,9 @@
 	</div>
 
 	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/views/main/js/index.js"></script>
+		src="${pageContext.request.contextPath}/views/common/js/index.js"></script>
 
-	<jsp:include page="/views/main/footer.jsp" />
+	<jsp:include page="/views/common/footer.jsp" />
 
 
 </body>

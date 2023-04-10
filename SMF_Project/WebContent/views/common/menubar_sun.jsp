@@ -19,13 +19,13 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/views/main/css/menu.css"
+	href="${pageContext.request.contextPath}/views/common/css/menu.css"
 	type="text/css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/views/main/css/modal.css"
+	href="${pageContext.request.contextPath}/views/common/css/modal.css"
 	type="text/css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/views/main/css/sunny.css"
+	href="${pageContext.request.contextPath}/views/common/css/sunny.css"
 	type="text/css">
 <style>
 .header {
@@ -176,7 +176,7 @@
 						<li class="top_item"><a href="">로그인</a></li>
 						<li><button class="view_more" type="button">
 								<img id="alarm"
-									src="${pageContext.request.contextPath}/resources/main/bell_icon.png">
+									src="${pageContext.request.contextPath}/resources/common/images/bell_icon.png">
 							</button></li>
 					</ul>
 				</div>
@@ -190,7 +190,7 @@
 							<li><a href="">MY</a></li>
 							<li><button class="view_more" type="button">
 									<img id="search"
-										src="${pageContext.request.contextPath}/resources/main/search_icon.png">
+										src="${pageContext.request.contextPath}/resources/common/images/search_icon.png">
 								</button></li>
 						</ul>
 					</nav>
@@ -208,7 +208,7 @@
 	</div>
 	
 	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/views/main/js/modal.js"></script>
+		src="${pageContext.request.contextPath}/views/common/js/modal.js"></script>
 	
 
 </body>
