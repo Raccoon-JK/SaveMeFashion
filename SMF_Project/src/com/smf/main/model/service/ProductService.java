@@ -11,7 +11,8 @@ public class ProductService {
 
     public static List<Product> getProduct() {
         Connection conn = JDBCTemplate.getConnection();
-        List<Product> productList = new ProductDAO().getProduct();
+        new ProductDAO();
+		List<Product> productList = ProductDAO.getProduct();
         JDBCTemplate.close(conn);
         return productList;
     }

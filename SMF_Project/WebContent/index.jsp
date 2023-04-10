@@ -44,7 +44,7 @@
 </style>
 <body>
 
-	<jsp:include page="/views/common/menubar_shop.jsp" />
+	<jsp:include page="/views/common/menubar_sun.jsp" />
 
 	<!-- Swiper -->
 	<div class="swiper first">
