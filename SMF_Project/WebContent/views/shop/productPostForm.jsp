@@ -12,9 +12,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>        
-        <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/super-build/ckeditor.js"></script>
         <script src="/semi/resources/ckeditor/translations/ko.js"></script>
-        <link rel="stylesheet" href="/semi/resources/css/content-styles.css" type="text/css">
+        <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/super-build/ckeditor.js"></script>
+        <link rel="stylesheet" href="../../resources/shop/css/content-styles.css" type="text/css">
         <style>
         
         </style>
