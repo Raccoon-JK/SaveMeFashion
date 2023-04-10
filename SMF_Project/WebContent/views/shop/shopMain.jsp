@@ -712,42 +712,14 @@
                 url: "<%=contextPath%>/pCatFilter.sh",
                 dataType: 'json',
                 data: { category },
-                success: function(data) {
-                    // <div class="postItem">
-                    //     <a href="productDetailForm.jsp">
-                    //         <div>
-                    //             <img src="../../resources/shop/symbols/sample.jpg" alt="" class="productImg">
-                    //         </div>
-                    //         <div class="productInner">
-                    //             <div class="productBrand">Hermes</div>
-                    //             <div class="productName">(W) Hermes Mini Pop H Pendant Rose Gold & Blanc</div>
-                    //             <div class="productPrice">850,000원</div>
-                    //         </div>
-                    //     </a>
-                    //     <div class="productWish">
-                    //         <div class="interestWish">
-                    //             <svg width="13" height="15">
-                    //                 <path d="M0,0 L13,0 L13,15 L6.5,9.5 L0,15 L0,10 Z" fill="none" stroke="#000000" stroke-width="1" />
-                    //             </svg>
-                    //             <div class="wishText">300</div>
-                    //         </div>
-                    //         <div class="interestWish">
-                    //             <svg width="15" height="15">
-                    //                 <rect x="0" y="0" width="15" height="15" fill="#fff" stroke="#000" stroke-width="1" />
-                    //                 <path d="M6.5 9.2c-1.88-1.85-3.67-3.44-3.67-4.84 0-1.28 1.04-1.76 1.79-1.76 0.44 0 1.39 0.17 1.92 1.5 0.53-1.32 1.49-1.48 1.92-1.48 0.85 0 1.76 0.54 1.76 1.72 0 1.69-2.13 3.59-4.5 6.01m1.92-8.63c-0.7 0-1.42 0.33-1.84 1.02-0.42-0.72-1.15-1.06-1.88-1.06-1.05 0-2.08 0.72-2.08 2.04 0 1.54 1.84 3.11 4 5.24 2.16-2.13 4-3.71 4-5.24 0-1.33-1.03-2.05-2.09-2.05" fill="#000" stroke="#000" stroke-width="0"/>
-                    //                 <line x1="2" y1="11" x2="13" y2="11" stroke="#000" stroke-width="1" />
-                    //                 <line x1="2" y1="13" x2="10.5" y2="13" stroke="#000" stroke-width="1" />
-                    //             </svg>
-                    //             <div class="wishText">300</div>
-                    //         </div>
-                    //     </div>
-                    // </div>
+                success: function(data) {       
+                    let product = response.~~; // product, wishlist등 데이터가져오기
                     for(let i = 0; i < data.length; i++) {
-						str += '<div class="postItem">'
+						str +=  '<div class="postItem">'
                             +   '<a href="">'
-                            +      '<div>'
-                            +           '<img src="' + product.filPath + '"alt ="" class ="productImg">'
-							+      '</div>'
+                            +       '<div>'
+                            +           '<img src="' + product.filePath + '"alt ="" class ="productImg">'
+							+       '</div>'
                             +       '<div class="productInner">'
                             +           '<div class="productBrand">'+ product.brand +'</div>'
                             +           '<div class="productName">'+ product.name +'</div>'
@@ -758,16 +730,16 @@
                             +           '<svg width="13" height="15">'
                             +               '<path d="M0,0 L13,0 L13,15 L6.5,9.5 L0,15 L0,10 Z" fill="none" stroke="#000000" stroke-width="1" />'
                             +           '</svg>'
-                            +           '<div class="wishText">300</div>'
+                            +           '<div class="wishText">' + WISHLIST개수 + '</div>'
                             +       '</div>'
                             +       '<div class="interestWish">'
-                            +           '<svg width="15" height="15">'
-                            +               '<rect x="0" y="0" width="15" height="15" fill="#fff" stroke="#000" stroke-width="1" />'
-                            +               '<path d="M6.5 9.2c-1.88-1.85-3.67-3.44-3.67-4.84 0-1.28 1.04-1.76 1.79-1.76 0.44 0 1.39 0.17 1.92 1.5 0.53-1.32 1.49-1.48 1.92-1.48 0.85 0 1.76 0.54 1.76 1.72 0 1.69-2.13 3.59-4.5 6.01m1.92-8.63c-0.7 0-1.42 0.33-1.84 1.02-0.42-0.72-1.15-1.06-1.88-1.06-1.05 0-2.08 0.72-2.08 2.04 0 1.54 1.84 3.11 4 5.24 2.16-2.13 4-3.71 4-5.24 0-1.33-1.03-2.05-2.09-2.05" fill="#000" stroke="#000" stroke-width="0"/>'
-                            +               '<line x1="2" y1="11" x2="13" y2="11" stroke="#000" stroke-width="1" />'
-                            +               '<line x1="2" y1="13" x2="10.5" y2="13" stroke="#000" stroke-width="1" />'
-                            +           '</svg>'
-                            +           '<div class="wishText">300</div>'
+                            +          '<svg width="15" height="15">'
+                            +              '<rect x="0" y="0" width="15" height="15" fill="#fff" stroke="#000" stroke-width="1" />'
+                            +              '<path d="M6.5 9.2c-1.88-1.85-3.67-3.44-3.67-4.84 0-1.28 1.04-1.76 1.79-1.76 0.44 0 1.39 0.17 1.92 1.5 0.53-1.32 1.49-1.48 1.92-1.48 0.85 0 1.76 0.54 1.76 1.72 0 1.69-2.13 3.59-4.5 6.01m1.92-8.63c-0.7 0-1.42 0.33-1.84 1.02-0.42-0.72-1.15-1.06-1.88-1.06-1.05 0-2.08 0.72-2.08 2.04 0 1.54 1.84 3.11 4 5.24 2.16-2.13 4-3.71 4-5.24 0-1.33-1.03-2.05-2.09-2.05" fill="#000" stroke="#000" stroke-width="0"/>'
+                            +              '<line x1="2" y1="11" x2="13" y2="11" stroke="#000" stroke-width="1" />'
+                            +              '<line x1="2" y1="13" x2="10.5" y2="13" stroke="#000" stroke-width="1" />'
+                            +          '</svg>'
+                            +          '<div class="wishText">' + POST_PRODUCTTAG개수 + '</div>'
                             +       '</div>'
                             +    '</div>'
 							+ '</div>'
@@ -783,25 +755,25 @@
             } 
         });
 
-        $('.filterCheckUl').on('click', 'input[name="outer"]', function() {
-            var selectedFilters = [];
-            $('input[name="outer"]:checked').each(function() {
-                selectedFilters.push($(this).val());
-            });
+//         $('.filterCheckUl').on('click', 'input[name="outer"]', function() {
+//             var selectedFilters = [];
+//             $('input[name="outer"]:checked').each(function() {
+//                 selectedFilters.push($(this).val());
+//             });
 
-            $.ajax({
-                url: '/getProducts',
-                type: 'POST',
-                dataType: 'json',
-                data: { category: 'outer', filters: selectedFilters },
-                success: function(data) {
-                // 응답받은 데이터를 가지고 상품 목록 생성 및 렌더링
-                },
-                error: function() {
-                alert('상품 목록을 가져오는데 실패하였습니다.');
-                }
-            });
-        });
+//             $.ajax({
+//                 url: '/getProducts',
+//                 type: 'POST',
+//                 dataType: 'json',
+//                 data: { category: 'outer', filters: selectedFilters },
+//                 success: function(data) {
+//                 // 응답받은 데이터를 가지고 상품 목록 생성 및 렌더링
+//                 },
+//                 error: function() {
+//                 alert('상품 목록을 가져오는데 실패하였습니다.');
+//                 }
+//             });
+//         });
         // $.ajax({
         //     url: "<%=contextPath%>/pCatFilter.sh",
         //     data: filterData,
