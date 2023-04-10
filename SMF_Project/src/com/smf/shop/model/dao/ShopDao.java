@@ -178,4 +178,37 @@ public class ShopDao {
 		}
 		return result;
 	}
+	
+//	public ArrayList<Product> selectProduct(String category) {
+//	    ArrayList<Product> productList = new ArrayList<Product>();
+//
+//	    try {
+//	        Connection conn = getConnection();
+//	        PreparedStatement pstmt = null;
+//	        ResultSet rs = null;
+//
+//	        String sql = "SELECT * FROM products WHERE category = ?";
+//	        pstmt = conn.prepareStatement(sql);
+//	        pstmt.setString(1, category);
+//
+//	        rs = pstmt.executeQuery();
+//
+//	        while (rs.next()) {
+//	            Product product = new Product();
+//	            product.setId(rs.getLong("id"));
+//	            product.setName(rs.getString("name"));
+//	            product.setCategory(rs.getString("category"));
+//	            product.setPrice(rs.getInt("price"));
+//	            productList.add(product);
+//	        }
+//
+//	        rs.close();
+//	        pstmt.close();
+//	        conn.close();
+//	    } catch (Exception e) {
+//	        e.printStackTrace();
+//	    }
+//
+//	    return productList;
+//	}
 }
