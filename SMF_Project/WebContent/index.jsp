@@ -22,7 +22,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/views/common/css/index.css"
+	href="${pageContext.request.contextPath}/views/main/css/index.css"
 	type="text/css">
 </head>
 <style>
@@ -44,7 +44,7 @@
 </style>
 <body>
 
-	<jsp:include page="/views/common/menubar_sun.jsp" />
+	<jsp:include page="/views/main/menubar_sun.jsp" />
 
 	<!-- Swiper -->
 	<div class="swiper first">
@@ -298,9 +298,9 @@
 	</div>
 
 	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/views/common/js/index.js"></script>
+		src="${pageContext.request.contextPath}/views/main/js/index.js"></script>
 
-	<jsp:include page="/views/common/footer.jsp" />
+	<jsp:include page="/views/main/footer.jsp" />
 
 
 </body>
