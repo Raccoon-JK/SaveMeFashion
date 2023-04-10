@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.smf.main.model.dao.ProductDAO;
 import com.smf.main.model.vo.Product;
-import com.smf.main.model.JDBCTemplate;
+import com.smf.common.JDBCTemplate;
 
 public class ProductService {
 

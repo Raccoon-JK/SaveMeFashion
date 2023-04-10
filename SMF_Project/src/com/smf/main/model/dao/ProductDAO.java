@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.smf.main.model.JDBCTemplate;
+import com.smf.common.JDBCTemplate;
 import com.smf.main.model.vo.Product;
 
 public class ProductDAO {
