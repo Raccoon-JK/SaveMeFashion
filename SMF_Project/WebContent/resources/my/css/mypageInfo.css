@@ -17,7 +17,12 @@
     width: 120px;
     height: 120px;
     margin: 15px;
+    /* border: 1px solid black; */
+}
+#mypageInfo_img>label{
     border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 #mypageInfo_content{
@@ -48,4 +53,17 @@
     position: absolute;
     right: 0px;
     bottom: -7px;
+}
+#memberDel_div{
+    margin-top: 50px;
+    text-align: right;
+}
+#memberDel>a{
+    font-size: 11px;
+    cursor: pointer;
+    color: red;
+    text-decoration: underline;
+}
+#updateMyImg{
+    display: none;
 }

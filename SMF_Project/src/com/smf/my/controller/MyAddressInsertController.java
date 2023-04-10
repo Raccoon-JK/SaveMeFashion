@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smf.member.model.vo.Member;
 import com.smf.my.model.service.MyPageService;
 import com.smf.my.model.vo.Address;
 
@@ -48,8 +49,7 @@ public class MyAddressInsertController extends HttpServlet {
 //				System.out.println("name=" + name + ",value=" + value);
 //			}
 //		}
-		//로그인된 회원으로 변경해야함
-		String userId = "hshwan0406@smf.com";
+		String userId = ((Member)request.getSession().getAttribute("loginUser")).getUserId();
 		String receiver = request.getParameter("name");
 		String phone = request.getParameter("phone");
 		int postcode = Integer.parseInt(request.getParameter("postcode"));
