@@ -1,4 +1,7 @@
-/SaveMeFashion/.classpath
-/.metadata/
+/SaveMeFashion/SMF_Project/.classpath
+.classpath
+bin/
+.metadata/
 /SaveMeFashion/.settings/
 /Servers/
+.DS_Store
