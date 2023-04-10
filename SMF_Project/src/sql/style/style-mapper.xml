@@ -1,8 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
+	<entry key="selectList">
+		SELECT 	POST_NO,
+				USER_ID,
+				IMG_PATH
+		FROM SNS_POST SP
+		JOIN POST_IMG ON POST_NO = POST_NO
+			AND SP.POST_STATUS = 'Y'
+	</entry>
 
-
+	<entry key="insertPost">
+		INSERT INTO SNS_POST(POST_NO, CONTENT, USER_ID , UPROADTIME)
+		VALUES (SEQ_POST_NO.NEXTVAL ,  ? , ? , ?)
+	</entry>
+	
+	<entry key="insertImg">
+		INSERT INTO POST_IMG(IMG_NO, POST_NO, IMG_NAME, IMG_PATH)
+		VALUES (SEQ_POST_INO.NEXTVAL, ? , ?, ?)
+	</entry>
+	
+	<entry key="selectPost">
+		SELECT	POST_NO,
+				USER_ID,
+				IMG_NO,
+				IMG_NAME,
+				IMG_PATH
+				PRODUCT_TAG_ID
+		FROM SNS_POST SP
+		JOIN POST_IMG ON POST_NO = POST_NO
+			 POST_PRODUCTTAG ON POST_NO = POST_NO
+			AND SP.POST_STATUS = 'Y'				
+	</entry>
+	
+	<entry key="selectImg">
+		SELECT  IMG_NO ,
+			IMG_NAME,
+			FILE_PATH,
+		FROM POST_IMG
+		WHERE POST_NO = ?
+	</entry>
+	
+	<entry key="insertComment">
+		INSERT INTO SNS_COMMENT(C_NO, C_CONTENT, POST_NO, USER_ID, C_UPROADTIME)
+		VALUES (SEQ_POST_CNO.NEXTVAL, ?, ?, ?, ?)
+		AND C_STATUS = 'Y'			
+	</entry>
+	
+	<entry key="selectCommentList">
+		SELECT	C_NO, 
+				C_CONTENT, 
+				USER_ID,
+			 	TO_CHAR(C_UPROADTIME, 'YY/MM/DD HH:MI:SS' ) AS C_UPROADTIME
+		FROM SNS_COMMENT SC
+		JOIN MEMBER USING (USER_ID)
+		WHERE SC.STATUS = 'Y' AND POST_NO = ?
+		ORDER BY C_UPROADTIME DESC, C_NO DESC
+	</entry>
+	
+	<entry key="followUser">
+		SELECT 	USER_ID,
+				FOLLOWER
+		FROM	FOLLOW
+		JOIN MEMBER USING(USER_ID)
+	</entry>
+	
 
 
 </properties>

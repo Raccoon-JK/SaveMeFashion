@@ -27,7 +27,7 @@ public class hashtagController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("views/style/hashtag.jsp").forward(request,response);
+		request.getRequestDispatcher("views/style/hashtagfeed.jsp").forward(request,response);
 
 	}
 

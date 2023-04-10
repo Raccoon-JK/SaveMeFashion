@@ -138,23 +138,27 @@
           </a>
         </div>
         <div class="ct-sort">
+          <%-- <% if(loginUser != null) { %> --%>
           <a href="<%= contextPath %>/styleInsert.me" class="style-insert">#스타일 등록</a>
+         <%--  <% } %> --%>
           <ul>
             <li>
-              <a href="" style="font-weight: bold;">날짜별</a>
+              <a href="#" style="font-weight: bold;">날짜별</a>
             </li>
             <li>
-              <a href="">인기순</a>
+              <a href="#">인기순</a>
             </li>
             <li>
-              <a href="">최신순</a>
+              <a href="#">최신순</a>
             </li>
           </ul>
         </div>
         <div class="ct-feedcontainer">
+        <% int count = 1; %>
+        <%-- <% for Snspost sp : list { %> --%>
           <div class="feedwrap">
             <div class="feedimg1">
-              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
+<%--               <img src="<%= contextPath %> <%= pi.getImgPath %>"> --%>
               <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
               <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
               <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
@@ -168,54 +172,8 @@
               <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
             </div>
           </div>
-          <div class="feedwrap">
-            <div class="feedimg2">
-              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
-              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
-              <img src="./resources/style/캡처88.PNG">
-              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
-              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
-              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
-              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
-              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
-              <img src="./resources/style/캡쳐66.PNG">
-              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
-              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
-              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg3">
-              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
-              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
-              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
-              <img src="./resources/style/캡쳐66.PNG">
-              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
-              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
-              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
-              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
-              <img src="./resources/style/캡쳐66.PNG">
-              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
-              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
-              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
-            </div>
-          </div>
-          <div class="feedwrap">
-            <div class="feedimg4">
-              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
-              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
-              <img src="./resources/style/캡쳐66.PNG">
-              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
-              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
-              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
-              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
-              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
-              <img src="./resources/style/캡쳐66.PNG">
-              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
-              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
-              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
-            </div>
-          </div>
+          <%-- <% } %> --%>
+          
         </div>
       </div>
 
