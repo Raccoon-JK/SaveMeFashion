@@ -6,11 +6,8 @@ body {
 
 div {
 	box-sizing: border-box;
-	/* border: 1px solid red; */
 }
-/* section{
-      border: 1px solid red;
-     } */
+
 #main {
 	display: flex;
 	position: relative;
@@ -36,7 +33,6 @@ div {
 .leftbox {
 	width: 44%;
 	height: 50%;
-	/* border: 3px solid blue; */
 	position: absolute;
 	background-image: url(/SMF_Project/resources/dressroom/image/거울틀.png);
 	background-size: contain;
@@ -76,13 +72,16 @@ img {
 	position: absolute;
 }
 
-#main2 {
+#selectbox {
+	position: relative;
 	height: 700px;
 	width: 100%;
 	max-width: 1900px;
 	min-width: 1600px;
-	background-image: url(/SMF_Project/resources/dressroom/image/옷장틀1.png);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+}
+
+#selectboxList {
+	position: absolute;
+	height: 100%;
+	width: 61%;
 }

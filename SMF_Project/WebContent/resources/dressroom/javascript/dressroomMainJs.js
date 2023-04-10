@@ -32,8 +32,8 @@ function makeDragEvent() {
 			document.addEventListener('mousemove', drag);
 
 			function dragStart(e) {
-				initialX = e.clientX - (image.getBoundingClientRect().left - image.getBoundingClientRect().left / 2);
-				initialY = e.clientY - (image.getBoundingClientRect().top - image.getBoundingClientRect().top / 2);
+				initialX = e.clientX - xOffset;
+				initialY = e.clientY - yOffset;
 				// 마우스포인터가 위치한 x y
 
 				// 드래그 앤 드롭한 이미지가 leftbox 안에 있을 때만 아이콘을 표시
@@ -69,8 +69,8 @@ function makeDragEvent() {
 					currentX = Math.min(Math.max(currentX, minX), maxX);
 					currentY = Math.min(Math.max(currentY, minY), maxY);
 
-					xOffset = currentX;
-					yOffset = currentY;
+					xOffset = e.clientX - initialX;
+					yOffset = e.clientY - initialY;
 
 					setTranslate(currentX, currentY, image);
 				}
@@ -164,6 +164,7 @@ function dropped(e) {
 			leftbox.appendChild(newMergedImage);
 
 			newMergedImage.style.display = "inline";
+
 		} else {
 			// 일반적인 이미지 추가
 			leftbox.appendChild(newImage);
@@ -296,7 +297,7 @@ function dropped(e) {
 
 		deleteIcon.addEventListener("click", function() {
 			image.remove();
-			updateTransform();
+			// updateTransform();
 		});
 
 		IconRemoveEvent(deleteIcon, image);

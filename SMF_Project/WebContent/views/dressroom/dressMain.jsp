@@ -136,9 +136,12 @@
 
 	</section>
 
-	<section id="main2">
-		<div>dd</div>
-	</section>
+	<section id="selectbox">
+    <div><h3>코디에 사용된 제품</h3></div>
+    <div id="selectboxList">
+    </div>
+    
+  </section>
 
 	<script src="/SMF_Project/resources/dressroom/javascript/dressroomMainJs.js"></script>
 </body>
