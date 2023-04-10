@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import static com.smf.common.JDBCTemplate.*;
 
+import com.smf.member.model.vo.Member;
 import com.smf.my.model.vo.Account;
 import com.smf.my.model.vo.Address;
 import com.smf.my.model.vo.Card;
@@ -36,7 +37,94 @@ public class MyPageDao {
 		}
 	}
 	
-	public Address addressDefault(Connection conn) {
+	// 내 프로필 정보
+	public int myInfoUpdate(Connection conn, String column, String value, String userId) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+//		String sql = prop.getProperty("myInfoUpdate");
+		String sql = "UPDATE MEMBER SET "+column+" = ? WHERE USER_ID = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, value);
+			pstmt.setString(2, userId);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public Member myInfoUpdateLoginUser(Connection conn, String userId) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		Member m = null;
+		
+		String sql = prop.getProperty("myInfoUpdateLoginUser");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, userId);
+			
+			rset = pstmt.executeQuery();
+			if(rset.next()) {
+				m = new Member(rset.getString("USER_ID"),
+						   rset.getString("USER_NAME"),
+						   rset.getString("USER_PWD"),
+						   rset.getString("PHONE"),
+						   rset.getDate("BIRTH"),
+						   rset.getInt("USER_TYPE"),
+						   rset.getString("AGREE_EMAIL"),
+						   rset.getString("USER_IMAGE"),
+						   rset.getString("INTRODUCE"),
+						   rset.getString("SNS_ID"),
+						   rset.getInt("TOTAL_POINT")
+						   );
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return m;
+		
+	}
+	
+	public int myinfoDelete(Connection conn, String userId) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("myinfoDelete");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, userId);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	//주소록
+	public Address addressDefault(Connection conn, String userId) {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -47,7 +135,7 @@ public class MyPageDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, "hshwan0406@smf.com");
+			pstmt.setString(1, userId);
 			
 			rset = pstmt.executeQuery();
 			
@@ -71,7 +159,7 @@ public class MyPageDao {
 		return addr;
 	}
 	
-	public ArrayList<Address> addressList(Connection conn){
+	public ArrayList<Address> addressList(Connection conn, String userId){
 		
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -82,7 +170,7 @@ public class MyPageDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, "hshwan0406@smf.com");
+			pstmt.setString(1, userId);
 			
 			rset = pstmt.executeQuery();
 			
@@ -144,7 +232,7 @@ public class MyPageDao {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, addrNo);
-			pstmt.setString(2, "hshwan0406@smf.com"); //userId
+			pstmt.setString(2, userId); //userId
 			
 			result = pstmt.executeUpdate();
 			
@@ -167,7 +255,7 @@ public class MyPageDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, "hshwan0406@smf.com"); //userId
+			pstmt.setString(1, userId); //userId
 			
 			result = pstmt.executeUpdate();
 			
@@ -219,7 +307,7 @@ public class MyPageDao {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, addrNo);
-			pstmt.setString(2, "hshwan0406@smf.com"); //userId
+			pstmt.setString(2, userId); //userId
 			
 			result = pstmt.executeUpdate();
 			
@@ -286,7 +374,7 @@ public class MyPageDao {
 				card = new Card(rset.getString("USER_ID"),
 								rset.getInt("CARD_NO"),
 								rset.getInt("CARD_PWD"),
-								rset.getDate("CARD_Validity"),
+								rset.getDate("CARD_VALIDIY"),
 								rset.getInt("CVC")
 								);
 			}
@@ -343,6 +431,57 @@ public class MyPageDao {
 			
 			result = pstmt.executeUpdate();
 			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public int cardInsert(Connection conn, Card card) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("cardInsert");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, card.getUserId());
+			pstmt.setInt(2, card.getCardNo());
+			pstmt.setInt(3, card.getCardPwd());
+			pstmt.setDate(4, card.getCardValidity());
+			pstmt.setInt(5, card.getCvc());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public int cardUpdate(Connection conn, Card card) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("cardUpdate");
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, card.getCardNo());
+			pstmt.setInt(2, card.getCardPwd());
+			pstmt.setDate(3, card.getCardValidity());
+			pstmt.setInt(4, card.getCvc());
+			pstmt.setString(5, card.getUserId());
+			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
