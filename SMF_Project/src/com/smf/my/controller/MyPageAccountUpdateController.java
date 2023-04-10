@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smf.member.model.vo.Member;
 import com.smf.my.model.service.MyPageService;
 import com.smf.my.model.vo.Account;
 
@@ -39,8 +40,8 @@ public class MyPageAccountUpdateController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-//		String userId = ((Member)request.getSession().getAttribute("loginUser")).getUserId;
-		String userId = "hshwan@smf.com";
+		String userId = ((Member)request.getSession().getAttribute("loginUser")).getUserId();
+		
 		String bankName = request.getParameter("bankName");
 		int accountNo = Integer.parseInt(request.getParameter("accountNo"));
 		String accountHolder = request.getParameter("accountHolder");

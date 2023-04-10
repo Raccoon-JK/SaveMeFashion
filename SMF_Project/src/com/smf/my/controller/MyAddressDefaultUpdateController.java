@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smf.member.model.vo.Member;
 import com.smf.my.model.service.MyPageService;
 
 /**
@@ -30,7 +31,7 @@ public class MyAddressDefaultUpdateController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int addrNo = Integer.parseInt(request.getParameter("addrno"));
-		String userId = request.getParameter("loginUser");
+		String userId = ((Member)request.getSession().getAttribute("loginUser")).getUserId();
 		
 		int result = new MyPageService().addressDefaultUpdate(addrNo, userId);
 		
@@ -38,6 +39,7 @@ public class MyAddressDefaultUpdateController extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/address.me");
 		}else {
 			//오류
+			System.out.println("오류");
 		}
 	}
 
