@@ -65,12 +65,12 @@ public class MemberDao {
 							   rset.getString("USER_PWD"),
 							   rset.getString("PHONE"),
 							   rset.getDate("BIRTH"),
+							   rset.getInt("USER_TYPE"),
 							   rset.getString("AGREE_EMAIL"),
-							   rset.getString("STATUS"));
-				
-				
-				
-				
+							   rset.getString("USER_IMAGE"),
+							   rset.getString("INTRODUCE"),
+							   rset.getString("SNS_ID"),
+							   rset.getInt("TOTAL_POINT"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
