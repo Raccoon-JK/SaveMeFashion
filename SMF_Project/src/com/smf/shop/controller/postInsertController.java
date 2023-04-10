@@ -133,13 +133,14 @@ public class postInsertController extends HttpServlet {
 				while (f.hasMoreElements()) {
 					String fileName = (String) f.nextElement();
 					String imgName = multi.getFilesystemName(fileName);
+					
 					Product_Img pi = new Product_Img();
 
 					pi.setProductName(pName);
 					pi.setImgName(imgName);
 					pi.setImgPath("/resources/thumb_upfiles/");
 
-					imgresult += new ShopService().insertProductImg(imgName);
+					imgresult += new ShopService().insertProductImg(pi);
 				}
 				if(imgresult > 0) {
 					response.sendRedirect(request.getContextPath());

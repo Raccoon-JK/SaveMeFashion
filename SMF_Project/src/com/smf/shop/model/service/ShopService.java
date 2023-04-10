@@ -7,6 +7,7 @@ import com.smf.shop.model.dao.ShopDao;
 import com.smf.shop.model.vo.Category_Sub;
 import com.smf.shop.model.vo.Product;
 import com.smf.shop.model.vo.Product_Detail;
+import com.smf.shop.model.vo.Product_Img;
 import com.smf.shop.model.vo.Stock;
 
 public class ShopService {
@@ -41,4 +42,18 @@ public class ShopService {
 		
 	}
 	
+	public int insertProductImg(Product_Img pi) {
+		
+		Connection conn = getConnection();
+		
+		int result = new ShopDao().insertProductImg(conn, pi);
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		close(conn);
+		return result;
+	}
 }
