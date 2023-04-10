@@ -42,8 +42,8 @@ var swiper = new Swiper(".second", {
  * 상품 페이지
  */
 
-$(function() {
-	$.get("/product.pr")
+$(document).ready(function() {
+	$.get("https://raw.githubusercontent.com/SardineSP/SardineSP.github.io/main/test_more_info.json")
 		.done((data) => {
 			data = JSON.parse(data);
 			data.forEach((a, i) => {
@@ -66,16 +66,14 @@ $(function() {
  * 더보기 기능
  */
 
-var count = 1;
-
 $('#more').click(function() {
-   $.get("/product.pr")
-      .done((data) => {
-         console.log(data)
-         data = JSON.parse(data);
-         data.forEach((a, i) => {
-            var template =
-               `<a href=""> <div class="col-sm-4">
+	$.get("/SMF_Project/Product.pr")
+		.done((data) => {
+			console.log(data)
+			data = JSON.parse(data);
+			data.forEach((a, i) => {
+				var template =
+					`<a href=""> <div class="col-sm-4">
                    <img src="${data[i].image}" id="box2">
                    <div class="info_box">
                      <h6 class="brand">${data[i].brand}</h6>
@@ -83,11 +81,7 @@ $('#more').click(function() {
                      <p>가격 : ${data[i].price}</p>
                    </div>
                  </div> </a>`;
-            $(".row").append(template);
-         })
-      })
-   count++;
-   if (count == 3) {
-      console.log("여기까지")
-   }
+				$(".row").append(template);
+			})
+		})
 });

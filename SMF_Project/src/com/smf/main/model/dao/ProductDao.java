@@ -16,13 +16,13 @@ import java.util.ArrayList;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
-public class ProductDAO {
-	private static Properties prop = new Properties();
+public class ProductDao {
+	private Properties prop = new Properties();
 
-	public ProductDAO() {
+	public ProductDao() {
 		try {
 			prop.loadFromXML(new FileInputStream(
-					ProductDAO.class.getResource("/sql/main/product/product-mapper.xml").getPath()));
+					ProductDao.class.getResource("/sql/main/product/product-mapper.xml").getPath()));
 		} catch (InvalidPropertiesFormatException e) {
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
@@ -33,7 +33,7 @@ public class ProductDAO {
 	}
 
 	public ArrayList<Product> getProduct(Connection conn) {
-		ArrayList<Product> productList = new ArrayList();
+		ArrayList<Product> productList = new ArrayList<>();
 
 		PreparedStatement pstmt = null;
 
