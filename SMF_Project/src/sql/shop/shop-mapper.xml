@@ -57,4 +57,16 @@
 			?
 		)
 	</entry>
+	<entry key="insertProductImg">
+		INSERT INTO(
+			PRODUCT_NAME,
+			IMG_NAME,
+			IMG_PATH
+		)
+		VALUES(
+			?,
+			?,
+			?
+		)
+	</entry>
 </properties>
