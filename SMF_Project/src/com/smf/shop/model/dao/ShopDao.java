@@ -15,6 +15,7 @@ import static com.smf.common.JDBCTemplate.*;
 import com.smf.shop.model.vo.Category_Sub;
 import com.smf.shop.model.vo.Product;
 import com.smf.shop.model.vo.Product_Detail;
+import com.smf.shop.model.vo.Product_Img;
 import com.smf.shop.model.vo.Stock;
 
 public class ShopDao {
@@ -141,6 +142,32 @@ public class ShopDao {
 			
 			pstmt.setString(1, pd.getProductName());
 			pstmt.setString(2, pd.getProductContent());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	
+	public int insertProductImg(Connection conn, Product_Img pi) {
+		
+		int result = 0;
+		
+		PreparedStatement pstmt = null;
+		
+		String sql = prop.getProperty("insertProductImg");
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, pi.getProductName());
+			pstmt.setString(2, pi.getImgName());
+			pstmt.setString(3, pi.getImgPath());
 			
 			result = pstmt.executeUpdate();
 			

@@ -13,11 +13,14 @@ import java.util.Properties;
 
 import static com.smf.common.JDBCTemplate.*;
 
+import com.smf.main.model.vo.Product;
 import com.smf.member.model.vo.Member;
 import com.smf.my.model.vo.Account;
 import com.smf.my.model.vo.Address;
 import com.smf.my.model.vo.Card;
 import com.smf.my.model.vo.ReplacePhoneNumber;
+import com.smf.my.model.vo.WishList;
+import com.smf.shop.model.vo.ProductAll;
 
 public class MyPageDao {
 
@@ -489,5 +492,38 @@ public class MyPageDao {
 		}
 		
 		return result;
+	}
+	
+	//관심 상품
+	public ArrayList<ProductAll> wishlistList(Connection conn, String userId){
+		
+		ArrayList<ProductAll> list = new ArrayList<>();
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String sql = prop.getProperty("wishlistList");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, userId);
+			
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()) {
+				ProductAll pAll = new ProductAll(rset.getString("PRODUCT_NAME"), 
+												 rset.getString("BRAND_NAME"), 
+												 rset.getString("IMG_NAME"), 
+												 rset.getString("IMG_PATH")
+												 );
+				list.add(pAll);
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
 	}
 }
