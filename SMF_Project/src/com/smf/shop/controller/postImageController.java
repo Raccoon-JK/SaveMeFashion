@@ -47,10 +47,10 @@ public class postImageController extends HttpServlet {
 		//전에 배웠던 것에서는 파일업로드와 다른 파라미터를 한 파일에서 작업했지만 여기선 파일업로드이 현재 파일에서 다른 파라미터 작업(DB Insert)은 다른 파일에서 
 		if(ServletFileUpload.isMultipartContent(request)) {
 			int maxSize = 1024 * 1024 * 10;
-			String savePath = request.getSession().getServletContext().getRealPath("/resources/upfiles_img/");
-			
+			String savePath = request.getSession().getServletContext().getRealPath("/resources/shop/upfiles_img/");
+			System.out.println(savePath);
 			//파일 저장
-			MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8", new MyFileRenamePolicy());
+			MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8"); //new MyFileRenamePolicy()
 			
 			Enumeration e = multi.getParameterNames();
 			while (e.hasMoreElements()) {
@@ -62,8 +62,8 @@ public class postImageController extends HttpServlet {
 			}
 			
 			// 파일 이름 동적으로 변경해야 됨
-			String img = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/resources/upfiles_img/"+multi.getOriginalFileName("upload");
-			
+			String img = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/resources/shop/upfiles_img/"+multi.getOriginalFileName("upload"); //multi.getOriginalFileName("upload")
+			System.out.println(img);
 			JSONObject outData = new JSONObject();
 			outData.put("url", img);
 			outData.put("uploaded", true);

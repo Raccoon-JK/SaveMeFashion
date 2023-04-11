@@ -13,6 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="/views/common/menubar_sun.jsp" />
 	<div id="mypage_wrapper">
 		<jsp:include page="mypageMenu.jsp"></jsp:include>
 		<div id="mypage_content_wrapper">
@@ -128,6 +129,7 @@
             </div>
         </div>
 	</div>
+	<jsp:include page="/views/common/footer.jsp" />
 	<script>
 		document.querySelector("#shopping_more>a").addEventListener('click',function(){
 			location.href='<%=contextPath%>/mypagbuyhistory.me';

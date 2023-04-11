@@ -62,7 +62,7 @@ public class postInsertController extends HttpServlet {
 			int maxSize = 10 * 1024 * 1024;
 
 			// 1_2. 저장할 폴더의 물리적 경로 제시
-			String savePath = request.getSession().getServletContext().getRealPath("/resources/thumb_upfiles/");
+			String savePath = request.getSession().getServletContext().getRealPath("/resources/shop/thumb_upfiles/");
 
 			// 2. 전달된 파일명 수정작업 후 서버에 업로드
 			MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8",
