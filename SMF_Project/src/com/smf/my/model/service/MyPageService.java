@@ -10,6 +10,8 @@ import com.smf.my.model.dao.MyPageDao;
 import com.smf.my.model.vo.Account;
 import com.smf.my.model.vo.Address;
 import com.smf.my.model.vo.Card;
+import com.smf.my.model.vo.WishList;
+import com.smf.shop.model.vo.ProductAll;
 
 public class MyPageService {
 	
@@ -227,6 +229,19 @@ public class MyPageService {
 		close(conn);
 		
 		return result;
+	}
+	
+	// 관심 상품
+	public ArrayList<ProductAll> wishlistList(String userId){
+		
+		Connection conn = getConnection();
+		
+		ArrayList<ProductAll> list = new MyPageDao().wishlistList(conn, userId);
+		
+		close(conn);
+		
+		return list;
+		
 	}
 	
 }
