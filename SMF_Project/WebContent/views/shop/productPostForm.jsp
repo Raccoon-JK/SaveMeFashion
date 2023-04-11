@@ -139,7 +139,7 @@
                     </tr>
                     <tr>
 						<th>첨부파일</th>
-						<td><input type="file" name="upfile" multiple id="upfile"></td>
+						<td><input type="file" name="upfile" multiple></td>
 					</tr>
                 </table>
                 <div style="width: 100px; margin: auto;">
@@ -323,30 +323,28 @@
         });
         
         $('#submit').click(function(){
-            let form = $("#productPostForm")[0];
-            let formData = new FormData(form);
-            
-//             console.log($("#upfile")[0].files);
-            
-            $.each($("#upfile")[0].files, function(index, file){
-                console.log(index, file);
-                formData.append("upfile"+index, file);
-            });
-            formData.delete("upfile");
-    
-            
-            $.ajax({
-                cache: false,
-                url: "<%=contextPath%>/insert.sh",
+    		let form = $("#productPostForm")[0];
+    		let formData = new FormData(form);
+    		
+    		$.each($("#upfile")[0].files, function(index, file){
+    			console.log(index, file);
+    			formData.append("upfile"+index, file);
+    		});
+    		formData.delete("upfile");
+
+    		
+    		$.ajax({
+    			cache: false,
+    			url: "<%=contextPath%>/insert.sh",
                 type : 'POST', 
                 data : formData,
                 processData: false,
                 contentType: false,
                 success: function(data){
-                    alert("성공");
+                	alert("성공");
                 }
-            });
-        });
+    		});
+    	});
     </script>
 
     </html>
