@@ -65,4 +65,12 @@
 	</entry>
 	
 	
+	<!-- 관심 상품 -->
+	<entry key="wishlistList">
+		SELECT PRODUCT_NAME, BRAND_NAME, IMG_NAME, IMG_PATH
+		FROM WISHLIST W LEFT JOIN PRODUCT P USING(PRODUCT_NAME)
+		LEFT JOIN PRODUCT_IMG PI USING(PRODUCT_NAME)
+		WHERE USER_ID = ? AND PI.IMG_NAME LIKE '%_1.png%'
+	</entry>
+	
 </properties>
