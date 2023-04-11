@@ -14,6 +14,7 @@ import java.util.Properties;
 import static com.smf.common.JDBCTemplate.*;
 import com.smf.shop.model.vo.Category_Sub;
 import com.smf.shop.model.vo.Product;
+import com.smf.shop.model.vo.ProductAll;
 import com.smf.shop.model.vo.Product_Detail;
 import com.smf.shop.model.vo.Product_Img;
 import com.smf.shop.model.vo.Stock;
@@ -179,36 +180,42 @@ public class ShopDao {
 		return result;
 	}
 	
-//	public ArrayList<Product> selectProduct(String category) {
-//	    ArrayList<Product> productList = new ArrayList<Product>();
-//
-//	    try {
-//	        Connection conn = getConnection();
-//	        PreparedStatement pstmt = null;
-//	        ResultSet rs = null;
-//
-//	        String sql = "SELECT * FROM products WHERE category = ?";
-//	        pstmt = conn.prepareStatement(sql);
-//	        pstmt.setString(1, category);
-//
-//	        rs = pstmt.executeQuery();
-//
-//	        while (rs.next()) {
-//	            Product product = new Product();
-//	            product.setId(rs.getLong("id"));
-//	            product.setName(rs.getString("name"));
-//	            product.setCategory(rs.getString("category"));
-//	            product.setPrice(rs.getInt("price"));
-//	            productList.add(product);
-//	        }
-//
-//	        rs.close();
-//	        pstmt.close();
-//	        conn.close();
-//	    } catch (Exception e) {
-//	        e.printStackTrace();
-//	    }
-//
-//	    return productList;
-//	}
+	public ArrayList<ProductAll> selectProduct(Connection conn){
+		 
+		ArrayList<ProductAll> list = new ArrayList<ProductAll>();
+		
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String sql = prop.getProperty("selectProduct");
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()) {
+				ProductAll pa = new ProductAll(
+						rset.getString("PRODUCT_NAME"),
+						rset.getString("BRAND_NAME"),
+						rset.getInt("COMPANY_PRICE"),
+						rset.getString("IMG_NAME"),
+						rset.getString("IMG_PATH"),
+						rset.getInt("WISHLIST_COUNT"),
+						rset.getInt("PPT_COUNT")
+						);
+				list.add(pa);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		return list;
+	}
+
 }

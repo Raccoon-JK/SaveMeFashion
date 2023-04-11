@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import com.smf.shop.model.dao.ShopDao;
 import com.smf.shop.model.vo.Category_Sub;
 import com.smf.shop.model.vo.Product;
+import com.smf.shop.model.vo.ProductAll;
 import com.smf.shop.model.vo.Product_Detail;
 import com.smf.shop.model.vo.Product_Img;
 import com.smf.shop.model.vo.Stock;
@@ -55,5 +56,16 @@ public class ShopService {
 		}
 		close(conn);
 		return result;
+	}
+	
+	public ArrayList<ProductAll> selectProduct(){
+		
+		Connection conn = getConnection();
+		
+		ArrayList<ProductAll> list = new ShopDao().selectProduct(conn);
+		
+		close(conn);
+		
+		return list;
 	}
 }

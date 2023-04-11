@@ -10,21 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smf.shop.model.service.ShopService;
-import com.smf.shop.model.vo.Product;
 import com.smf.shop.model.vo.ProductAll;
-import com.smf.shop.model.vo.Stock;
 
 /**
- * Servlet implementation class mainCatFilter
+ * Servlet implementation class ShopMainListController
  */
-@WebServlet("/pCatFilter.sh")
-public class mainCatFilter extends HttpServlet {
+@WebServlet("/main.sh")
+public class ShopMainListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public mainCatFilter() {
+    public ShopMainListController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,12 +32,11 @@ public class mainCatFilter extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<ProductAll> list = new ShopService().selectCatProduct();
-	
-		response.setContentType("application/json; charset=UTF-8");
+		ArrayList<ProductAll> list = new ShopService().selectProduct();
 		
-		response.getWriter().print(list);
+		request.setAttribute("list", list);
 		
+		request.getRequestDispatcher("views/shop/shopMain.jsp").forward(request, response);
 	}
 
 	/**
