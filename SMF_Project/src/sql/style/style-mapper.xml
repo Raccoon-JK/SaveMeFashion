@@ -4,9 +4,9 @@
 	<entry key="selectList">
 		SELECT 	POST_NO,
 				USER_ID,
-				IMG_PATH
-		FROM SNS_POST SP
-		JOIN POST_IMG ON POST_NO = POST_NO
+				CONTENT,
+				UPROADTIME
+		FROM SNS_POST
 			AND SP.POST_STATUS = 'Y'
 	</entry>
 
@@ -16,29 +16,96 @@
 	</entry>
 	
 	<entry key="insertImg">
-		INSERT INTO POST_IMG(IMG_NO, POST_NO, IMG_NAME, IMG_PATH)
-		VALUES (SEQ_POST_INO.NEXTVAL, ? , ?, ?)
+		INSERT INTO POST_IMG(IMG_NO, POST_NO, IMG_NAME, ORIGIN_NAME , IMG_PATH)
+		VALUES (SEQ_POST_INO.NEXTVAL, ? , ?, ?, ?)
+	</entry>
+	
+	<entry key="insertImg2">
+		INSERT INTO POST_IMG(IMG_NO, POST_NO, IMG_NAME, ORIGIN_NAME , IMG_PATH)
+		VALUES (SEQ_POST_INO.NEXTVAL, ? , ?, ?, ?)
+	</entry>
+	
+	<entry key="insertNewImg">
+		INSERT INTO ATTACHMENT(IMG_NO, POST_NO, ORIGIN_NAME, IMG_NAME,IMG_PATH)
+		VALUES(SEQ_POST_INO.NEXTVAL , ? , ? , ?, ? )
 	</entry>
 	
 	<entry key="selectPost">
 		SELECT	POST_NO,
 				USER_ID,
-				IMG_NO,
-				IMG_NAME,
-				IMG_PATH
-				PRODUCT_TAG_ID
+				CONTENT,
+				UPROADTIME
 		FROM SNS_POST SP
-		JOIN POST_IMG ON POST_NO = POST_NO
-			 POST_PRODUCTTAG ON POST_NO = POST_NO
-			AND SP.POST_STATUS = 'Y'				
+			AND SP.POST_STATUS = 'Y'
+		ORDER BY POST_NO DESC	
+						
 	</entry>
 	
 	<entry key="selectImg">
 		SELECT  IMG_NO ,
-			IMG_NAME,
-			FILE_PATH,
+				IMG_NAME,
+				ORIGIN_NAME,
+				FILE_PATH,
+				NVL(IMG_LEVEL , 0) AS IMG_LEVEL
 		FROM POST_IMG
 		WHERE POST_NO = ?
+		ORDER BY IMG_LEVEL
+	</entry>
+	
+	<entry key="updatePost">
+		UPDATE SNS_POST
+		SET 
+			CONTENT = ?,
+			UPROADTIME = ?,
+		WHERE POST_NO = ?
+		
+	</entry>
+	
+	<entry key="updateImg">
+		UPDATE POST_IMG
+		SET ORIGIN_NAME = ? ,
+		    IMG_NAME = ? ,
+		    IMG_PATH   = ? ,
+		WHERE IMG_NO = ?
+	
+	</entry>
+	
+	<entry key="deletePost">
+		UPDATE SNS_POST
+		SET STATUS = 'N'
+		WHERE POST_NO = ?
+		AND USER_ID = ?
+	</entry>
+	
+	<entry key="deleteImg">
+		DELETE FROM POST_IMG
+		WHERE POST_NO = ?
+	</entry>
+	
+	<entry key="insertImgPost">
+		INSERT INTO SNS_POST(POST_NO , CONTENT, USER_ID)
+		VALUES (SEQ_POST_NO.NEXTVAL,  ? , ? )
+	</entry>
+	
+	<entry key="insertImgList">
+		INSERT INTO ATTACHMENT(FILE_NO, REF_BNO, ORIGIN_NAME,CHANGE_NAME, FILE_PATH, FILE_LEVEL)
+		VALUES SEQ_POST_INO.NEXTVAL, SEQ_BNO.CURRVAL , ?, ? , ?, ?)
+	</entry>
+	
+	<entry key="selectImgList">
+		SELECT 
+			POST_NO,
+			CONTENT,
+			USER_ID,
+			IMG_PATH,
+			IMG_NAME,
+			IMG_LEVEL,
+			IMG_PATH || CHANGE_NAME AS TITLEIMG
+		FROM SNS_POST SP
+		JOIN POST_IMG ON POST_NO = POST_NO
+		WHERE  SP.STATUS = 'Y'
+		  AND FILE_LEVEL = 1
+		ORDER BY UPROADTIME DESC
 	</entry>
 	
 	<entry key="insertComment">
@@ -46,6 +113,7 @@
 		VALUES (SEQ_POST_CNO.NEXTVAL, ?, ?, ?, ?)
 		AND C_STATUS = 'Y'			
 	</entry>
+	
 	
 	<entry key="selectCommentList">
 		SELECT	C_NO, 

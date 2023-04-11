@@ -24,6 +24,16 @@ public class StyleComment {
 		this.cUproadTime = cUproadTime;
 		this.cStatus = cStatus;
 	}
+	
+	
+
+	public StyleComment(int cNo, String userId, String cContent, Date cUproadTime) {
+		super();
+		this.cNo = cNo;
+		this.userId = userId;
+		this.cContent = cContent;
+		this.cUproadTime = cUproadTime;
+	}
 
 	public int getcNo() {
 		return cNo;

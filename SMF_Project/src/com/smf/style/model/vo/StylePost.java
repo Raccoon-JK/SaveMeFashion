@@ -10,12 +10,15 @@ public class StylePost {
 	private Date uproadTime;
 	private String postStatus;
 	
+	private String titleImg;
+	
+	private PostImg pi;
 	
 	public StylePost(){
 		super();
 	}
-	
-	
+
+
 	public StylePost(int postNo, String userId, String content, Date uproadTime, String postStatus) {
 		super();
 		this.postNo = postNo;
@@ -23,6 +26,37 @@ public class StylePost {
 		this.content = content;
 		this.uproadTime = uproadTime;
 		this.postStatus = postStatus;
+	}
+	
+
+	public StylePost(int postNo, String userId, String content, Date uproadTime) {
+		super();
+		this.postNo = postNo;
+		this.userId = userId;
+		this.content = content;
+		this.uproadTime = uproadTime;
+	}
+	
+	
+
+
+	public String getTitleImg() {
+		return titleImg;
+	}
+
+
+	public void setTitleImg(String titleImg) {
+		this.titleImg = titleImg;
+	}
+
+
+	public PostImg getPi() {
+		return pi;
+	}
+
+
+	public void setPi(PostImg pi) {
+		this.pi = pi;
 	}
 
 
@@ -81,6 +115,9 @@ public class StylePost {
 		return "StylePost [postNo=" + postNo + ", userId=" + userId + ", content=" + content + ", uproadTime="
 				+ uproadTime + ", postStatus=" + postStatus + "]";
 	}
+	
+	
+	
 	
 	
 	

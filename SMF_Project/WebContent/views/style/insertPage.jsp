@@ -1,3 +1,4 @@
+<%-- <%@ page import="com.smf.style.model.dao.StyleDao, java.io.File, com.oreilly.servlet.multipart.DefaultFileRenamePolicy, com.oreilly.servlet.MultipartRequest" %> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -9,8 +10,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/style/게시물등록.css" />
-</head>
-<body>
+<style>
+      .img-area img{
+          width: 150px;
+          height: 200px;
+      }
+
+      .img-area {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
     <header>
       <div class="headerwrap">
           <div class="headertop">
@@ -38,7 +50,7 @@
         <div class="noticewrap1">
           <div class="insertnotice">
             <div class="insert-btnwrap">
-              <a href="<%= contextPath %>">
+              <a href="http://127.0.0.1:3000/%EC%8A%A4%ED%83%80%EC%9D%BC%EB%A9%94%EC%9D%B8%ED%8E%98%EC%9D%B4%EC%A7%80.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="close-btn" viewBox="0 0 16 16">
                   <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                 </svg>
@@ -54,19 +66,18 @@
             <table>
               <tr>
                 <div class="uproadfilewrap">
-                    <button id="open" type="button" onclick="openModal('modal-wrapper1')">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
-                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                      </svg>
-                    </button>
+                    <label><input type="file" onchange="setDetailImage(event);" multiple="multiple">이미지 등록</label>
+                      
                 </div>
               </tr>
+              <div class="img-area"></div>
               
 
               <div class="notice-content">
                   <textarea style="width: 500px; height: 300px;" placeholder="#아이템과 #스타일을 공유해보세요!"></textarea>
               </div>
+              
+              
               <div class="fc-tag">
                   <span class="tag-link">
                       <button type="button" class="btn btn-dark">
@@ -95,10 +106,10 @@
         <div class="noticewrap2">
             <div class="insertnotice2">
                 <div class="uproad-img">
-                    <img src="resources/style/a_7350c375e3a1458f96e16223e2310cc3.webp">
+                    <img src="resources/a_7350c375e3a1458f96e16223e2310cc3.webp">
                 </div>
                 <div class="uproad-img">
-                  <img src="resources/style/a_b2f594eb104a44c9b3b6f2286771f221.webp">
+                  <img src="resources/a_b2f594eb104a44c9b3b6f2286771f221.webp">
                 </div>
             </div>
             <div class="item-tag">
@@ -109,22 +120,6 @@
               </button>
               <span style="font-weight: bold;">상품태그</span>
             </div>
-        </div>
-        
-
-        <div id="modal-wrapper1" style="display: none">
-          <div class="modal">
-            <div id="close-wrapper1">
-              <button type="submit" class="insert-btn2">등록</button>
-              <button id="close" onclick="closeModal('modal-wrapper1')">닫기</button>
-            </div>
-            <div class="modal-title">스타일 이미지 올리기</div>
-            <div class="file-box">
-              <label for="ex_file">이미지 업로드</label>
-              <input type="file" id="ex_file">
-            </div>
-            <div class="img-area"></div>
-          </div>
         </div>
         
 
@@ -162,6 +157,24 @@
           window.onclick = function(event) {
             if (event.target.classList.contains("modal")) {
               closeModal(event.target.id);
+            }
+          }
+        </script>
+
+        <script>
+          function setDetailImage(event){
+            for(var image of event.target.files){
+              var reader = new FileReader();
+              
+              reader.onload = function(event){
+                var img = document.createElement("img");
+                img.setAttribute("src", event.target.result);
+                img.setAttribute("class", "col-lg-6");
+                document.querySelector("div.img-area").appendChild(img);
+              };
+              
+              console.log(image);
+              reader.readAsDataURL(image);
             }
           }
         </script>

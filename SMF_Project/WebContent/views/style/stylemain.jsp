@@ -1,8 +1,17 @@
+<%@ page import="com.smf.common.model.vo.PageInfo, java.util.ArrayList, com.smf.style.model.vo.StylePost" %>
+<%@ page import = "java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%
 	String contextPath = request.getContextPath();
+	PageInfo pi = (PageInfo) request.getAttribute("pi");
+	ArrayList<StylePost> list = (ArrayList<StylePost>) request.getAttribute("list");
+	
+	int currentPage = pi.getCurrentPage();
+	int startPage = pi.getStartPage();
+	int endPage = pi.getEndPage();
+	int maxPage = pi.getMaxPage();
 %>
 <!DOCTYPE html>
 <html>
@@ -34,7 +43,7 @@
               <a href="">관심상품</a>
             </li>
             <li>
-              <a href="">로그인</a>
+              <a href="<%= contextPath %>/login.page">로그인</a>
             </li>
           </ul>
         </div>
@@ -138,9 +147,7 @@
           </a>
         </div>
         <div class="ct-sort">
-          <%-- <% if(loginUser != null) { %> --%>
           <a href="<%= contextPath %>/styleInsert.me" class="style-insert">#스타일 등록</a>
-         <%--  <% } %> --%>
           <ul>
             <li>
               <a href="#" style="font-weight: bold;">날짜별</a>
@@ -155,10 +162,10 @@
         </div>
         <div class="ct-feedcontainer">
         <% int count = 1; %>
-        <%-- <% for Snspost sp : list { %> --%>
+        <% for StylePost sp : list { %>
           <div class="feedwrap">
             <div class="feedimg1">
-<%--               <img src="<%= contextPath %> <%= pi.getImgPath %>"> --%>
+             <img src="<%= contextPath %> <%= pi.getImgPath %>">
               <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
               <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
               <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
@@ -172,7 +179,7 @@
               <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
             </div>
           </div>
-          <%-- <% } %> --%>
+          <% } %>
           
         </div>
       </div>
