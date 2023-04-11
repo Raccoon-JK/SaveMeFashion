@@ -65,7 +65,7 @@ public class SearchEmailController extends HttpServlet {
     	  
     	  session.setAttribute("email", email);
     	  session.setAttribute("alert", "이메일 찾기 성공");
-    	
+    	  
     	  
           response.sendRedirect(request.getContextPath()+"/views/member/searchemailresult.jsp");
       }

@@ -84,8 +84,8 @@
 
 		cardInput[0].value = '${card.cardNo}';
 		cardInput[1].value = '${card.cardPwd}';
-		cardInput[2].value = '${card.cardPwd}';
-		cardInput[3].value = '${card.cardValidity}';
+		cardInput[2].value = MMYY('${card.cardValidity}');
+		cardInput[3].value = '${card.cvc}';
 		
 		if('${account}' == ''){
 			accountBtn.innerText = '추가하기';
@@ -126,6 +126,18 @@
 				return false;
 			});
 		});
+		
+		function MMYY(mmyy) {
+			let inputDateStr = mmyy;
+			let inputDate = new Date(inputDateStr);
+			let month = inputDate.getMonth()+1;
+			let year = String(inputDate.getFullYear()).slice(2);
+			let outputDateStr = '';
+			if(mmyy != ''){
+				outputDateStr = ('00'+month.toString()).slice(-2)+'/'+year;
+			}
+			return outputDateStr
+		}
 	</script>
 </body>
 </html>

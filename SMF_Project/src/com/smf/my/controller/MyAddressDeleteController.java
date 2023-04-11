@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smf.member.model.vo.Member;
 import com.smf.my.model.service.MyPageService;
 
 /**
@@ -31,14 +32,14 @@ public class MyAddressDeleteController extends HttpServlet {
 		
 		int addrNo = Integer.parseInt(request.getParameter("addrNo"));
 		
-		String userId = request.getParameter("userId");
+		String userId = ((Member)request.getSession().getAttribute("loginUser")).getUserId();
 		
 		int result = new MyPageService().addressDelete(addrNo, userId);
 		
 		if( result>0 ) {
 			response.sendRedirect(request.getContextPath()+"/address.me");
 		}else {
-			
+			System.out.println("에러");
 		}
 		
 	}
