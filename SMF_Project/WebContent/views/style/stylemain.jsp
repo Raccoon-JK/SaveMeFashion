@@ -1,5 +1,4 @@
-<%@ page import="com.smf.common.model.vo.PageInfo, java.util.ArrayList, com.smf.style.model.vo.StylePost" %>
-<%@ page import = "java.util.ArrayList" %>
+<%@ page import="com.smf.common.model.vo.PageInfo, java.util.ArrayList, com.smf.style.model.vo.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -161,22 +160,16 @@
           </ul>
         </div>
         <div class="ct-feedcontainer">
-        <% int count = 1; %>
-        <% for StylePost sp : list { %>
           <div class="feedwrap">
+	        <% int count = 1; %>
+	       	<% for StylePost sp : list { %>
             <div class="feedimg1">
-             <img src="<%= contextPath %> <%= pi.getImgPath %>">
-              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
-              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
-              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
-              <img src="./resources/style/캡처55.PNG">
-              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
-              <img src="./resources/style/a_17002637a4e44a5c958830c00ab3059a.webp">
-              <img src="./resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg">
-              <img src="./resources/style/캡쳐66.PNG">
-              <img src="./resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp">
-              <img src="./resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp">
-              <img src="./resources/style/a_89c114d3a071422e9966dca98fa051f8.webp">
+            <img src="<%= contextPath %> <%= pi.getImgPath %>">
+              <input type="hidden" value="<%= b.getBoardNo() %>">
+					<img src="<%=contextPath %><%= sp.getPi().getImgPath()+ sp.getPi().getImgName() %>" width="200px" height="150px">
+					<p>
+						<%= sp.userId  %><br><%= sp.getContent() %>						
+					</p>
             </div>
           </div>
           <% } %>

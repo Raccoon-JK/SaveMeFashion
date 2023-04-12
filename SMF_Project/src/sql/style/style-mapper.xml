@@ -133,6 +133,14 @@
 		JOIN MEMBER USING(USER_ID)
 	</entry>
 	
+	<entry key="loadOrderList">
+		SELECT
+				USER_ID,
+				PRODUCT_NAME,
+				FROM ORDER
+				GROUP BY USER_ID
+	</entry>
+	
 
 
 </properties>
