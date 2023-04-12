@@ -36,7 +36,6 @@ public class ProductController extends HttpServlet {
 
         // 조회한 상품 정보를 JSON 형식으로 변환
         String json = "[";
-        json += "\n";
         for (int i = 0; i < productList.size(); i++) {
             Product product = productList.get(i);
             json += "{";
@@ -47,10 +46,8 @@ public class ProductController extends HttpServlet {
             json += "}";
             if (i < productList.size() - 1) {
                 json += ",";
-                json += "\n";
             }
         }
-        json += "\n";
         json += "]";
 
         // JSON 형식으로 변환된 데이터를 HTTP 응답에 담아서 전송

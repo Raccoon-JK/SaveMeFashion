@@ -43,9 +43,8 @@ var swiper = new Swiper(".second", {
  */
 
 $(document).ready(function() {
-	$.get("https://raw.githubusercontent.com/SardineSP/SardineSP.github.io/main/test_more_info.json")
+	$.get("/SMF_Project/Product.pr")
 		.done((data) => {
-			data = JSON.parse(data);
 			data.forEach((a, i) => {
 				var template =
 					`<a href=""> <div class="col-sm-4">
@@ -69,8 +68,6 @@ $(document).ready(function() {
 $('#more').click(function() {
 	$.get("/SMF_Project/Product.pr")
 		.done((data) => {
-			console.log(data)
-			data = JSON.parse(data);
 			data.forEach((a, i) => {
 				var template =
 					`<a href=""> <div class="col-sm-4">
