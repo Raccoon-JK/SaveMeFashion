@@ -78,7 +78,7 @@ public class ProductDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rset = pstmt.executeQuery();
-			
+		
 			int startRange = 1 + 3 * (pr.getCurrentRange() - 1);
 			int endRange = 4 + pr.getProductLimit() * (startRange - 1);
 
