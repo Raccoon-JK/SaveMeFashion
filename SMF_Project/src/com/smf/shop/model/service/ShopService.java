@@ -58,14 +58,58 @@ public class ShopService {
 		return result;
 	}
 	
-	public ArrayList<ProductAll> selectProduct(){
+	public ArrayList<ProductAll> selectProductAll(){
 		
 		Connection conn = getConnection();
 		
-		ArrayList<ProductAll> list = new ShopDao().selectProduct(conn);
+		ArrayList<ProductAll> list = new ShopDao().selectProductAll(conn);
 		
 		close(conn);
 		
 		return list;
+	}
+	
+	public Product selectProduct(String productName) {
+		
+		Connection conn = getConnection();
+		
+		Product result = new ShopDao().selectProduct(conn, productName);
+		
+		close(conn);
+		
+		return result;
+	}
+	
+	public Stock selectStock(String productName) {
+		
+		Connection conn = getConnection();
+		
+		Stock result = new ShopDao().selectStock(conn, productName);
+		
+		close(conn);
+		
+		return result;
+	}
+	
+	public ArrayList<Product_Img> selectProduct_Img(String productName) {
+		
+		Connection conn = getConnection();
+		
+		ArrayList<Product_Img> list = new ShopDao().selectProduct_Img(conn, productName);
+		
+		close(conn);
+		
+		return list;
+	}
+	
+	public Product_Detail selectProduct_Detail(String productName) {
+		
+		Connection conn = getConnection();
+		
+		Product_Detail result = new ShopDao().selectProduct_Detail(conn, productName);
+		
+		close(conn);
+		
+		return result;
 	}
 }

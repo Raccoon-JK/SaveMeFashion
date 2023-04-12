@@ -32,7 +32,7 @@ public class ShopMainListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<ProductAll> list = new ShopService().selectProduct();
+		ArrayList<ProductAll> list = new ShopService().selectProductAll();
 		
 		request.setAttribute("list", list);
 		

@@ -28,6 +28,13 @@ public class Product {
 		this.status = status;
 		this.tradeCount = tradeCount;
 	}
+	
+	public Product(String productName, String brandName, int companyPrice) {
+		super();
+		this.productName = productName;
+		this.brandName = brandName;
+		this.companyPrice = companyPrice;
+	}
 
 	public String getProductName() {
 		return productName;
