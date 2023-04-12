@@ -1,8 +1,11 @@
-<%-- <%@ page import="com.smf.style.model.dao.StyleDao, java.io.File, com.oreilly.servlet.multipart.DefaultFileRenamePolicy, com.oreilly.servlet.MultipartRequest" %> --%>
+<%@ page import="com.smf.style.model.vo.*, com.smf.member.model.vo.*, java.io.File,  java.util.ArrayList, com.oreilly.servlet.multipart.DefaultFileRenamePolicy, com.oreilly.servlet.MultipartRequest" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 	String contextPath = request.getContextPath();
+	Member loginUser = (Member) session.getAttribute("loginUser");
+	ArrayList<PostImg> list = (ArrayList<PostImg>) request.getAttribute("list");
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -19,6 +22,8 @@
       .img-area {
         margin-top: 20px;
         margin-bottom: 20px;
+         width: 250;
+    	height: 170;
       }
     </style>
   </head>
@@ -106,10 +111,10 @@
         <div class="noticewrap2">
             <div class="insertnotice2">
                 <div class="uproad-img">
-                    <img src="resources/a_7350c375e3a1458f96e16223e2310cc3.webp">
+                    <img src="resources/style/a_7350c375e3a1458f96e16223e2310cc3.webp">
                 </div>
                 <div class="uproad-img">
-                  <img src="resources/a_b2f594eb104a44c9b3b6f2286771f221.webp">
+                  <img src="resources/style/a_b2f594eb104a44c9b3b6f2286771f221.webp">
                 </div>
             </div>
             <div class="item-tag">
@@ -132,7 +137,7 @@
             </div>
             <div class="modal-title">상품 태그하기</div>
             <div class="buy-list">
-              <button type="button" class="list-btn">구매내역 불러오기</button>
+              <button type="button" class="list-btn" value="구매내역 불러오기"></button>
               <p>나이키 에어포스</p>
               <p>조던 1로우 그레이</p>
               <p>뉴발란스 992</p>

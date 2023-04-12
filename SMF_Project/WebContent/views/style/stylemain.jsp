@@ -1,4 +1,4 @@
-<%@ page import="com.smf.common.model.vo.PageInfo, java.util.ArrayList, com.smf.style.model.vo.*" %>
+<%@ page import="com.smf.common.model.vo.PageInfo, java.util.ArrayList, com.smf.style.model.vo.*, com.smf.member.model.vo.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -6,6 +6,7 @@
 	String contextPath = request.getContextPath();
 	PageInfo pi = (PageInfo) request.getAttribute("pi");
 	ArrayList<StylePost> list = (ArrayList<StylePost>) request.getAttribute("list");
+	Member loginUser = (Member) session.getAttribute("loginUser");
 	
 	int currentPage = pi.getCurrentPage();
 	int startPage = pi.getStartPage();
@@ -146,7 +147,9 @@
           </a>
         </div>
         <div class="ct-sort">
+        <% if(loginUser != null){ %>
           <a href="<%= contextPath %>/styleInsert.me" class="style-insert">#스타일 등록</a>
+        <% } %>
           <ul>
             <li>
               <a href="#" style="font-weight: bold;">날짜별</a>
@@ -161,14 +164,13 @@
         </div>
         <div class="ct-feedcontainer">
           <div class="feedwrap">
-	        <% int count = 1; %>
-	       	<% for StylePost sp : list { %>
+	       	<% for (StylePost sp : list) { %>
             <div class="feedimg1">
-            <img src="<%= contextPath %> <%= pi.getImgPath %>">
-              <input type="hidden" value="<%= b.getBoardNo() %>">
+            <img src="<%= contextPath %> <%= sp.getPi().getImgPath()+ sp.getPi().getImgName() %>">
+              <input type="hidden" value="<%= sp.getPostNo() %>">
 					<img src="<%=contextPath %><%= sp.getPi().getImgPath()+ sp.getPi().getImgName() %>" width="200px" height="150px">
 					<p>
-						<%= sp.userId  %><br><%= sp.getContent() %>						
+						<%= sp.getUserId() %><br><%= sp.getContent() %>						
 					</p>
             </div>
           </div>

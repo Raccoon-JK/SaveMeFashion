@@ -1,11 +1,12 @@
-<%@ page import="com.smf.common.model.vo.PageInfo, java.util.ArrayList, com.smf.style.model.vo.*" %>
+<%@ page import="com.smf.common.model.vo.PageInfo, java.util.ArrayList, com.smf.style.model.vo.*, com.smf.member.model.vo.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 	String contextPath = request.getContextPath();
 	StylePost sp = (StylePost) request.getAttribute("sp");
 	StyleComment sc = (StyleComment) request.getAttribute("sc");
-	ArrayList<StylePost> list = (ArrayList<StylePost>) request.getAttribute("list");
+	ArrayList<PostImg> list = (ArrayList<PostImg>) request.getAttribute("list");
+	Member loginUser = (Member) session.getAttribute("loginUser");
 %>
 <!DOCTYPE html>
 <html>
@@ -58,23 +59,22 @@
               </div>
               <div class="userinfo">
                 <p class="userid" value="<%= loginUser.getUserId() %>"></p>
-                <p class="uproadtime"><%= sp.getUproadTime %></p>
+                <p class="uproadtime"><%= sp.getUproadTime() %></p>
               </div>
             </a>
             <div class="userfollow"><button type="button"  id="follow-btn">팔로잉</button></div>
           </div>
           <div class="swiper mySwiper">
+          <% for (PostImg pi : list) { %>
             <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="resources/style/a_1a4352d0cfaf42639677af7d142ed7c0.webp"></div>
-              <div class="swiper-slide"><img src="resources/style/a_89c114d3a071422e9966dca98fa051f8.webp" /></div>
-              <div class="swiper-slide"><img src="resources/style/a_171c091de0d142dfb94c421b6bf55b6f.jpg" /></div>
-              <div class="swiper-slide"><img src="resources/style/a_aa9dfdbd41a746dfbc025a06fad36f62.webp" /></div>
-              <div class="swiper-slide"><img src="resources/style/a_17002637a4e44a5c958830c00ab3059a.webp" /></div>
+              <div class="swiper-slide"><img src="<%= pi.getImgPath() + pi.getImgName() %>"></div>
+              
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
           </div>
+          <% } %>
         </div>
         <div class="feedproduct">
           <div class="product-title">
@@ -168,11 +168,11 @@
               </a>
               <div class="comment-detail">
                 <div class="main">
-                  <span class="user-name"><%= sp.getUserId %></span>
-                  <span class="comment-txt"><%= sc.getCComment %></span>
+                  <span class="user-name"><%= sp.getUserId() %></span>
+                  <span class="comment-txt"><%= sc.getcContent() %></span>
                 </div>
                 <div class="sub">
-                  <span class="upload-time"><%= sc.getUproadTime %></span>
+                  <span class="upload-time"><%= sc.getcUproadTime() %></span>
                 </div>
               </div>
               <div class="btn-like">
@@ -201,96 +201,15 @@
                       <img src="resources/style/p_fa94223fea044656b2f41d55cbcb334c.jpeg" />
                     </div>
                     <div class="userinfo">
-                      <p class="userid">yxxhzzi</p>
-                      <p class="uproadtime">어제</p>
+                      <p class="userid"><%= sp.getUserId() %></p>
+                      <p class="user-comment"><%= sc.getcContent() %></p>
+                      <p class="uproadtime"><%= sc.getcUproadTime() %></p>
                     </div>
                   </a>
                 </div>
               </div>
               <div id="comments">
-                <form id="commentForm">
-                  <div class="modal-profile">
-                    <img src="resources/style/account_img_default.png">
-                  </div>
-                  <input type="text" id="commentInput" style="width: 250px;" placeholder="댓글을 남기세요">
-                  <button type="submit">작성</button>
-                </form>
-                <ul id="commentList">
-                  <!-- 작성한 댓글들이 표시될 영역 -->
-                </ul>
-              </div>
-            </div>
-    
-          </div>
-        </div>
-        <div id="modal-wrapper2" style="display: none">
-          <div class="modal">
-            <div class="close-wrapper2">
-              <button class="close" style="background-color: white; border: 0; cursor: pointer;" onclick="closeModal('modal-wrapper2')">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                </svg>
-              </button>
-            </div>
-            <div class="modal-title">댓글</div>
-            <div class="comment-box">
-              <div class="comment-top">
-                <div class="feeduser">
-                  <a href="http://127.0.0.1:3000/%EC%9C%A0%EC%A0%80%ED%94%BC%EB%93%9C.html">
-                    <div class="userimg">
-                      <img src="resources/style/p_fa94223fea044656b2f41d55cbcb334c.jpeg" />
-                    </div>
-                    <div class="userinfo">
-                      <p class="userid">yxxhzzi</p>
-                      <p class="user-comment"></p>
-                      <p class="uproadtime">어제</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div id="comments">
-                <form id="commentForm">
-                  <div class="modal-profile">
-                    <img src="resources/style/account_img_default.png">
-                  </div>
-                  <input type="text" id="commentInput" style="width: 250px;" placeholder="댓글을 남기세요">
-                  <button type="submit">작성</button>
-                </form>
-                <ul id="commentList">
-                  <!-- 작성한 댓글들이 표시될 영역 -->
-                </ul>
-              </div>
-            </div>
-    
-          </div>
-        </div>
-
-        <div id="modal-wrapper3" style="display: none">
-          <div class="modal">
-            <div class="close-wrapper3">
-              <button class="close" style="background-color: white; border: 0; cursor: pointer;" onclick="closeModal('modal-wrapper3')">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                </svg>
-              </button>
-            </div>
-            <div class="modal-title">댓글</div>
-            <div class="comment-box">
-              <div class="comment-top">
-                <div class="feeduser">
-                  <a href="http://127.0.0.1:3000/%EC%9C%A0%EC%A0%80%ED%94%BC%EB%93%9C.html">
-                    <div class="userimg">
-                      <img src="resources/style/p_fa94223fea044656b2f41d55cbcb334c.jpeg" />
-                    </div>
-                    <div class="userinfo">
-                      <p class="userid">yxxhzzi</p>
-                      <p class="uproadtime">어제</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div id="comments">
-                <form id="commentForm">
+                <form id="commentForm" action="">
                   <div class="modal-profile">
                     <img src="resources/style/account_img_default.png">
                   </div>
