@@ -1,3 +1,6 @@
+#mypage_content{
+    margin-top: 25px;
+}
 #myprofile{
 	display: flex;
     justify-content: space-between;

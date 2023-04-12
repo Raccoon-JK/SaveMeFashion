@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="/views/common/menubar_sun.jsp" />
     <div id="mypage_wrapper">
     	<jsp:include page="mypageMenu.jsp"></jsp:include>
     	<div id="mypage_content_wrapper">
@@ -25,70 +27,45 @@
                     </div>
                 </div>
                 <div id="wishList_productInfo_wrapper">
-                    <div class="wishList_productInfo_flex">
-                        <div class="wishList_productInfo_left">
-                            <div class="wishList_productInfo_img">
-                                <img src="/SMF_Project/resources/my/img/_W_ Nike Dunk Low Black_1.png" alt="" width="80px" height="80px">
-                            </div>
-                            <div class="wishList_productInfo_text">
-                                <p class="wishList_productInfo_brand">Jordan</p>
-                                <p class="wishList_productInfo_name">Jordan 4 x Nike SB Retro Pine Green</p>
-                                <p class="wishList_productInfo_size">255</p>
-                            </div>
-                        </div>
-                        <div class="wishList_productInfo_right">
-                            <div class="wishList_productInfo_shoppingCart_div">
-                                <a href="" >장바구니에 담기</a>
-                            </div>
-                            <div class="wishList_productInfo_delete_div">
-                                <a href="" >삭제</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wishList_productInfo_flex">
-                        <div class="wishList_productInfo_left">
-                            <div class="wishList_productInfo_img">
-                                <img src="/SMF_Project/resources/my/img/_W_ Nike Dunk Low Black_1.png" alt="" width="80px" height="80px">
-                            </div>
-                            <div class="wishList_productInfo_text">
-                                <p class="wishList_productInfo_brand">Jordan</p>
-                                <p class="wishList_productInfo_name">Jordan 4 x Nike SB Retro Pine Green</p>
-                                <p class="wishList_productInfo_size">255</p>
-                            </div>
-                        </div>
-                        <div class="wishList_productInfo_right">
-                            <div class="wishList_productInfo_shoppingCart_div">
-                                <a href="" >장바구니에 담기</a>
-                            </div>
-                            <div class="wishList_productInfo_delete_div">
-                                <a href="" >삭제</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wishList_productInfo_flex">
-                        <div class="wishList_productInfo_left">
-                            <div class="wishList_productInfo_img">
-                                <img src="/SMF_Project/resources/my/img/_W_ Nike Dunk Low Black_1.png" alt="" width="80px" height="80px">
-                            </div>
-                            <div class="wishList_productInfo_text">
-                                <p class="wishList_productInfo_brand">Jordan</p>
-                                <p class="wishList_productInfo_name">Jordan 4 x Nike SB Retro Pine Green</p>
-                                <p class="wishList_productInfo_size">255</p>
-                            </div>
-                        </div>
-                        <div class="wishList_productInfo_right">
-                            <div class="wishList_productInfo_shoppingCart_div">
-                                <a href="" >장바구니에 담기</a>
-                            </div>
-                            <div class="wishList_productInfo_delete_div">
-                                <a href="" >삭제</a>
-                            </div>
-                        </div>
-                    </div>
-                    
+                	<c:choose>
+                		<c:when test="${wList != '[]'}">
+		                    <c:forEach var="list" items="${wList}">
+			                    <div class="wishList_productInfo_flex">
+			                        <div class="wishList_productInfo_left">
+			                            <div class="wishList_productInfo_img">
+			                                <img src="${pageContext.request.contextPath}${list.imgPath}${list.imgName}" alt="" width="80px" height="80px">
+			                            </div>
+			                            <div class="wishList_productInfo_text">
+			                                <p class="wishList_productInfo_brand">${list.brandName }</p>
+			                                <p class="wishList_productInfo_name">${list.productName }</p>
+		<!-- 	                                <p class="wishList_productInfo_size">255</p> -->
+			                            </div>
+			                        </div>
+			                        <div class="wishList_productInfo_right">
+			                            <div class="wishList_productInfo_shoppingCart_div">
+			                                <a href="" >상품페이지 이동</a>
+			                            </div>
+			                            <div class="wishList_productInfo_delete_div">
+			                                <a href="" >삭제</a>
+			                            </div>
+			                        </div>
+			                    </div>
+		                    </c:forEach>
+                    	</c:when>
+                    	<c:otherwise>
+                    		<div id="wishList_null">
+                    			<p>관심상품으로 등록된 상품이 없습니다.</p>
+                    		</div>
+                    	</c:otherwise>
+                    </c:choose>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    	$('#wishList_productInfo_delete_div>a').click(function(){
+    		$(this).attr("href","${pageContext.request.contextPath}/wishListItemDel.me?")//html에서 불러와야함
+    	});
+    </script>
 </body>
 </html>

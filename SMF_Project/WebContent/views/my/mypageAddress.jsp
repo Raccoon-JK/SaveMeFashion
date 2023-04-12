@@ -118,6 +118,7 @@
    			</div>
   		</div>
 	</div>
+	<jsp:include page="/views/common/menubar_sun.jsp" />
     <div id="mypage_wrapper">
 	    <jsp:include page="mypageMenu.jsp"></jsp:include>
         <div id="mypage_content_wrapper">
