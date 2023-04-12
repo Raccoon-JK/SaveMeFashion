@@ -1,8 +1,14 @@
 package com.smf.shop.model.service;
 
-import static com.smf.common.JDBCTemplate.*;
+import static com.smf.common.JDBCTemplate.close;
+import static com.smf.common.JDBCTemplate.commit;
+import static com.smf.common.JDBCTemplate.getConnection;
+import static com.smf.common.JDBCTemplate.rollback;
+
 import java.sql.Connection;
 import java.util.ArrayList;
+
+import com.smf.my.model.vo.WishList;
 import com.smf.shop.model.dao.ShopDao;
 import com.smf.shop.model.vo.Category_Sub;
 import com.smf.shop.model.vo.Product;
@@ -107,6 +113,17 @@ public class ShopService {
 		Connection conn = getConnection();
 		
 		Product_Detail result = new ShopDao().selectProduct_Detail(conn, productName);
+		
+		close(conn);
+		
+		return result;
+	}
+	
+	public WishList selectWishList(String productName) {
+		
+		Connection conn = getConnection();
+		
+		WishList result = new ShopDao().selectWishList(conn, productName);
 		
 		close(conn);
 		

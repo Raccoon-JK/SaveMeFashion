@@ -125,4 +125,10 @@
 		WHERE PRODUCT_NAME = ?
         GROUP BY PRODUCT_NAME
 	</entry>
+	
+	<entry key="selectWishList">
+		SELECT COUNT(PRODCUT_NAME) AS PRODUCT_NAME
+		FROM WISHLIST
+		WHERE PRODUCT_NAME = ?
+	</entry>
 </properties>

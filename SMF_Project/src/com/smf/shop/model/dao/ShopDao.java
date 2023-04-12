@@ -1,5 +1,7 @@
 package com.smf.shop.model.dao;
 
+import static com.smf.common.JDBCTemplate.close;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,7 +13,7 @@ import java.util.ArrayList;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
-import static com.smf.common.JDBCTemplate.*;
+import com.smf.my.model.vo.WishList;
 import com.smf.shop.model.vo.Category_Sub;
 import com.smf.shop.model.vo.Product;
 import com.smf.shop.model.vo.ProductAll;
@@ -352,6 +354,41 @@ public class ShopDao {
 			close(pstmt);
 		}
 		return pd;
+	}
+	
+	public WishList selectWishList(Connection conn, String productName) {
+		
+		WishList wl = null;
+		
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String sql = prop.getProperty("selectWishList");
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, productName);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+
+				wl = new WishList();
+				
+				wl.setProductName(rset.getString("PRODCUT_NAME"));
+				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		return wl;
 	}
 
 }

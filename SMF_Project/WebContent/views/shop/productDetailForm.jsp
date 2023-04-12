@@ -185,7 +185,7 @@
                                         <path d="M0,0 L13,0 L13,15 L6.5,9.5 L0,15 L0,10 Z" fill="none" stroke="#000000" stroke-width="1" />
                                     </svg>
                                     <span class="btnText">관심상품</span>
-                                    <span class="wishCount">320</span>
+                                    <span class="wishCount">${ wl.productName }</span>
                                 </a>
                             </div>
                         <div class="deliveryTitle1">
